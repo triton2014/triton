@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+<div class="col-sm-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius">      
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8">
+                       <a class="thumbnail">
+                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                        <div class="caption font_style1 pull-right">
+                            
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> 
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; PROJECT</p>
+                    </div>
+                    <div class="row pad_top">
+                        <p>Project</p>
+                        <hr>
+                        <%= form_for(@project) do |f| %>
+						  <% if @project.errors.any? %>
+						    <div id="error_explanation">
+						      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+						      <ul>
+						      <% @project.errors.full_messages.each do |msg| %>
+						        <li><%= msg %></li>
+						      <% end %>
+						      </ul>
+						    </div>
+						  <% end %>
+
+						  <div class="field">
+						    <%= f.label :name %><br>
+						    <%= f.text_field :name %>
+						  </div>
+						  <div class="field">
+						    <%= f.label :start_date %><br>
+						    <%= f.date_field :start_date %>
+						  </div>
+						   <div class="field">
+						    <%= f.label :end_date %><br>
+						    <%= f.date_field :end_date %>
+						  </div>
+						  <div class="field">
+						    <%= f.label :status %><br>
+						    <%= f.text_field :status %>
+						  </div>
+						  <div class="field">
+						    <%= f.label :note %><br>
+						    <%= f.text_field :note %>
+						  </div>
+						  <div class="field">
+						    <%= f.label :security_alert %><br>
+						    <%= f.text_field :security_alert %>
+						  </div>
+						  <%= f.hidden_field :manager_id, value: current_user.id %>
+						  <br>
+						  <div class="actions">
+						    <%= f.submit %>
+						  </div>
+						<% end %>
+
+
+                    <!-- </div>
+                    <div class="row"> -->
+                                               <br>
+                        <hr>
+                    </div>                    
+
+                </div>
+
+                <div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+
+
+    
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+

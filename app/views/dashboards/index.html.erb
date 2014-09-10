@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+
+<div class="col-sm-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius"> 
+            <% if current_user.role == "admin" %>     
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8">
+                       <a class="thumbnail">
+                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                        <div class="caption font_style1 pull-right">
+                            
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
+                        </div>
+                    </div>
+                    <div class="row navbar-text navbar-right text-right pad_top10">
+                        <a href="#">Profile &nbsp;<img src="/assets/profile_2.png" alt=""></a><br>
+                        <a href="#">Reset Password &nbsp;<img src="/assets/reset.png" alt=""></a><br>
+                        <a href="#">Logout &nbsp;<img src="/assets/logout_2.png" alt=""></a>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; DASHBOARD</p>
+                    </div>
+                    <div class="row pad_top">
+                        <p>Admin</p>
+                        <hr>
+                        
+					<table class = "table">
+						<thead>
+							<tr>
+								<th>User name</th>
+								<th>Email</th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+
+						<% @users.each do |user| %>
+							<tr>
+								<td><%= user.first_name %></td>
+								<td><%= user.email %></td>
+								<td><%= link_to 'Edit', edit_user_dashboards_path(:id=>user.id) %></td>
+								<td><%= link_to 'Delete', delete_user_dashboards_path(:id=>user.id), method: :put, data: { confirm: 'Are you sure?' } %></td>
+
+							</tr>
+						<% end %>
+						</tbody>
+					</table>
+					<a href="/dashboards/new_user">Create New User</a>
+
+                    </div>                    
+
+                </div>
+                <% end %>
+
+                
+
+            </div>
+
+        </div>
+
+ <% if current_user.role != "admin" %> 
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius"> 
+               
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8">
+                       <a class="thumbnail">
+                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                        <div class="caption font_style1 pull-right">
+                            
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; DASHBOARD</p>
+                    </div>
+                    <div class="row pad_top">
+                        <p>Manager</p>
+                        <hr>
+                        
+					<table class = "table">
+						<thead>
+							<tr>
+								<th>Project Name</th>
+								<th>Start Date</th>
+								<th>End Date</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						<% @projects.each do |project| %>
+							<tr>
+								<td><%= link_to "#{project.name}", project_path(project.id) %></td>
+								<td><%= project.start_date %></td>
+								<td><%= project.end_date %></td>
+								
+								
+
+							</tr>
+						<% end %>
+						</tbody>
+					</table>
+
+					<% if current_user.role == 'Manager' %>
+					<a href="/projects/new">Create New Project</a>
+					<% end %>
+
+                    </div>                    
+
+                </div>
+                
+
+        </div>
+<% end %>
+<div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+
+                </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
