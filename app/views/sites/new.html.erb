@@ -22,58 +22,34 @@
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> 
                         </div>
                     </div>
-
                     
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; PROJECT</p>
+                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; SITE</p>
                     </div>
                     <div class="row pad_top">
-                        <p>Project</p>
+                        <p>Site</p>
                         <hr>
-                        <div class="row">
-                        <div class="col-sm-4">
-                            <h6>Project Name</h6>
-                        </div>
-                        <div class="col-sm-4">
-                            <h6>Start Date</h6>
-                        </div>
-                        <div class="col-sm-4">
-                            <h6>Estimated End Date</h6>
-                        </div>                        
-                        </div>
-                        <hr>
-                        <div class="row">
+                        <%= form_tag project_sites_path, class: "form-horizontal" do  %>
 
-						  <div class="col-sm-4 field">
-						    
-						    <%= @project.name %>
-						  </div>
-						  <div class="col-sm-4 field">
-						    
-						    <%= @project.start_date %>
-						  </div>
-						   <div class="col-sm-4 field">
-						    
-						    <%= @project.estimated_end_date %>
-						  </div>
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Site Name</label>
+                        <div class="col-md-6">
+                        <%= text_field_tag :name, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
+                      </div>
+                      </div>
+
+                       
+                          <div class="col-md-4">
+                        <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
                           </div>
-                          <div >
-                            <hr>
-                            <span><h3>List of Sites</h3></span>
-						<% @project.sites.each do |site| %>
-                            <%= link_to "#{site.name}" ,"/projects/#{@project.id}/sites/#{site.id}" %> <br>
-                        <% end %>
-                        </div>
+                    </div>
+                    <% end %>
+                       
 						  
-						  <br>
-						  <% if current_user.role == 'Manager' %>
-                          <%= link_to 'Add a site', new_project_site_path(@project) %>|
-					       <%= link_to 'Edit', edit_project_path(@project) %>
-					<% end %>
-          	
+						  
 
 
                     <!-- </div>

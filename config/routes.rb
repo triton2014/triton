@@ -7,9 +7,16 @@ Triton::Application.routes.draw do
   get "static_pages/project"
   get "static_pages/chat"
   get "static_pages/help"
+  get "static_pages/help1"
 
 
-  resources :projects
+  resources :projects do
+    resources :sites do
+      resources :reports do
+        end
+      end
+  end
+  
   resources :dashboards do
     collection do
       get :new_user
