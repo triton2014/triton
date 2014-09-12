@@ -1,0 +1,4 @@
+class Site < ActiveRecord::Base
+	belongs_to :project
+	has_many :reports
+end

@@ -11,15 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910062056) do
+ActiveRecord::Schema.define(version: 20140912102049) do
 
   create_table "projects", force: true do |t|
     t.string   "name"
-    t.string   "status"
-    t.string   "note"
-    t.string   "security_alert"
     t.datetime "start_date"
-    t.datetime "end_date"
+    t.datetime "estimated_end_date"
     t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,6 +28,36 @@ ActiveRecord::Schema.define(version: 20140910062056) do
   end
 
   add_index "projects_users", ["project_id", "user_id"], name: "index_projects_users_on_project_id_and_user_id"
+
+  create_table "reports", force: true do |t|
+    t.integer  "site_id"
+    t.string   "summary"
+    t.string   "effciency"
+    t.string   "report_type"
+    t.string   "controls_in_place"
+    t.string   "project_start_condition"
+    t.string   "todays_condition"
+    t.string   "safety_meeting"
+    t.string   "materials"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sites", force: true do |t|
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.integer  "report_id"
+    t.string   "task_type"
+    t.string   "target_task"
+    t.string   "completed_task"
+    t.string   "efficiency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
