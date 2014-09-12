@@ -128,6 +128,9 @@ footer p {
     padding-bottom: 2em;
 }
 
+.pad_bot5 {
+    padding-bottom: 5em;
+}
 .pad_left {
     padding-left: 1em;
 }
@@ -180,6 +183,19 @@ footer p {
 
 .min_height {
     min-height: 400px;
+}
+
+.scroll_div {
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#list_tri ul>li>a {    
+        padding-left: 3em;
+        padding-right: 3em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
 }
 
 @media screen and (min-width:768px) {

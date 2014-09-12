@@ -24,12 +24,7 @@
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
                         </div>
                     </div>
-                    <div class="row navbar-text navbar-right text-right pad_top10">
-                        <a href="#">Profile &nbsp;<img src="/assets/profile_2.png" alt=""></a><br>
-                        <a href="#">Reset Password &nbsp;<img src="/assets/reset.png" alt=""></a><br>
-                        <a href="#">Logout &nbsp;<img src="/assets/logout_2.png" alt=""></a>
-
-                    </div>
+                    
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
@@ -37,7 +32,7 @@
                         <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; DASHBOARD</p>
                     </div>
                     <div class="row pad_top">
-                        <p>Admin > New user</p>
+                        <p>Admin > Edit User</p>
                         <hr>
                    <div class="col-md-12 col-lg-12 ">
                     <%= form_tag update_user_dashboards_path, class: "form-horizontal" do  %>
@@ -84,11 +79,13 @@
                         <%= text_field_tag :password_confirmation,  nil, type:"text", tabindex: "6", class: "form-control",  placeholder: 'Retype Password',  required: true %>
                       </div>
                     </div>
-
                       
 
-                      <div class="actions">                  
-                        <div class="col-md-8">
+                      <div class="actions"> 
+                      <div class="col-md-4">
+                        <a href="/dashboards"> <button type="button" class="btn btn-primary btn-block">Cancel </button></a>
+                      </div>                 
+                      <div class="col-md-4">
                         <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
                       </div>
                     </div>
@@ -128,33 +125,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="col-md-12 col-lg-12 ">
-       <%= form_tag update_user_dashboards_path do %>
-  
- <div class="form-group">   
-    <%= hidden_field_tag :id , @edited_user.id %>
-    <%= text_field_tag :first_name , @edited_user.first_name %>
-    <%= text_field_tag :last_name, @edited_user.last_name %>
-    <%= text_field_tag :email, @edited_user.email %>
-    <%= select_tag :role, options_for_select(["Customer","Manager"]) %>
-    
-  </div>
-  <div class="actions">
-    <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
-  </div>
-<% end %>
-         
-    </div>

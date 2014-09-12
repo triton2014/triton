@@ -23,13 +23,7 @@
                             
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
                         </div>
-                    </div>
-                    <div class="row navbar-text navbar-right text-right pad_top10">
-                        <a href="#">Profile &nbsp;<img src="/assets/profile_2.png" alt=""></a><br>
-                        <a href="#">Reset Password &nbsp;<img src="/assets/reset.png" alt=""></a><br>
-                        <a href="#">Logout &nbsp;<img src="/assets/logout_2.png" alt=""></a>
-
-                    </div>
+                    </div>                    
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
@@ -62,7 +56,7 @@
 						<% end %>
 						</tbody>
 					</table>
-					<a href="/dashboards/new_user">Create New User</a>
+					   <a href="/dashboards/new_user"><button type="button" class="btn btn-primary">Create New User</button></a>
 
                     </div>                    
 
@@ -77,8 +71,7 @@
 
  <% if current_user.role != "admin" %> 
         <div class="col-sm-12">
-            <div class="row bg_white pad_top2 radius"> 
-               
+            <div class="row bg_white pad_top2 radius">               
 
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
                     <div class="col-lg-4"></div>
@@ -89,8 +82,7 @@
                             
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
@@ -135,7 +127,7 @@
 
         </div>
 <% end %>
-<div class="col-sm-12 pad_top2">
+                <div class="col-sm-12 pad_top2">
                     <div class="row bg_black bottom_radius">
                         <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
                     </div>
@@ -143,8 +135,10 @@
                 </div>
 
     </div>
+    </div>
     <div class="col-sm-1"></div>
 </div>
+
 
     <!-- jQuery Version 1.11.0 -->
     <script src="/assets/jquery-1.11.0.js"></script>

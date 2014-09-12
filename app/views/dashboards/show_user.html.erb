@@ -24,12 +24,7 @@
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
                         </div>
                     </div>
-                    <div class="row navbar-text navbar-right text-right pad_top10">
-                        <a href="#">Profile &nbsp;<img src="/assets/profile_2.png" alt=""></a><br>
-                        <a href="#">Reset Password &nbsp;<img src="/assets/reset.png" alt=""></a><br>
-                        <a href="#">Logout &nbsp;<img src="/assets/logout_2.png" alt=""></a>
-
-                    </div>
+                    
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
@@ -40,32 +35,32 @@
                         <p>Admin > Show</p>
                         <hr>
                   <div class="col-md-12 col-lg-12 ">
-                     
+
                      <table class = "table">
 						<thead>
 							<tr>
 								<th>User First name</th>
 								<th>User Last name</th>
 								<th>Email</th>
-								<th>Role</th>
-								
+								<th>Role</th>								
 							</tr>
 						</thead>
-						<tbody>
-
-						
+						<tbody>						
 							<tr>
 								<td><%= @user.first_name %></td>
 								<td><%= @user.last_name %></td>
 								<td><%= @user.email %></td>
 								<td><%= @user.role %></td>
-							</tr>
-						
+							</tr>						
 						</tbody>
 					</table>
+
+                    <div class="row col-sm-3">
+                        <a href="/dashboards"> <button type="button" class="btn btn-primary btn-block">Back </button></a>
+                    </div>
                        
                   </div>
-                    <%= link_to 'Back to list', dashboards_path %>    
+                        
         			
 
                     </div>                    
