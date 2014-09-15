@@ -22,7 +22,7 @@ class ReportsController < ApplicationController
 	    @report.todays_condition = params[:todays_condition]
 	    @report.materials = params[:materials]
 	    @report.safety_meeting = params[:safety_meeting]
-	    @report.image = File.new(params[:image])
+	    #@report.image = File.new(params[:image])
 	    @report.save
 	    redirect_to project_site_report_path(@site.project.id,@site.id,@report.id)
 
