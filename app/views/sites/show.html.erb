@@ -46,6 +46,12 @@
                         <p> <%=@site.project.name %> >  <%= @site.name %> </p>
                         <hr>
                         <h3>Reports</h3>
+                        <% if current_user.role == 'Manager' %>
+                        <%= link_to "Create a new report", new_project_site_report_path(@site.project.id,@site.id) %>
+             
+                        <% end %>
+
+                        
                         <hr>
                         <div class="row">
                         <div class="col-sm-2">
@@ -79,7 +85,7 @@
                             <h6><%= r1.effciency %></h6>
                         </div> 
                         <div class="col-sm-2">
-                            <a href="/static_pages/help"> <button type="button" class="btn btn-primary btn-block">View </button></a>
+                            <%= link_to "View", project_site_report_path(@site.project.id,@site.id,r1.id) %>
                         </div>                       
                         </div>
 						
@@ -119,7 +125,7 @@
                             <h6><%= r1.effciency %></h6>
                         </div>
                         <div class="col-sm-2">
-                            <a href="/static_pages/help1"> <button type="button" class="btn btn-primary btn-block">View </button></a>
+                            <%= link_to "View", project_site_report_path(@site.project.id,@site.id,r1.id) %>
                         </div>                        
                         </div>
 						

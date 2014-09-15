@@ -20,6 +20,14 @@ class SitesController < ApplicationController
   
   end
 
+  def edit
+
+  end
+
+  def update
+
+  end
+
 
    
 end

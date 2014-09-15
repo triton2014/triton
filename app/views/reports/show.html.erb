@@ -1,0 +1,349 @@
+<% if @report.report_type == 'tristatus' %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+
+<div class="col-sm-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius">      
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8">
+                       <a class="thumbnail">
+                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                        <div class="caption font_style1 pull-right">
+                            
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> <br> 
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row" id="list_tri">
+                    	<ul class="nav nav-stacked">
+			                <li><a href="#tri_s_target" class="form-control">Target Tasks</a></li>
+			                <li><a href="#tri_s_today" class="form-control" >Today's Photos</a></li>	                
+			                <li><a href="#tri_s_safety" class="form-control">Safety Meeting</a></li>
+			                <li><a href="#tri_s_tomorrow" class="form-control">Tomorrow's Target Tasks</a></li>
+			                <li class="form-group"><a href="#tri_s_material" class="form-control">Materials</a></li>
+			                 
+			            </ul>
+
+                    </div>
+
+                   
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; Tri-Status Report</p>
+                    </div>
+                    <div class="row pad_top">
+                        <p>Report</p>
+                        <hr>
+                    </div> 
+                    <div class="row scroll_div">
+                    	<div id="tri_s_target" >
+                    		<div class="row pad_bot5">
+                    		<div class="col-sm-12">
+                    			<div class="col-sm-4">
+                    				<span>Target Tasks</span>
+                    			</div>
+                    			<div class="col-sm-4">
+                    				<span>Completed Tasks</span>
+                    			</div>
+                    			<div class="col-sm-4">
+                    				<span>Efficiency</span>
+                    			</div>
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-sm-12">
+                    				<hr>
+                    			</div>                    			
+                    		</div> 
+                    		</div>         
+                    	</div>
+
+                    	<div id="tri_s_today" >
+                    		<div class="col-sm-12">
+                    			<span>Today's Photo</span>
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-sm-12">
+                    				<hr>
+                    			</div>                    			
+                    		</div>
+                    		<div class="col-sm-12">
+                    			<div class="row pad_bot5">
+                    				<div class="col-sm-8">
+                    					<span> Today's Photo
+                    						<%= image_tag @report.image_url %></span>
+                    				</div>
+                    				<div class="col-sm-4">
+                    					<p><img class="img-responsive" src="/assets/profile_img.jpg" style="height: 4em; width: 4em;" alt=""></p>
+                    				</div>
+                    			</div>
+                    		</div>
+                    	</div>
+
+                    	<div id="tri_s_safety" >
+                    		<div class="col-sm-12">
+                    			<span>Safety</span>
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-sm-12">
+                    				<hr>
+                    			</div>                    			
+                    		</div>
+                    		<div class="col-sm-12">
+                    			<div class="row pad_bot5">
+                    				<div class="col-sm-12">
+                    					<span><%= @report.safety_meeting %></span>
+                    				</div>                    				
+                    			</div>
+                    		</div>
+                    	</div>
+
+                    	<div id="tri_s_tomorrow">
+                    		<div class="col-sm-12">
+                    			<span>Tomorrow's Target Tasks</span>
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-sm-12">
+                    				<hr>
+                    			</div>                    			
+                    		</div>
+                    		<div class="col-sm-12">
+                    			<div class="row pad_bot5">
+                    				<div class="col-sm-12">
+                    					<span>Description of Target Tasks</span>
+                    				</div>                    				
+                    			</div>
+                    		</div>
+                    	</div>
+
+                    	<div id="tri_s_material">
+                    		<div class="col-sm-12">
+                    			<span>Materials</span>
+                    		</div>
+                    		<div class="row pad_bot5">
+                    			<div class="col-sm-12">
+                    				<hr>
+                    			</div>                    			
+                    		</div>
+                    		<div class="col-sm-12">
+                    			<div class="row pad_bot5">
+                    				<div class="col-sm-12">
+                    					<span><%= @report.materials %></span>
+                    				</div>
+                    				
+                    			</div>
+                    		</div>
+                    	</div>
+
+                    </div>                   
+
+                </div>
+
+                <div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+<% else %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+
+<div class="col-sm-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius">      
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8">
+                       <a class="thumbnail">
+                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                        <div class="caption font_style1 pull-right">
+                            
+                            <h6 class="caption font_style1 pull-right">John Username</h6> <br> 
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row" id="list_tri">
+                    	<ul class="nav nav-stacked">
+			                <li><a href="#tri_h_place" class="form-control">Controls in Place</a></li>
+			                <li><a href="#tri_h_project" class="form-control" >Project Start Conditions</a></li>           
+			                <li><a href="#tri_h_condition" class="form-control">Today's Conditions</a></li>
+			                <li><a href="#tri_h_today" class="form-control">Today's Photos</a></li>		                 
+			            </ul>
+
+                    </div>
+
+                   
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; Tri-Harder Report</p>
+                    </div>
+                    <div class="row pad_top">
+                        <p>Report</p>
+                        <hr>
+                    </div> 
+                    <div class="row scroll_div">
+                    	<div id="tri_h_place" >
+                    		<div class="row pad_bot5">
+                    		<div class="col-sm-12">
+                    			<div class="col-sm-4">
+                    				<span>Controls in Place</span>
+                    			</div>
+                    			<div class="col-sm-4">
+                    				<span>Completed Tasks</span>
+                    			</div>
+                    			<div class="col-sm-4">
+                    				<span>Efficiency</span>
+                    			</div>
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-sm-12">
+                    				<hr>
+                    			</div>                    			
+                    		</div> 
+                    		</div>         
+                    	</div>
+
+                    	<div id="tri_h_project" >
+                    		<div class="col-sm-12">
+                    			<span>Project Start Conditions</span>
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-sm-12">
+                    				<hr>
+                    			</div>                    			
+                    		</div>
+                    		<div class="col-sm-12">
+                    			<div class="row pad_bot5">
+                    				<div class="col-sm-8">
+                    					<span><%= @report.project_start_condition %></span>
+                    				</div>
+                    				<div class="col-sm-4">
+                    					<p></p>
+                    				</div>
+                    			</div>
+                    		</div>
+                    	</div>
+
+
+                    	<div id="tri_h_condition">
+                    		<div class="col-sm-12">
+                    			<span>Today's Conditions</span>
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-sm-12">
+                    				<hr>
+                    			</div>                    			
+                    		</div>
+                    		<div class="col-sm-12">
+                    			<div class="row pad_bot5">
+                    				<div class="col-sm-12">
+                    					<span><%= @report.todays_condition %></span>
+                    				</div>                    				
+                    			</div>
+                    		</div>
+                    	</div>
+
+                    	<div id="tri_h_today" >
+                            <div class="col-sm-12">
+                                <span>Today's Photo</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <hr>
+                                </div>                              
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="row pad_bot5">
+                                    <div class="col-sm-8">
+                                        <span>Description of Today's Photo</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p><img class="img-responsive" src="/assets/profile_img.jpg" style="height: 4em; width: 4em;" alt=""></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>                   
+
+                </div>
+
+                <div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+<% end %>	
