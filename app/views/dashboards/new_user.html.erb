@@ -60,7 +60,9 @@
                       <div class="form-group">
                         <label class="control-label col-md-2">Select Role</label>
                         <div class="col-md-6">
-                        <%= select_tag :role,  options_for_select(["Customer","Manager"], tabindex: "4", ) %>
+                          <div class="form-control">
+                        <%= select_tag :role,  options_for_select(["Customer","Manager"] , tabindex: "4" ) %>
+                          </div>
                       </div>
                     </div>
 

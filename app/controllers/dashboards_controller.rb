@@ -6,6 +6,9 @@ class DashboardsController < ApplicationController
 		if current_user.role == 'Manager'
 			@projects = Project.where("manager_id = ? ",current_user.id)
 		end
+		if current_user.role == 'customer'
+			@projects = Project.where("customer_id = ? ",current_user.id)
+		end
 	end
 
 	def new_user

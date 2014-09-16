@@ -54,33 +54,56 @@
                 <a class="navbar-brand" href="index.html"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
+             
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                	<li>
+              <% if user_signed_in? %>
+                <ul class="nav navbar-nav">                	  
+                     <li>
                         <img class="img-responsive center-block" src="/assets/logo.png" alt="">
-                    </li>
+                    </li>                    
                     <li>
                         <img class="img-responsive center-block pad_top" src="/assets/home.png" alt=""> <a class="align_center" href="/static_pages/index">HOME</a>
                     </li>
                     <li>
-                    	<img class="img-responsive center-block pad_top" src="/assets/project.png" alt=""> <a class="align_center" href="/static_pages/project">PROJECTS</a>
+                    	<img class="img-responsive center-block pad_top" src="/assets/project.png" alt=""> <a class="align_center" href="/dashboards">PROJECTS</a>
                     </li>
                     <li>
                     	<img class="img-responsive center-block pad_top" src="/assets/profile.png" alt=""><a class="align_center" href="/static_pages/profile">PROFILE</a>
                     </li>
                     <li>
                     	<img class="img-responsive center-block pad_top" src="/assets/chat.png" alt=""> <a class="align_center" href="/static_pages/chat">CHAT</a>
-                    </li>
-                     <li>
-                        <% if user_signed_in? %>
+                    </li>                   
+                     <li>                       
                      	<img class="img-responsive center-block pad_top" src="/assets/logout.png" alt="">
                         <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+                      </li>
+                      </ul> 
+                  
+
                         <% else %>
-                        <img class="img-responsive center-block pad_top" src="/assets/logout.png" alt=""> <a class="align_center" href="/users/sign_in">LOG IN</a>
-                        <% end %>
-                    </li>
-                </ul>
-            </div>
+                         
+                        <ul class="nav navbar-nav">
+                        <li>
+                          <img class="img-responsive center-block" src="/assets/logo.png" alt="">
+                        </li>
+                        <li class="invisible">
+                        <img class="img-responsive center-block pad_top" src="/assets/home.png" alt=""> <a class="align_center" href="/">HOME</a>
+                        </li>
+                        <li class="invisible">
+                          <img class="img-responsive center-block pad_top" src="/assets/project.png" alt=""> <a class="align_center" href="/dashboard">PROJECTS</a>
+                        </li>
+                        <li class="invisible">
+                          <img class="img-responsive center-block pad_top" src="/assets/profile.png" alt=""><a class="align_center" href="#">PROFILE</a>
+                        </li>
+                        <li class="invisible">
+                          <img class="img-responsive center-block pad_top" src="/assets/chat.png" alt=""> <a class="align_center" href="#">CHAT</a>
+                        </li> 
+                        <li>
+                          <img class="img-responsive center-block pad_top" src="/assets/logout.png" alt=""> <a class="align_center" href="/users/sign_in">LOG IN</a>
+                        </li>                 
+                    </ul>
+                <% end %>
+                </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->

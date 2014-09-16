@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,17 +30,38 @@
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; SITE</p>
+                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; TASK</p>
                     </div>
                     <div class="row pad_top">
                         <p>Site</p>
                         <hr>
-                        <%= form_tag project_sites_path, class: "form-horizontal" do  %>
+                        <%= form_tag project_site_report_tasks_path, class: "form-horizontal" do  %>
 
                       <div class="form-group">                
-                        <label class="control-label col-md-2">Site Name</label>
+                        <label class="control-label col-md-2">Task for :</label>
                         <div class="col-md-6">
-                        <%= text_field_tag :name, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
+                        <%= select_tag :task_type, options_for_select(["Today","Tomorrow"]), type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
+                      </div>
+                      </div>
+
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Target Task</label>
+                        <div class="col-md-6">
+                        <%= text_field_tag :target_task, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
+                      </div>
+                      </div>
+
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Completed Task</label>
+                        <div class="col-md-6">
+                        <%= text_field_tag :completed_task, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
+                      </div>
+                      </div>
+
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Efficiency</label>
+                        <div class="col-md-6">
+                        <%= text_field_tag :efficiency, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
                       </div>
                       </div>
 

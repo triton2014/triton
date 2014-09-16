@@ -31,7 +31,7 @@
 			                <li><a href="#tri_s_target" class="form-control">Target Tasks</a></li>
 			                <li><a href="#tri_s_today" class="form-control" >Today's Photos</a></li>	                
 			                <li><a href="#tri_s_safety" class="form-control">Safety Meeting</a></li>
-			                <!-- <li><a href="#tri_s_tomorrow" class="form-control">Tomorrow's Target Tasks</a></li> -->
+			                <li><a href="#tri_s_tomorrow" class="form-control">Tomorrow's Target Tasks</a></li>
 			                <li class="form-group"><a href="#tri_s_material" class="form-control">Materials</a></li>
 			                 
 			            </ul>
@@ -46,41 +46,46 @@
                         <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; Tri-Status Report</p>
                     </div>
                     <div class="row pad_top">
-                        <p>Report</p>
+                        <p>Report</p> <%= link_to "Add a task", new_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id) %>
                         <hr>
                     </div> 
                     <div class="row scroll_div">
-                    	<div id="tri_s_target" >
-                    		<div class="row pad_bot5">
-                    		<div class="col-sm-12">
-                    			<div class="col-sm-4">
-                    				<span>Target Tasks</span>
-                    			</div>
-                    			<div class="col-sm-4">
-                    				<span>Completed Tasks</span>
-                    			</div>
-                    			<div class="col-sm-4">
-                    				<span>Efficiency</span>
-                    			</div>
-                    		</div>
-                    		<div class="row">
-                    			<div class="col-sm-12">
-                    				<hr>
-                    			</div>                    			
-                    		</div> 
-                            <div class="col-sm-12">
-                                <div class="col-sm-4">
-                                    <span><%= @report.summary %></span>
-                                </div>
-                                <div class="col-sm-4">
-                                    <span>Task4</span>
-                                </div>
-                                <div class="col-sm-4">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                    		</div>         
-                    	</div>
+                        <% if @tasks_today != nil %>
+                            	<div id="tri_s_target" >
+                            		<div class="row pad_bot5">
+                            		<div class="col-sm-12">
+                            			<div class="col-sm-4">
+                            				<span>Target Tasks</span>
+                            			</div>
+                            			<div class="col-sm-4">
+                            				<span>Completed Tasks</span>
+                            			</div>
+                            			<div class="col-sm-4">
+                            				<span>Efficiency</span>
+                            			</div>
+                            		</div>
+                            		<div class="row">
+                            			<div class="col-sm-12">
+                            				<hr>
+                            			</div>                    			
+                            		</div> 
+                                    <% @tasks_today.each  do |t1| %>
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-4">
+                                            <span><%=  t1.target_task %></span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <span><%= t1.completed_task %></span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <span><%= t1.efficiency %></span>
+                                        </div>
+                                        </div>
+                                        <% end %>
+                                    
+                            		</div>         
+                            	</div>
+                        <% end %>
 
                     	<div id="tri_s_today" >
                     		<div class="col-sm-12">
@@ -122,23 +127,46 @@
                     		</div>
                     	</div>
 
-                    	<!-- <div id="tri_s_tomorrow">
-                    		<div class="col-sm-12">
-                    			<span>Tomorrow's Target Tasks</span>
-                    		</div>
-                    		<div class="row">
-                    			<div class="col-sm-12">
-                    				<hr>
-                    			</div>                    			
-                    		</div>
-                    		<div class="col-sm-12">
-                    			<div class="row pad_bot5">
-                    				<div class="col-sm-12">
-                    					<span>Description of Target Tasks</span>
-                    				</div>                    				
-                    			</div>
-                    		</div>
-                    	</div> -->
+                    	
+                        <% if @tasks_tomorrow != nil %>
+                                <div id="tri_s_tomorrow" >
+                                    <div class="row pad_bot5">
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-4">
+                                            <span>Target Tasks</span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <span>Completed Tasks</span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <span>Efficiency</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <hr>
+                                        </div>                              
+                                    </div> 
+                                    <% @tasks_tomorrow.each  do |t1| %>
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-4">
+                                            <span><%=  t1.target_task %></span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <span><%= t1.completed_task %></span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <span><%= t1.efficiency %></span>
+                                        </div>
+                                        </div>
+                                        <% end %>
+                                    
+                                    </div>         
+                                </div>
+                        <% end %>
+
+
+
 
                     	<div id="tri_s_material">
                     		<div class="col-sm-12">
@@ -243,35 +271,24 @@
                     </div> 
                     <div class="row scroll_div">
                     	<div id="tri_h_place" >
-                    		<div class="row pad_bot5">
                     		<div class="col-sm-12">
-                    			<div class="col-sm-4">
-                    				<span>Controls in Place</span>
-                    			</div>
-                    			<div class="col-sm-4">
-                    				<span>Completed Tasks</span>
-                    			</div>
-                    			<div class="col-sm-4">
-                    				<span>Efficiency</span>
-                    			</div>
-                    		</div>
-                    		<div class="row">
-                    			<div class="col-sm-12">
-                    				<hr>
-                    			</div>                    			
-                    		</div>
+                                <span>Controls in place</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <hr>
+                                </div>                              
+                            </div>
                             <div class="col-sm-12">
-                                <div class="col-sm-4">
-                                    <span><%= @report.summary %></span>
+                                <div class="row pad_bot5">
+                                    <div class="col-sm-8">
+                                        <span><%= @report.controls_in_place %></span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p></p>
+                                    </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <span>Task2</span>
-                                </div>
-                                <div class="col-sm-4">
-                                    <span>75%</span>
-                                </div>
-                            </div> 
-                    		</div>         
+                            </div>        
                     	</div>
 
                     	<div id="tri_h_project" >

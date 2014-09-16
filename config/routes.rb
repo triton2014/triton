@@ -1,7 +1,10 @@
 Triton::Application.routes.draw do
   
   devise_for :users
-  root :to => "static_pages#index"
+
+  devise_scope :user do
+      root :to => 'devise/sessions#new'
+  end
   get "static_pages/index"
   get "static_pages/profile"
   get "static_pages/project"
@@ -13,6 +16,8 @@ Triton::Application.routes.draw do
   resources :projects do
     resources :sites do
       resources :reports do
+        resources :tasks do
+          end
         end
       end
   end

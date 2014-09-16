@@ -45,11 +45,21 @@
                     <div class="row pad_top">
                         <p> <%=@site.project.name %> >  <%= @site.name %> </p>
                         <hr>
-                        <h3>Reports</h3>
-                        <% if current_user.role == 'Manager' %>
-                        <%= link_to "Create a new report", new_project_site_report_path(@site.project.id,@site.id) %>
-             
-                        <% end %>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3>Reports</h3>
+                                <div class="col-sm-3"> 
+                                    <div class="row">                           
+                                        <% if current_user.role == 'Manager' %>
+                                        <%= link_to "Create a new report", new_project_site_report_path(@site.project.id,@site.id) %>                 
+                                        <% end %>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <a href="#">Back to Project</a>
+                                </div>
+                            </div>
+                        </div>
 
                         
                         <hr>
