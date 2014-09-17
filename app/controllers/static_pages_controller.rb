@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
+    @projects = Project.find(:all, :conditions => ["manager_id = ? ", current_user.id])    
   end
 
   def profile
@@ -16,4 +17,5 @@ class StaticPagesController < ApplicationController
 
   def help1    
   end
+
 end

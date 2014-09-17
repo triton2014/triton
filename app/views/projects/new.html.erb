@@ -48,9 +48,9 @@
                     <div class="col-sm-12 col-lg-12 ">                        
                         <div class="form-group"> 
                         <div class="row">               
-                            <label class="control-label col-md-2">Project Name</label>
-                            <div class="col-md-6">
-                                <%= f.text_field :name, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Project Name',  required: true %>
+                            <label class="control-label col-md-3">Project Name</label>
+                            <div class="col-md-5">
+                                <%= f.text_field :name, type:"text", tabindex: "1", class: "form-control", pattern: "[!-~ ]{1,30}",  placeholder: 'Enter The Project Name', title: 'Should be 30 character max' , autofocus: true, required: true %>
                             </div>
                             <div class="col-md-4"></div>
                         </div>
@@ -58,9 +58,9 @@
 
                         <div class="form-group"> 
                         <div class="row">               
-                            <label class="control-label col-md-2">Start Date</label>
-                            <div class="col-md-6">
-                                <%= f.date_field :start_date, tabindex: "2", class: "form-control",  placeholder: 'Enter Start Date',  required: true %>
+                            <label class="control-label col-md-3">Start Date</label>
+                            <div class="col-md-5">
+                                <%= f.date_field :start_date, tabindex: "2", class: "form-control",  title: 'Enter Start Date',  required: true %>
                             </div>
                             <div class="col-md-4"></div>
                         </div>
@@ -68,9 +68,9 @@
 
                         <div class="form-group"> 
                         <div class="row">               
-                            <label class="control-label col-md-2">Project Name</label>
-                            <div class="col-md-6">
-                                <%= f.date_field :estimated_end_date , tabindex: "3", class: "form-control",  placeholder: 'Enter The Estimated End Date',  required: true %>
+                            <label class="control-label col-md-3">Estimated End Date</label>
+                            <div class="col-md-5">
+                                <%= f.date_field :estimated_end_date , tabindex: "3", class: "form-control",  title: 'Enter The Estimated End Date',  required: true %>
                             </div>
                             <div class="col-md-4"></div>
                         </div>
@@ -78,14 +78,15 @@
 
 						    <%= f.hidden_field :manager_id, value: current_user.id %>
 						  <br>
-
-                        <div class="actions"> 
-                              <div class="col-md-4">
-                                    <a href="#"> <button type="button" class="btn btn-primary btn-block">Cancel </button></a>
-                              </div>            
-                              <div class="col-md-4">
-                                    <%= f.submit 'Submit', :class => 'btn btn-primary btn-block' %>
-                              </div>
+                        <div class="row">
+                            <div class="actions"> 
+                                  <div class="col-md-4">
+                                        <a href="/dashboards"> <button type="button" class="btn btn-primary btn-block" tabindex= "4">Cancel </button></a>
+                                  </div>            
+                                  <div class="col-md-4">
+                                        <%= f.submit 'Submit', :class => 'btn btn-primary btn-block',tabindex: "5" %>
+                                  </div>
+                            </div>
                         </div>
                     
 				</div> 		  

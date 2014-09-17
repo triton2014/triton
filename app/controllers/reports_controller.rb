@@ -16,16 +16,16 @@ class ReportsController < ApplicationController
 
 	def create
 		@site = Site.find(params[:site_id])
-	    @report = @site.reports.build
-	    @report.report_type = params[:report_type]
-	    @report.summary = params[:summary]
-	    @report.effciency = params[:effciency]
-	    @report.controls_in_place = params[:controls_in_place]
-	    @report.project_start_condition = params[:project_start_condition]
-	    @report.todays_condition = params[:todays_condition]
-	    @report.materials = params[:materials]
-	    @report.safety_meeting = params[:safety_meeting]
-	    @report.image = params[:image]
+	    @report = @site.reports.build(report_params)
+	    # @report.report_type = params[:report_type]
+	    # @report.summary = params[:summary]
+	    # @report.effciency = params[:effciency]
+	    # @report.controls_in_place = params[:controls_in_place]
+	    # @report.project_start_condition = params[:project_start_condition]
+	    # @report.todays_condition = params[:todays_condition]
+	    # @report.materials = params[:materials]
+	    # @report.safety_meeting = params[:safety_meeting]
+	    # @report.image = params[:image]
 	    @report.save
 	    redirect_to project_site_report_path(@site.project.id,@site.id,@report.id)
 
@@ -34,4 +34,15 @@ class ReportsController < ApplicationController
 	def update
 
 	end
+
+
+	private
+
+# Use strong_parameters for attribute whitelisting
+# Be sure to update your create() and update() controller methods.
+
+       def report_params
+         params.require(:report).permit(:report_type,:summary, :effciency, :project_start_condition,
+                 :todays_condition, :materials, :safety_meeting, :image)
+       end
 end

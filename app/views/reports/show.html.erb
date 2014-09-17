@@ -99,11 +99,10 @@
                     		<div class="col-sm-12">
                     			<div class="row pad_bot5">
                     				<div class="col-sm-8">
-                    					<span> Today's Photo
-                    						<%= image_tag @report.image_url %></span>
+                    					<span> Today's Photo</span>
                     				</div>
                     				<div class="col-sm-4">
-                    					<p><img class="img-responsive" src="/assets/profile_img.jpg" style="height: 4em; width: 4em;" alt=""></p>
+                    					<p><%= image_tag @report.image_url(:thumb) if @report.image? %></p>
                     				</div>
                     			</div>
                     		</div>
@@ -346,7 +345,7 @@
                                         <span>Description of Today's Photo</span>
                                     </div>
                                     <div class="col-sm-4">
-                                        <p><img class="img-responsive" src="/assets/profile_img.jpg" style="height: 4em; width: 4em;" alt=""></p>
+                                        <p><%= image_tag @report.image_url(:thumb) if @report.image? %></p>
                                     </div>
                                 </div>
                             </div>

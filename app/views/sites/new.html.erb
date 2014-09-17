@@ -17,12 +17,10 @@
                     <div class="col-lg-8">
                        <a class="thumbnail">
                         <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
-                        <div class="caption font_style1 pull-right">
-                            
+                        <div class="caption font_style1 pull-right">                            
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> 
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
@@ -34,42 +32,36 @@
                         <hr>
                         <%= form_tag project_sites_path, class: "form-horizontal" do  %>
 
-                      <div class="form-group">                
-                        <label class="control-label col-md-2">Site Name</label>
-                        <div class="col-md-6">
-                        <%= text_field_tag :name, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
-                      </div>
-                      </div>
-
-                       
-                          <div class="col-md-4">
-                        <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
+                          <div class="form-group">                
+                              <label class="control-label col-md-2">Site Name</label>
+                              <div class="col-md-6">
+                              <%= text_field_tag :name, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
+                              </div>
                           </div>
+
+                          <div class="actions"> 
+                              <div class="col-md-4">
+                                    <a href="#"> <button type="button" class="btn btn-primary btn-block">Cancel </button></a>
+                              </div>            
+                              <div class="col-md-4">
+                                <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
+                              </div>
+                        </div>                      
+                          
                     </div>
-                    <% end %>
-                       
+                    <% end %>        
 						  
-						  
-
-
-                    <!-- </div>
-                    <div class="row"> -->
-                                               <br>
+			             <br>
                         <hr>
-                    </div>                    
-
-                </div>
+                </div>  
 
                 <div class="col-sm-12 pad_top2">
                     <div class="row bg_black bottom_radius">
                         <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </div>
     <div class="col-sm-1"></div>
 </div>

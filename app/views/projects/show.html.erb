@@ -33,36 +33,28 @@
                     <div class="row pad_top">
                         <p>Project</p>
                         <hr>
-                        <div class="row">
-                        <div class="col-sm-4">
-                            <h6>Project Name</h6>
-                        </div>
-                        <div class="col-sm-4">
-                            <h6>Start Date</h6>
-                        </div>
-                        <div class="col-sm-4">
-                            <h6>Estimated End Date</h6>
-                        </div>                        
-                        </div>
-                        <hr>
-                        <div class="row">
+                        <table class = "table">
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            
+                            <tr>
+                                <td><%= @project.name %></td>
+                                <td><%= @project.start_date %></td>
+                                <td><%= @project.estimated_end_date %></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
 
-						  <div class="col-sm-4 field">
-						    
-						    <%= @project.name %>
-						  </div>
-						  <div class="col-sm-4 field">
-						    
-						    <%= @project.start_date %>
-						  </div>
-						   <div class="col-sm-4 field">
-						    
-						    <%= @project.estimated_end_date %>
-						  </div>
-                          </div>
                           <div >
                             <hr>
-                            <span><h3>List of Sites</h3></span>
+                            <span><h4>List of Sites</h4></span>
 						<% @project.sites.each do |site| %>
                             <%= link_to "#{site.name}" ,"/projects/#{@project.id}/sites/#{site.id}" %> <br>
                         <% end %>
