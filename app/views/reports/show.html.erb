@@ -98,11 +98,13 @@
                     		</div>
                     		<div class="col-sm-12">
                     			<div class="row pad_bot5">
-                    				<div class="col-sm-8">
+                    				<div class="col-sm-4">
                     					<span> Today's Photo</span>
                     				</div>
-                    				<div class="col-sm-4">
+                    				<div class="col-sm-8">
                     					<p><%= image_tag @report.image_url(:thumb) if @report.image? %></p>
+                                        <br>
+                                        <%= link_to 'Download Image' , @report.image.url , :target => '_blank' %>
                     				</div>
                     			</div>
                     		</div>
@@ -341,11 +343,13 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="row pad_bot5">
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-4">
                                         <span>Description of Today's Photo</span>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-8">
                                         <p><%= image_tag @report.image_url(:thumb) if @report.image? %></p>
+                                        <br>
+                                        <%= link_to 'Download Image' , @report.image.url, :target => '_blank' %>
                                     </div>
                                 </div>
                             </div>
