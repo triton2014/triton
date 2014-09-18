@@ -8,6 +8,8 @@ Triton::Application.routes.draw do
   get "static_pages/index"
   get "static_pages/profile"
   get "static_pages/project"
+  get "static_pages/edit_profile"
+  post "static_pages/update_profile"
   get "static_pages/chat"
   get "static_pages/help"
   get "static_pages/help1"
