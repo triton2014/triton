@@ -14,158 +14,115 @@
 
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
                     <div class="row">
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-8">
-                       <a class="thumbnail">
-                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
-                        <div class="caption font_style1 pull-right">
-                            
-                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> <br> 
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-8">
+                           <a class="thumbnail">
+                            <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                            <div class="caption font_style1 pull-right">                            
+                                <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> <br> 
+                            </div>
                         </div>
                     </div>
-                    </div>
                     <div class="row" id="list_tri">
-                    	<ul class="nav nav-stacked">
+                    	<ul class="nav nav-stacked scroll_site_nav">
 			                <li><% @sites_project.each do |site| %>
                             <%= link_to "#{site.name}" ,"/projects/#{@site.project.id}/sites/#{site.id}" %> <br>
                         <% end %></li>
-			                
-			                 
 			            </ul>
-
                     </div>
-
-                   
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; PROJECT</p>
+                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; PROJECT > <%=@site.project.name %> >  <%= @site.name %></p>
                     </div>
                     <div class="row pad_top">
-                        <p> <%=@site.project.name %> >  <%= @site.name %> </p>
-                        <hr>
+                        
                         <div class="row">
-                            <div class="col-sm-12">
-                                <h3>Reports</h3>
-                                <div class="col-sm-3"> 
-                                    <div class="row">                           
-                                        <% if current_user.role == 'Manager' %>
-                                        <%= link_to "Create a new report", new_project_site_report_path(@site.project.id,@site.id) %>                 
-                                        <% end %>
+                            <div class="col-sm-12">                        
+                                <div class="col-sm-2">
+                                    <div class="row">
+                                        <p>Reports</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-9">
-                                    <a href="#">Back to Project</a>
+                                <% if current_user.role == 'Manager' %>
+                                <div class="col-sm-10">                                                              
+                                    <%= link_to "Create a New Report", new_project_site_report_path(@site.project.id,@site.id), :class => 'btn btn-primary', tabindex: "1" %>
+
+                                    <a href="#"> <button type="button" class="btn btn-primary" tabindex= "2">Back to Project </button></a>                                    
                                 </div>
+                                <% end %> 
                             </div>
-                        </div>
-
+                       </div> 
                         
-                        <hr>
-                        <div class="row">
-                        <div class="col-sm-2">
-                            <h5>Tri Status</h5>
-                        </div>
-                        <div class="col-sm-2">
-                            <h5>Date</h5>
-                        </div>
-                        <div class="col-sm-3">
-                            <h5>Summary</h5>
-                        </div>
-                        <div class="col-sm-2">
-                            <h5>Efficiency</h5>
-                        </div> 
-                                                
-                        </div>
+                    <% if @reports_tristatus != [] %>
+                    <hr>
+					<table class = "table">
+                        <thead>
+                            <tr>
+                                <th>Tri Status</th>
+                                <th>Date</th>
+                                <th>Summary</th>
+                                <th>Efficiency</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @reports_tristatus.each do |r1| %>            
+                            <tr>
+                                <td></td>
+                                <td><%= r1.created_at.to_date %></td>
+                                <td><%= r1.summary %></td>
+                                <td><%= r1.effciency %></td>
+                                <td><%= link_to "View", project_site_report_path(@site.project.id,@site.id,r1.id) %></td>
+                            </tr>
+                            <% end %>                         
+                        </tbody>
+                    </table>
 
-                        <hr>
-						<% @reports_tristatus.each do |r1| %>
-						<div class="row">
-                        <div class="col-sm-2">
-                            
-                        </div>
-                        <div class="col-sm-2">
-                            <h6><%= r1.created_at.to_date %></h6>
-                        </div>
-                        <div class="col-sm-3">
-                            <h6><%= r1.summary %></h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <h6><%= r1.effciency %></h6>
-                        </div> 
-                        <div class="col-sm-2">
-                            <%= link_to "View", project_site_report_path(@site.project.id,@site.id,r1.id) %>
-                        </div>                       
-                        </div>
-						
-                  
-                        <% end %> 
+                    <% end %>
 
-                        <hr>
-                        <div class="row">
-                        <div class="col-sm-2">
-                            <h5>Tri Harder</h5>
-                        </div>
-                        <div class="col-sm-2">
-                            <h5>Date</h5>
-                        </div>
-                        <div class="col-sm-3">
-                            <h5>Summary</h5>
-                        </div>
-                        <div class="col-sm-2">
-                            <h5>Efficiency</h5>
-                        </div>
-                                                
-                        </div>
-
-                        <hr>
-						<% @reports_triharder.each do |r1| %>
-						<div class="row">
-                        <div class="col-sm-2">
-                            
-                        </div>
-                        <div class="col-sm-2">
-                            <h6><%= r1.created_at.to_date %></h6>
-                        </div>
-                        <div class="col-sm-3">
-                            <h6><%= r1.summary %></h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <h6><%= r1.effciency %></h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <%= link_to "View", project_site_report_path(@site.project.id,@site.id,r1.id) %>
-                        </div>                        
-                        </div>
-						
-                  
-                        <% end %> 
-						  
-						
-						  
+                    <% if @reports_triharder != [] %>
+                    <hr>
+                    <table class = "table">
+                        <thead>
+                            <tr>
+                                <th>Tri Harder</th>
+                                <th>Date</th>
+                                <th>Summary</th>
+                                <th>Efficiency</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @reports_triharder.each do |r1| %>            
+                            <tr>
+                                <td></td>
+                                <td><%= r1.created_at.to_date %></td>
+                                <td><%= r1.summary %></td>
+                                <td><%= r1.effciency %></td>
+                                <td><%= link_to "View", project_site_report_path(@site.project.id,@site.id,r1.id) %></td>
+                            </tr>
+                            <% end %>                         
+                        </tbody>
+                    </table>
+                    <% end %>
 						 
-                    </div>                    
-
+                    </div> 
                 </div>
 
                 <div class="col-sm-12 pad_top2">
                     <div class="row bg_black bottom_radius">
                         <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
                     </div>
-
                 </div>
 
             </div>
         </div>
-
     </div>
     <div class="col-sm-1"></div>
 </div>
 
-
-
-    
 
     <!-- jQuery Version 1.11.0 -->
     <script src="/assets/jquery-1.11.0.js"></script>

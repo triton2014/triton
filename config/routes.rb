@@ -30,6 +30,8 @@ Triton::Application.routes.draw do
       put :delete_user
       get :edit_user
       post :update_user
+      get :list_users
+      post :assign_users
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

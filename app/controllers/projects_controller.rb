@@ -10,10 +10,12 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @users_for_project = @project.users.find(:all, :conditions => ["role = 'Customer'"])
   end
 
   def create
     @project = Project.new(project_params)
+    @project.users<<current_user
     @project.save
     redirect_to @project
   end

@@ -50,7 +50,7 @@
                         <hr>
                     </div> 
                     <div class="row scroll_div">
-                        <% if @tasks_today != nil %>
+                        <%= if @tasks_today != [] %>
                             	<div id="tri_s_target" >
                             		<div class="row pad_bot5">
                             		<div class="col-sm-12">
@@ -129,7 +129,7 @@
                     	</div>
 
                     	
-                        <% if @tasks_tomorrow != nil %>
+                        <% if @tasks_tomorrow != [] %>
                                 <div id="tri_s_tomorrow" >
                                     <div class="row pad_bot5">
                                     <div class="col-sm-12">
@@ -349,7 +349,7 @@
                                     <div class="col-sm-8">
                                         <p><%= image_tag @report.image_url(:thumb) if @report.image? %></p>
                                         <br>
-                                        <%= link_to 'Download Image' , @report.image.url, :target => '_blank' %>
+                                        <%= link_to 'Download Image' , @report.image.url, :target => '_blank'  %>
                                     </div>
                                 </div>
                             </div>

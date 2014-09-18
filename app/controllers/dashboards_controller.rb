@@ -2,12 +2,8 @@ class DashboardsController < ApplicationController
 	def index
 		if current_user.role == 'admin'
 			@users = User.all
-		end
-		if current_user.role == 'Manager'
-			@projects = Project.where("manager_id = ? ",current_user.id)
-		end
-		if current_user.role == 'customer'
-			@projects = Project.where("customer_id = ? ",current_user.id)
+		else	
+			@projects = current_user.projects
 		end
 	end
 
@@ -62,4 +58,26 @@ class DashboardsController < ApplicationController
 	   end
 	 
 	end
+
+	def list_users
+	 if current_user.role = 'Manager'
+	 	@project = Project.find(params[:id])
+    	@customers = User.find(:all, :conditions => ["role = 'Customer'"]) 
+
+ 	 end
+ 	end
+
+ 	 def assign_users
+ 	 	@project = Project.find(params[:id])
+ 	 	if params[:user_ids] == nil
+ 	 		@project.users.clear
+ 	 	else
+ 	 		@project.users.clear
+	 	 	params[:user_ids].each do |userid|
+	 	 		user = User.find(userid)
+	 	 		@project.users<<user
+	 	 	end
+ 	 	end
+ 	 redirect_to @project
+ 	 end
 end

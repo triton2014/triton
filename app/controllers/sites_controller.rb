@@ -16,7 +16,7 @@ class SitesController < ApplicationController
   	@site = Site.find(params[:id])
   	@sites_project = @site.project.sites
   	@reports_tristatus = @site.reports.find(:all ,:conditions => ["report_type = 'tristatus'"])
-	@reports_triharder = @site.reports.find(:all ,:conditions => ["report_type = 'triharder'"])
+	  @reports_triharder = @site.reports.find(:all ,:conditions => ["report_type = 'triharder'"])
   
   end
 

@@ -34,6 +34,8 @@ p {
 hr {
     max-width: 100%;
     border-color: #999999;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .brand,
@@ -191,7 +193,19 @@ footer p {
 
 .scroll_div {
     height: 300px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.scroll_project {
+    height: 8.7em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.scroll_site_nav {
+    height: 13em;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 

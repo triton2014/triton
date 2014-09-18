@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+<div class="col-sm-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius">      
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="row">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-8">
+                           <a class="thumbnail">
+                            <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                            <div class="caption font_style1 pull-right">                            
+                                <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> <br> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; List of Users
+                    </div>
+                    <div class="row pad_top">
+                        
+                        <div class="row">
+                            <div class="col-sm-12">                        
+                                <div class="col-sm-2">
+                                    <div class="row">
+                                        <p>List of Users</p>
+                                    </div>
+                                </div>
+                                 
+                            </div>
+                       </div> 
+                        <hr> 
+                    <div class="col-md-12 col-lg-12 ">
+                    <%= form_tag assign_users_dashboards_path, class: "form-horizontal" do  %>
+                    <%= hidden_field_tag :id , @project.id %>
+
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Project Name</label>
+                        <div class="col-md-6">                        	
+                        		 <%= @project.name %>
+                       
+                      	</div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-2">Customers</label>
+                        <div class="col-md-6">
+                        	<% @customers.each do |c| %>
+							
+							<div class="checkbox">
+								
+							    <label>
+							       <%= check_box_tag("user_ids[]", c.id, @project.users.include?(c)) %> <%= c.first_name %>
+							    </label>
+							  </div>
+							<% end %>
+                        
+                      </div>
+                    </div>                                   
+                      
+
+                      <div class="actions"> 
+                      <div class="col-md-4">
+                        <a href="/dashboards"> <button type="button" class="btn btn-primary btn-block">Cancel </button></a>
+                      </div>                 
+                      <div class="col-md-4">
+                        <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
+                      </div>
+                    </div>
+                    <% end %>
+                       
+                  </div>                                             
+                       
+
+                  
+						 
+                    </div> 
+                </div>
+
+                <div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+<%= @project.name %>
+<% @customers.each do |c| %>
+<%= c.first_name %>
+<% end %>
