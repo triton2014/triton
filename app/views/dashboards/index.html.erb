@@ -90,7 +90,7 @@
                         <p>Manager</p>
                         <hr> 
 
-                    <% if @projects.exists? %>                           
+                    <% if @projects != [] %>                           
 					<table class = "table">
 						<thead>
 							<tr>
@@ -152,7 +152,7 @@
                     <div class="row pad_top">
                         <p>Customer</p>
                         <hr>  
-                    <% if @projects.exists? %>                          
+                    <% if @projects != [] %>                          
                     <table class = "table">
                         <thead>
                             <tr>
