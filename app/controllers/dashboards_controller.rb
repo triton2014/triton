@@ -24,6 +24,9 @@ class DashboardsController < ApplicationController
 			@user1.password_confirmation = params[:password_confirmation]
 			@user1.save(:validate => false)
 			redirect_to show_user_dashboards_path({:id => @user1.id})
+
+        	UserMailer.registration_confirmation(@user1).deliver
+
 		end
 	end
 
@@ -67,12 +70,14 @@ class DashboardsController < ApplicationController
  	 end
  	end
 
- 	 def assign_users
+ 	def assign_users
  	 	@project = Project.find(params[:id])
  	 	if params[:user_ids] == nil
  	 		@project.users.clear
+ 	 		@project.users<<current_user
  	 	else
  	 		@project.users.clear
+ 	 		@project.users<<current_user
 	 	 	params[:user_ids].each do |userid|
 	 	 		user = User.find(userid)
 	 	 		@project.users<<user
