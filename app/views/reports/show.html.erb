@@ -29,7 +29,7 @@
                     <div class="row" id="list_tri">
                     	<ul class="nav nav-stacked">
 			                <li><a href="#tri_s_target" class="form-control">Target Tasks</a></li>
-			                <li><a href="#tri_s_today" class="form-control" >Today's Photos</a></li>	                
+			                <li><a href="#tri_s_today" class="form-control" >Today's Photos</a></li>             
 			                <li><a href="#tri_s_safety" class="form-control">Safety Meeting</a></li>
 			                <li><a href="#tri_s_tomorrow" class="form-control">Tomorrow's Target Tasks</a></li>
 			                <li class="form-group"><a href="#tri_s_material" class="form-control">Materials</a></li>
@@ -50,8 +50,9 @@
                         <hr>
                     </div> 
                     <div class="row scroll_div">
-                        <% if @tasks_today != [] %>
+                        
                             	<div id="tri_s_target" >
+                                    <% if @tasks_today != [] %>
                             		<div class="row pad_bot5">
                             		<div class="col-sm-12">
                             			<div class="col-sm-4">
@@ -83,9 +84,10 @@
                                         </div>
                                         <% end %>
                                     
-                            		</div>         
+                            		</div> 
+                                    <% end %>        
                             	</div>
-                        <% end %>
+                        
 
                     	<div id="tri_s_today" >
                     		<div class="col-sm-12">
@@ -99,7 +101,7 @@
                     		<div class="col-sm-12">
                     			<div class="row pad_bot5">
                     				<div class="col-sm-4">
-                    					<span> Today's Photo</span>
+                    					
                     				</div>
                     				<div class="col-sm-8">
                     					<p><%= image_tag @report.image_url(:thumb) if @report.image? %></p>
@@ -112,7 +114,7 @@
 
                     	<div id="tri_s_safety" >
                     		<div class="col-sm-12">
-                    			<span>Safety</span>
+                    			<span>Safety Meeting</span>
                     		</div>
                     		<div class="row">
                     			<div class="col-sm-12">
@@ -121,7 +123,7 @@
                     		</div>
                     		<div class="col-sm-12">
                     			<div class="row pad_bot5">
-                    				<div class="col-sm-12">
+                    				<div class="col-sm-12">                                        
                     					<span><%= @report.safety_meeting %></span>
                     				</div>                    				
                     			</div>
@@ -167,13 +169,11 @@
                         <% end %>
 
 
-
-
                     	<div id="tri_s_material">
                     		<div class="col-sm-12">
                     			<span>Materials</span>
                     		</div>
-                    		<div class="row pad_bot5">
+                    		<div class="row">
                     			<div class="col-sm-12">
                     				<hr>
                     			</div>                    			
@@ -182,8 +182,7 @@
                     			<div class="row pad_bot5">
                     				<div class="col-sm-12">
                     					<span><%= @report.materials %></span>
-                    				</div>
-                    				
+                    				</div>                    				
                     			</div>
                     		</div>
                     	</div>
