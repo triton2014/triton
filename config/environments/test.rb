@@ -32,7 +32,7 @@ Triton::Application.configure do
   config.action_mailer.delivery_method = :test
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'http://www.herokuapp.com/' }
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
