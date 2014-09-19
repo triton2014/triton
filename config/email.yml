@@ -8,3 +8,11 @@ development:
   :password: priyanko123456
   :enable_starttls_auto: true        
 
+production:
+  :address: smtp.gmail.com
+  :port: 587
+  :Domain: mail.google.com
+  :authentication: plain
+  :user_name: priyanko.dey33@gmail.com
+  :password: ENV['SMTP_PASSWORD']
+  :enable_starttls_auto: true 
