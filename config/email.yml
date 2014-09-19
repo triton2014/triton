@@ -14,5 +14,5 @@ production:
   :Domain: mail.google.com
   :authentication: plain
   :user_name: priyanko.dey33@gmail.com
-  :password: ENV['SMTP_PASSWORD']
+  :password: priyanko123456
   :enable_starttls_auto: true 
