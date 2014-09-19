@@ -25,7 +25,7 @@ class DashboardsController < ApplicationController
 			@user1.save(:validate => false)
 			redirect_to show_user_dashboards_path({:id => @user1.id})
 
-        	UserMailer.registration_confirmation(@user1).deliver
+        	UserMailer.registration_confirmation(@user1,params[:password]).deliver
 
 		end
 	end
