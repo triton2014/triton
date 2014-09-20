@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+<div class="col-sm-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius">      
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8">
+                       <a class="thumbnail">
+                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                        <div class="caption font_style1 pull-right">
+                            
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name  %></h6>  
+                        </div>
+                    </div>
+                  
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <p style="float: left;"><img class="img-responsive" src="/assets/chat.png" alt=""></p><p> &nbsp; CHAT</p>
+                    </div>
+                    <hr>
+                    
+                    <div class="col-sm-12">
+                        <div class="col-sm-2"></div>
+                            <div class="col-sm-8">                                
+                                
+                                <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                    <% @chats.each  do |c| %>
+                                        <%= User.find(c.user_id).first_name %> :
+                                        <%= c.message %>
+                                           <br>                
+                                       <% end %> 
+                                  </div>
+                                  <div class="panel-body">
+                                      <%= form_tag post_chat_dashboards_path, class: "form-horizontal" do  %>
+
+                                          <div class="form-group">                
+                                              
+                                              <div class="col-sm-12">
+                                                <%= hidden_field_tag :project_id , params[:id] %>
+                                                <%= hidden_field_tag :user_id , current_user.id %>
+                                              <%= text_area_tag :message, nil, type:"text", tabindex: "1", class: "form-control", placeholder: 'Enter Your message',  required: true %>
+                                              </div>
+                                          </div>
+
+                                          <div class="actions"> 
+                                                       
+                                              <div class="col-md-4">
+                                              <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block', tabindex: "3" %>
+                                              </div>
+                                        </div>                      
+                                       <% end %>
+                                  </div>
+                                </div>
+                                
+                            </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+
+                    <div class="row pad_top">
+                        
+                                          
+                                          
+                        
+                            
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>

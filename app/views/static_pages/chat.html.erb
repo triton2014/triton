@@ -19,25 +19,61 @@
                         <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
                         <div class="caption font_style1 pull-right">
                             
-                            <h6 class="caption font_style1 pull-right">John Username</h6> <br>Company name 
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> 
                         </div>
                     </div>
-                    <div class="row navbar-text navbar-right text-right pad_top10">
-                        <a href="#">Profile &nbsp;<img src="/assets/profile_2.png" alt=""></a><br>
-                        <a href="#">Reset Password &nbsp;<img src="/assets/reset.png" alt=""></a><br>
-                        <a href="#">Logout &nbsp;<img src="/assets/logout_2.png" alt=""></a>
-
-                    </div>
+                    
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
                         <p style="float: left;"><img class="img-responsive" src="/assets/chat.png" alt=""></p><p> &nbsp; CHAT</p>
                     </div>
-                    <div class="row pad_top">
-                        <p>Chat</p>
-                        <hr>                    
-                    </div>                    
+                    
+                    <div class="col-sm-12">
+                                
+                                    <% if @projects.exists? %>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                   <h5><span> Select Chat Related To Your Project</span></h5>
+                                   <table class = "table">
+                                <thead>
+                                    <tr>
+                                        <th>Project name</th>
+                                        <th></th>
+                                        <th>Click below link for Chat</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @projects.each do |proj| %>
+                                    <tr>
+                                        <td><%= link_to "#{proj.name}", project_path(proj.id) %></td>
+                                        <td></td>
+                                        <td><%= link_to "Chat", chat_dashboards_path(id: proj.id), :class => 'btn btn-primary', tabindex: "1" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+
+                            <% else %>
+
+                            <div class="row">
+                        <div class="col-sm-12 align_center">
+                           <h5><span> You do not have any Project. </span></h5>                           
+                           <% if current_user.role == 'Manager' %>
+                               <span>Click on the link to </span><a href="/projects/new">Create New Project</a>
+                            <% end %>
+                       </div>
+                   </div>
+
+                    <% end %>
+
+                    </div>
+                    
+
 
                 </div>
 

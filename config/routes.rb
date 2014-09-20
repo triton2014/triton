@@ -34,6 +34,9 @@ Triton::Application.routes.draw do
       post :update_user
       get :list_users
       post :assign_users
+      get :chat
+      post :chat
+      post :post_chat
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

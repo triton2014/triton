@@ -85,4 +85,21 @@ class DashboardsController < ApplicationController
  	 	end
  	 redirect_to @project
  	 end
+
+ 	def chat
+	 	 @chat = Chat.new
+	 	 @chats = Chat.find(:all, :conditions => ["project_id = ?",params[:id]])	
+	end
+
+ 	 def post_chat
+ 	 	@chat1 = Chat.new
+ 	 	@chat1.project_id = params[:project_id]
+ 	 	@chat1.user_id = current_user.id
+ 	 	@chat1.message = params[:message]
+ 	 	@chat1.save
+ 	 	redirect_to chat_dashboards_path(id: params[:project_id])
+
+ 	 end
+
+
 end

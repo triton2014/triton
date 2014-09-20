@@ -25,6 +25,7 @@ class StaticPagesController < ApplicationController
   end
 
   def chat
+     @projects = current_user.projects 
   end
 
   def help

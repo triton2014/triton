@@ -45,10 +45,31 @@
                     <div class ="row pad_left radius bg_silver">
                         <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; Tri-Status Report</p>
                     </div>
+
                     <div class="row pad_top">
-                        <p>Report</p> <%= link_to "Add a task", new_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id) %>
-                        <hr>
+                        <div class="row">
+                            <div class="col-sm-12">                        
+                                <div class="col-sm-2">
+                                    <div class="row">
+                                        <p>Report</p>
+                                        <% if current_user.role == 'Manager' %> 
+                                        <%= link_to "Add a task", new_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id) %>
+                                        
+                                        <% end %> 
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-10">
+                                    <% if current_user.role == 'Manager' %>                   
+                                    <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-primary', tabindex: "2" %>
+                                    <% end %> 
+                                </div>
+                            </div>
+                       </div>
+                            <hr>
                     </div> 
+
+
                     <div class="row scroll_div">
                         
                             	<div id="tri_s_target" >
@@ -244,7 +265,7 @@
                         <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
                         <div class="caption font_style1 pull-right">
                             
-                            <h6 class="caption font_style1 pull-right">John Username</h6> <br> 
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> <br> 
                         </div>
                     </div>
                     </div>
@@ -266,7 +287,22 @@
                         <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; Tri-Harder Report</p>
                     </div>
                     <div class="row pad_top">
-                        <p>Report</p>
+                        <div class="row">
+                                <div class="col-sm-12">                        
+                                    <div class="col-sm-2">
+                                        <div class="row">
+                                            <p>Report</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <% if current_user.role == 'Manager' %>                          
+                                        <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-primary', tabindex: "1" %>
+                                        
+                                        <% end %> 
+                                    </div>
+                                </div>
+                           </div>                   
+                        
                         <hr>
                     </div> 
                     <div class="row scroll_div">
