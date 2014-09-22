@@ -80,8 +80,8 @@
                           <br>
 
                         <div class="actions"> 
-                              <div class="col-md-4">
-                                    <a href="#"> <button type="button" class="btn btn-primary btn-block" tabindex="4">Cancel </button></a>
+                              <div class="col-md-4">                                    
+                              <%= link_to 'Cancel', project_path(@project), :class => 'btn btn-primary btn-block', tabindex: "2" %>                              
                               </div>            
                               <div class="col-md-4">
                                     <%= f.submit 'Modify', :class => 'btn btn-primary btn-block', tabindex: "5" %>

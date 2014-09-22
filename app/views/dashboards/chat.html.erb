@@ -51,14 +51,14 @@
                                               <div class="col-sm-12">
                                                 <%= hidden_field_tag :project_id , params[:id] %>
                                                 <%= hidden_field_tag :user_id , current_user.id %>
-                                              <%= text_area_tag :message, nil, type:"text", tabindex: "1", class: "form-control", placeholder: 'Enter Your message',  required: true %>
+                                              <%= text_area_tag :message, nil, type:"text", tabindex: "1", class: "form-control", placeholder: 'Enter Your message', autofocus:true, required: true %>
                                               </div>
                                           </div>
 
                                           <div class="actions"> 
                                                        
                                               <div class="col-md-4">
-                                              <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block', tabindex: "3" %>
+                                              <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block', tabindex: "2" %>
                                               </div>
                                         </div>                      
                                        <% end %>

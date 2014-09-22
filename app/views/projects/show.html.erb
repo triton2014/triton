@@ -29,21 +29,7 @@
                         <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; PROJECT</p>
                     </div>
                     <div class="row pad_top">
-                        <div class="row">
-                            <div class="col-sm-12">                        
-                                <div class="col-sm-2">
-                                    <div class="row">
-                                        <p>Project</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-10">
-                                    <% if current_user.role == 'Manager' %>                          
-                                    <%= link_to 'Edit Project', edit_project_path(@project), :class => 'btn btn-primary', tabindex: "1" %>
-                                    <%= link_to 'Assign Users', list_users_dashboards_path(:id => @project.id), :class => 'btn btn-primary', tabindex: "1" %>
-                                    <% end %> 
-                                </div>
-                            </div>
-                       </div> 
+                        
                        <div class="row">
                             <div class="col-sm-12">
                                 <hr>
@@ -56,13 +42,18 @@
                                 <th>Project Name</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>            
                             <tr>
                                 <td><%= @project.name %></td>
-                                <td><%= @project.start_date %></td>
-                                <td><%= @project.estimated_end_date %></td>
+                                <td><%= @project.start_date.to_date() %></td>
+                                <td><%= @project.estimated_end_date.to_date() %></td>
+                                <td><% if current_user.role == 'Manager' %>                          
+                                    <%= link_to 'Edit Project', edit_project_path(@project), :class => 'btn btn-primary', tabindex: "1" %>                                    
+                                    <% end %>
+                                </td>
                             </tr>                        
                         </tbody>
                     </table>
@@ -84,6 +75,9 @@
                                     <div class="col-sm-3">                                    
                                         <span><h4>List of Users</h4></span>
                                     </div>
+                                    <div class="col-sm-3">                                    
+                                        <%= link_to 'Assign Users', list_users_dashboards_path(:id => @project.id), :class => 'btn btn-primary', tabindex: "1" %>
+                                    </div>
                                     <% end %>
                                 </div>
                                 <div class="col-sm-6">
@@ -95,7 +89,7 @@
                                 </div>
                                 <% if current_user.role == 'Manager' %>
                                 <div class="col-sm-6">
-                                    <div class="row scroll_project">
+                                    <div class="scroll_project">
                                         <% @users_for_project.each do |u1| %>
                                            <%= u1.first_name %> <br>
                                         <% end %>
@@ -117,7 +111,10 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-1"></div>
+    <div class="col-sm-1" id="abc">
+        
+
+    </div>
 </div>
 
 

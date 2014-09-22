@@ -33,7 +33,7 @@
                         <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; TASK</p>
                     </div>
                     <div class="row pad_top">
-                        <p>Site</p>
+                       <!--  <p>Site</p> -->
                         <hr>
                         <%= form_tag project_site_report_tasks_path, class: "form-horizontal" do  %>
 
@@ -65,12 +65,23 @@
                       </div>
                       </div>
 
-                       
-                          <div class="col-md-4">
+                      <div class="row">
+
+                        <div class="col-sm-2"></div>
+                          <div class="col-sm-3">
                         <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
                           </div>
+                          <div class="col-sm-3">
+                            <%= link_to 'Back To Report', project_site_report_path(id: @report.id), :class => 'btn btn-primary btn-block', tabindex: "2" %>
+                          </div>
+                           <div class="col-sm-4"></div>
+                           </div>
+
+                              <% end %>
+                              <br>
+                              <hr>
                     </div>
-                    <% end %>
+                    
                        
 						  
 						  
@@ -78,17 +89,18 @@
 
                     <!-- </div>
                     <div class="row"> -->
-                                               <br>
-                        <hr>
+                                               
+                        
                     </div>                    
 
-                </div>
+                
 
                 <div class="col-sm-12 pad_top2">
                     <div class="row bg_black bottom_radius">
                         <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
                     </div>
 
+                </div>
                 </div>
 
             </div>

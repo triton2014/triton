@@ -75,7 +75,7 @@
 
                       <div class="actions"> 
                       <div class="col-md-4">
-                        <a href="/dashboards"> <button type="button" class="btn btn-primary btn-block">Cancel </button></a>
+                        <%= link_to 'Cancel', project_path(@project), :class => 'btn btn-primary btn-block', tabindex: "2" %>
                       </div>                 
                       <div class="col-md-4">
                         <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>

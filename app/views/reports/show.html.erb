@@ -52,18 +52,21 @@
                                 <div class="col-sm-2">
                                     <div class="row">
                                         <p>Report</p>
-                                        <% if current_user.role == 'Manager' %> 
-                                        <%= link_to "Add a task", new_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id) %>
-                                        
-                                        <% end %> 
                                     </div>
                                 </div>
+                                
+                                        <% if current_user.role == 'Manager' %> 
+                                        <div class="col-sm-2">
+                                        <%= link_to "Add a task", new_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id), :class => 'btn btn-primary', tabindex: "1" %>
+                                    </div>                                        
+                                        <% end %> 
+                                    
+                                
 
-                                <div class="col-sm-10">
-                                    <% if current_user.role == 'Manager' %>                   
+                                <div class="col-sm-2">                   
                                     <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-primary', tabindex: "2" %>
-                                    <% end %> 
                                 </div>
+                                <div class="col-sm-6"></div>
                             </div>
                        </div>
                             <hr>

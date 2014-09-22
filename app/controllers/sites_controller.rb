@@ -9,7 +9,7 @@ class SitesController < ApplicationController
     @site = @project.sites.build
     @site.name = params[:name]
     @site.save
-    redirect_to "/projects/#{:project_id}/sites/#{@site.id}"
+    redirect_to "/projects/#{@project.id}/sites/#{@site.id}"
   end
 
   def show
