@@ -36,12 +36,13 @@
                             </div>
                         </div>
                         
-                    <table class = "table">
+                    <table class = "table table-hover table-condensed">
                         <thead>
                             <tr>
                                 <th>Project Name</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -50,10 +51,13 @@
                                 <td><%= @project.name %></td>
                                 <td><%= @project.start_date.to_date() %></td>
                                 <td><%= @project.estimated_end_date.to_date() %></td>
-                                <td><% if current_user.role == 'Manager' %>                          
-                                    <%= link_to 'Edit Project', edit_project_path(@project), :class => 'btn btn-primary', tabindex: "1" %>                                    
+                                <% if current_user.role == 'Manager' %>                          
+                                   <td class="pull-right"> <%= link_to 'Delete Project', delete_project_projects_path(id: @project.id),method: :put, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', tabindex: "1" %> </td>
+
+                                   <td class="pull-right"> <%= link_to 'Edit Project', edit_project_path(@project), :class => 'btn btn-primary', tabindex: "2" %> </td>
+
                                     <% end %>
-                                </td>
+                                
                             </tr>                        
                         </tbody>
                     </table>

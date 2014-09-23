@@ -31,6 +31,12 @@ class ProjectsController < ApplicationController
     @site = @project.sites.build
   end
 
+  def delete_project
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to dashboards_path
+  end
+
   private
       
     def project_params

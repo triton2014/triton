@@ -28,7 +28,7 @@
                         <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; SITE</p>
                     </div>
                     <div class="row pad_top">
-                        <p>Site</p>
+                        <!-- <p>Site</p> -->
                         <hr>
                         <%= form_tag project_sites_path, class: "form-horizontal" do  %>
 
@@ -38,21 +38,31 @@
                               <%= text_field_tag :name, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
                               </div>
                           </div>
-
-                          <div class="actions"> 
-                              <div class="col-md-4">
-                              <%= link_to 'Cancel', project_path(@project), :class => 'btn btn-primary btn-block', tabindex: "2" %>
-                              </div>            
-                              <div class="col-md-4">
-                              <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block', tabindex: "3" %>
+                          <div class="row">
+                              <div class="actions"> 
+                                  <div class="col-md-4">
+                                  <%= link_to 'Cancel', project_path(@project), :class => 'btn btn-primary btn-block', tabindex: "3" %>
+                                  </div>            
+                                  <div class="col-md-4">
+                                  <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block', tabindex: "2" %>
+                                  </div>
+                                  <div class="col-md-4">
+                                  </div>
+                              </div> 
+                          </div>                     
+                       <% end %>  
+                       
+                       <div class="col-md-12">
+                        <div class="row">
+                        <br>
+                        <hr>
+                        </div>
                               </div>
-                        </div>                      
-                       <% end %>    
+                          
                     </div>
                            
 						  
-			             <br>
-                        <hr>
+			             
                 </div>  
 
                 <div class="col-sm-12 pad_top2">

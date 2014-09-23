@@ -22,6 +22,9 @@ Triton::Application.routes.draw do
           end
         end
       end
+      collection do
+      put :delete_project
+    end
   end
   
   resources :dashboards do
