@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
   def update_profile
+    current_user.avatar = params[:avatar]
     current_user.first_name = params[:first_name]
     current_user.last_name = params[:last_name]
     current_user.email = params[:email]

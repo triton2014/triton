@@ -55,6 +55,7 @@ class DashboardsController < ApplicationController
 		@edited_user.role = params[:role]
 		@edited_user.password = params[:password]
 		@edited_user.password_confirmation = params[:password_confirmation]
+		
 		@edited_user.save(:validate => false)
 		redirect_to show_user_dashboards_path({:id => @edited_user.id})
 	   

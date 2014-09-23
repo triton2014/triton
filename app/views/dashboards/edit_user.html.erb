@@ -17,8 +17,7 @@
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
                     <div class="col-lg-4"></div>
                     <div class="col-lg-8">
-                       <a class="thumbnail">
-                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                       <%= render 'common/profile_pic' %>
                         <div class="caption font_style1 pull-right">
                             
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
@@ -37,6 +36,8 @@
                    <div class="col-md-12 col-lg-12 ">
                     <%= form_tag update_user_dashboards_path, class: "form-horizontal" do  %>
                     <%= hidden_field_tag :id , @edited_user.id %>
+
+                      
 
                       <div class="form-group">                
                         <label class="control-label col-md-2">First Name</label>
