@@ -127,9 +127,11 @@
                     					
                     				</div>
                     				<div class="col-sm-8">
-                    					<p><%= image_tag @report.image_url(:thumb) if @report.image? %></p>
+                                        <% if @report.image? %>
+                    					<p><%= image_tag @report.image_url(:thumb)  %></p>
                                         <br>
                                         <%= link_to 'Download Image' , @report.image.url , :target => '_blank' %>
+                                        <% end %>
                     				</div>
                     			</div>
                     		</div>
@@ -210,9 +212,11 @@
                     					<span><%= @report.materials %></span>
                     				</div>
                                     <div class="col-sm-6">
-                                        <p><%= image_tag @report.material_url (:thumb) if @report.material? %></p>
+                                        <% if @report.material? %>
+                                        <p><%= image_tag @report.material_url (:thumb) %></p>
                                         <br>
                                         <%= link_to 'Download Image' , @report.material.url , :target => '_blank' %>
+                                        <% end %>
                                     </div>                    				
                     			</div>
                     		</div>
@@ -392,9 +396,11 @@
                                         <span>Description of Today's Photo</span>
                                     </div>
                                     <div class="col-sm-8">
-                                        <p><%= image_tag @report.image_url(:thumb) if @report.image? %></p>
+                                        <%  if @report.image?  %>
+                                        <p><%= image_tag @report.image_url(:thumb) %></p>
                                         <br>
                                         <%= link_to 'Download Image' , @report.image.url, :target => '_blank'  %>
+                                        <% end %>
                                     </div>
                                 </div>
                             </div>
