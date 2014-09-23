@@ -46,21 +46,21 @@
                       <div class="form-group">                
                         <label class="control-label col-md-2">Target Task</label>
                         <div class="col-md-6">
-                        <%= text_field_tag :target_task, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Target Task',  required: true %>
+                        <%= text_field_tag :target_task, nil, type:"text", tabindex: "2", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Target Task',  required: true %>
                       </div>
                       </div>
 
                       <div class="form-group">                
                         <label class="control-label col-md-2">Completed Task</label>
                         <div class="col-md-6">
-                        <%= text_field_tag :completed_task, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Completed Task',  required: true %>
+                        <%= text_field_tag :completed_task, nil, type:"text", tabindex: "3", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Completed Task',  required: true %>
                       </div>
                       </div>
 
                       <div class="form-group">                
                         <label class="control-label col-md-2">Efficiency</label>
                         <div class="col-md-6">
-                        <%= text_field_tag :efficiency, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Efficiency',  required: true %>
+                        <%= text_field_tag :efficiency, nil, type:"text", tabindex: "4", class: "form-control", pattern: "[0-9.% ]{1,50}",  placeholder: 'Enter The Efficiency',  required: true %>
                       </div>
                       </div>
 
@@ -68,10 +68,10 @@
 
                         <div class="col-sm-2"></div>
                           <div class="col-sm-3">
-                        <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
+                        <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block', tabindex: "5" %>
                           </div>
                           <div class="col-sm-3">
-                            <%= link_to 'Back To Report', project_site_report_path(id: @report.id), :class => 'btn btn-primary btn-block', tabindex: "2" %>
+                            <%= link_to 'Back To Report', project_site_report_path(id: @report.id), :class => 'btn btn-primary btn-block', tabindex: "6" %>
                           </div>
                            <div class="col-sm-4"></div>
                            </div>

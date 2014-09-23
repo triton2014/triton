@@ -18,7 +18,7 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem "devise"
 gem 'carrierwave'
-gem 'rmagick'
+#gem 'rmagick'
 gem "mail"
 
 group :doc do
