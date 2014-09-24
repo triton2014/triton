@@ -14,8 +14,7 @@
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
                     <div class="col-lg-4"></div>
                     <div class="col-lg-8">
-                       <a class="thumbnail">
-                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                       <%= render 'common/profile_pic' %>
                         <div class="caption font_style1 pull-right">                            
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
                         </div>
@@ -88,7 +87,7 @@
                         <p>Manager</p>
                         <hr> 
                     <% if @projects != [] %>                           
-					<table class = "table">
+					<table class = "table table-hover table-condensed">
 						<thead>
 							<tr>
 								<th>Project Name</th>
@@ -135,8 +134,7 @@
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
                     <div class="col-lg-4"></div>
                     <div class="col-lg-8">
-                       <a class="thumbnail">
-                        <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> </a>
+                       <%= render 'common/profile_pic' %>
                         <div class="caption font_style1 pull-right">
                             
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
@@ -152,7 +150,7 @@
                         <p>Customer</p>
                         <hr>  
                     <% if @projects != [] %>                          
-                    <table class = "table">
+                    <table class = "table table-hover table-condensed">
                         <thead>
                             <tr>
                                 <th>Project Name</th>

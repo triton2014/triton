@@ -21,74 +21,82 @@
                             
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> 
                         </div>
-                    </div>
-                   
+                    </div>                   
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
                         <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; PROFILE</p>
                     </div>
-                    <div class="col-md-12 col-lg-12 ">
-                    <%= form_tag static_pages_update_profile_path, :multipart => true, class: "form-horizontal" do  %>
-                    
+                    <div class="col-sm-12 col-lg-12 pad_top ">
+                      
+                    <%= form_tag static_pages_update_profile_path, :multipart => true, class: "form-horizontal"  do  %>
+              <div class="well">
+                  <div class="row ">
+                      <div class="col-sm-8 col-lg-8">
+                      <div class="form-group">                
+                          <label class="control-label col-sm-4">First Name</label>
+                          <div class="col-md-8">
+                          <%= text_field_tag :first_name, current_user.first_name,  type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z. ]{1,50}",  placeholder: 'Enter The First Name',  required: true %>
+                          </div>
+                      </div>
 
                       <div class="form-group">
-                          <label class="control-label col-md-3">Profile Pic</label>
-                          <div class="col-md-9">                                  
-                              <div>
-                                 <%= file_field_tag :avatar , class: "form-control",tabindex:"3",required: true %>
+                          <label class="control-label col-sm-4">Last Name</label>
+                          <div class="col-md-8">
+                          <%= text_field_tag :last_name, current_user.last_name,   type:"text", tabindex: "2", class: "form-control", pattern: "[a-zA-Z. ]{1,50}",  placeholder: 'Enter The Last Name' %>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="control-label col-sm-4">Email</label>
+                          <div class="col-md-8">
+                          <%= text_field_tag :email,  current_user.email,  type:"email", tabindex: "3", class: "form-control",  placeholder: 'Enter The Email Address',  required: true %>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="control-label col-sm-4">Password</label>
+                          <div class="col-md-8">
+                          <%= text_field_tag :password,  nil, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Create a Password',  required: true %>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="control-label col-sm-4">Retype Password</label>
+                          <div class="col-md-8">                  
+                          <%= text_field_tag :password_confirmation,  nil, type:"text", tabindex: "6", class: "form-control",  placeholder: 'Retype Password',  required: true %>
+                          </div>
+                      </div>
+                      </div>
+
+                      <div class="col-sm-4 col-lg-4">
+                          <div class="form-group">
+                              <label class="control-label col-sm-8"><%= render 'common/profile_pic' %></label>
+                              <div class="col-sm-8">                                  
+                                  <div>
+                                     <%= file_field_tag :avatar , class: "form-control",tabindex:"3",required: true %>
+                                  </div>
                               </div>
                           </div>
                       </div>
 
-                      <div class="form-group">                
-                        <label class="control-label col-md-2">First Name</label>
-                        <div class="col-md-6">
-                        <%= text_field_tag :first_name, current_user.first_name,  type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z. ]{1,50}",  placeholder: 'Enter The First Name',  required: true %>
-                      </div>
-                      </div>
+                  </div>
+              </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-2">Last Name</label>
-                        <div class="col-md-6">
-                        <%= text_field_tag :last_name, current_user.last_name,   type:"text", tabindex: "2", class: "form-control", pattern: "[a-zA-Z. ]{1,50}",  placeholder: 'Enter The Last Name' %>
-                      </div>
+                    <div class="row">
+                        <div class="actions"> 
+                            <div class="col-md-4">
+                              <a href="/static_pages/profile"> <button type="button" class="btn btn-primary btn-block">Cancel </button></a>
+                            </div>                 
+                            <div class="col-md-4">
+                              <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
+                            </div>
+                        </div>
                     </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-2">Email</label>
-                        <div class="col-md-6">
-                        <%= text_field_tag :email,  current_user.email,  type:"email", tabindex: "3", class: "form-control",  placeholder: 'Enter The Email Address',  required: true %>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-md-2">Password</label>
-                        <div class="col-md-6">
-                        <%= text_field_tag :password,  nil, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Create a Password',  required: true %>
-                      </div>
-                    </div>
-
-                      <div class="form-group">
-                      <label class="control-label col-md-2">Retype Password</label>
-                        <div class="col-md-6">                  
-                        <%= text_field_tag :password_confirmation,  nil, type:"text", tabindex: "6", class: "form-control",  placeholder: 'Retype Password',  required: true %>
-                      </div>
-                    </div>
-                      
-
-                      <div class="actions"> 
-                      <div class="col-md-4">
-                        <a href="/static_pages/profile"> <button type="button" class="btn btn-primary btn-block">Cancel </button></a>
-                      </div>                 
-                      <div class="col-md-4">
-                        <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
-                      </div>
-                    </div>
-                    <% end %>
-                       
-                  </div>                    
+                    <% end %>                       
+                    </div>                    
 
                 </div>
 
@@ -96,7 +104,6 @@
                     <div class="row bg_black bottom_radius">
                         <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
                     </div>
-
                 </div>
 
             </div>

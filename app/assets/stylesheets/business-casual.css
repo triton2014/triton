@@ -191,6 +191,24 @@ footer p {
     min-height: 400px;
 }
 
+.table_wi_index {
+    width: 30%;
+}
+
+#table_wi_al_index {
+    text-align: center;
+    width: 30%;
+}
+
+#progress_bar {
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+
+#btn_pad {
+    padding: 3px 12px;
+}
+
 .scroll_div {
     height: 20em;
     overflow-y: auto;

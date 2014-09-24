@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923102207) do
+ActiveRecord::Schema.define(version: 20140924071341) do
 
   create_table "chats", force: true do |t|
     t.integer  "project_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140923102207) do
     t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "progress"
   end
 
   create_table "projects_users", id: false, force: true do |t|
