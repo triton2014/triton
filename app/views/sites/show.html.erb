@@ -23,9 +23,9 @@
                         </div>
                     </div>
                     <div class="row" id="list_tri">
-                    	<ul class="nav nav-stacked scroll_site_nav">
+                    	<ul class="nav nav-stacked text-right scroll_site_nav">
 			                <li><% @sites_project.each do |site| %>
-                            <%= link_to "#{site.name}" ,"/projects/#{@site.project.id}/sites/#{site.id}", :class => 'form-control' %>
+                            <%= link_to "#{site.name}" ,"/projects/#{@site.project.id}/sites/#{site.id}", :class => 'nav_style' %>
                         <% end %>
                             </li>
 			            </ul>

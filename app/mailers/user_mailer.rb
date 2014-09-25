@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def registration_confirmation(user,password)
  	@user1=user
  	@password = password
-    mail(:to => user.email, :subject => "You have added to the Triton")
+    mail(:to => user.email, :subject => "Tri-Status - Customer Login Access")
   end
 
 end

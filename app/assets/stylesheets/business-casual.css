@@ -5,7 +5,7 @@
  */
 
 body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: sans-serif,"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('../assets/bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -19,9 +19,9 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    /*text-transform: uppercase;*/
+    /*font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;*/
+    /*font-weight: 700;*/
     letter-spacing: 1px;
 }
 
@@ -51,9 +51,18 @@ hr {
 
 .navbar-nav {
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 900;
     letter-spacing: 3px;
 }
+
+.navbar-default .navbar-nav>li>a {
+    color: #121F06;
+}
+.nav_style {
+    color: #ffffff;
+}
+
+
 
 .img-full {
     min-width: 100%;
@@ -222,7 +231,7 @@ footer p {
 }
 
 .scroll_site_nav {
-    height: 13em;
+    height: 12em;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -230,7 +239,7 @@ footer p {
 
 #list_tri ul>li>a {    
         padding-left: 3em;
-        padding-right: 3em;
+        padding-right: 2em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
 }

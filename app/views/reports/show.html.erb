@@ -170,7 +170,7 @@
                                             <td><%= @report.materials %></td>
                                             <td>
                                                 <% if @report.material? %>
-                                            <p><%= image_tag @report.material_url(:thumb)  %></p>
+                                            <p><%= image_tag @report.material_url(:thumb)   %></p>
                                     <%= link_to 'Download Image' , @report.material.url , :target => '_blank' %>
                                                 <% end %>
                                             </td>
@@ -194,6 +194,7 @@
     </div>
     <div class="col-sm-1"></div>
 </div>
+
 
     <!-- jQuery Version 1.11.0 -->
     <script src="/assets/jquery-1.11.0.js"></script>
@@ -326,7 +327,7 @@
                                     <tr>
                                         <td>
                                             <%  if @report.image?  %>
-                                    <p><%= image_tag @report.image_url(:thumb) %></p>
+                                    <p><%= image_tag @report.image_url(:thumb)   %></p>
                                     <br>
                                     <%= link_to 'Download Image' , @report.image.url, :target => '_blank'  %>
                                     <% end %>
