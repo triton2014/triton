@@ -62,6 +62,9 @@ hr {
     color: #ffffff;
 }
 
+.nav>li>a:hover, .nav>li>a:focus {
+    background: #F99E2A;
+}
 
 
 .img-full {
@@ -214,10 +217,11 @@ footer p {
     margin-top: 3px;
 }
 
-#btn_pad {
-    padding: 3px 12px;
+/*#btn_pad {
+    padding-right: 3.5em;
+    padding-bottom: 1em;
 }
-
+*/
 .scroll_div {
     height: 20em;
     overflow-y: auto;

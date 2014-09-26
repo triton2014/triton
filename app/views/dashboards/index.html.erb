@@ -84,7 +84,27 @@
                         <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; DASHBOARD</p>
                     </div>
                     <div class="row pad_top">
-                        <p>Manager</p>
+
+                        <div class="row">
+                            <div class="col-sm-12">                        
+                                <div class="col-sm-2">
+                                    <div class="row">
+                                        <p>Manager</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-3"></div>                                
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-4">
+                                    <% if current_user.role == 'Manager' %>
+                                       <%= link_to(image_tag("add_project.png"), new_project_path) %>
+                                    <% end %>
+                                </div>
+                                
+                            </div>
+                       </div>
+
+
                         <hr> 
                     <% if @projects != [] %>                           
 					<table class = "table table-hover table-condensed">
@@ -108,9 +128,7 @@
                         
 					</table>
                     <% end %>
-					<% if current_user.role == 'Manager' %>
-					   <a href="/projects/new">Create New Project</a>
-					<% end %>
+					
                     </div>
                 </div>
 

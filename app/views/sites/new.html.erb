@@ -35,7 +35,7 @@
                           <div class="form-group">                
                               <label class="control-label col-md-2">Site Name</label>
                               <div class="col-md-6">
-                              <%= text_field_tag :name, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[a-zA-Z0-9. ]{1,50}",  placeholder: 'Enter The Site  Name',  required: true %>
+                              <%= text_field_tag :name, nil, type:"text", tabindex: "1", class: "form-control", pattern: "[!-~ ]{1,30}",  placeholder: 'Enter The Site  Name',  required: true %>
                               </div>
                           </div>
                           <div class="row">

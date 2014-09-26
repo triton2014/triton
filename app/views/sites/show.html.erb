@@ -77,7 +77,7 @@
                                 <td><%= r1.created_at.to_date %></td>
                                 <td><%= r1.summary %></td>
                                 <td><%= r1.effciency %></td>
-                                <td><%= link_to "View", project_site_report_path(@site.project.id,@site.id,r1.id) %></td>
+                                <td><%= link_to(image_tag("view.png"), project_site_report_path(@site.project.id,@site.id,r1.id)) %></td>
                             </tr>
                         
                             <% end %> 
@@ -106,7 +106,7 @@
                                 <td><%= r1.created_at.to_date %></td>
                                 <td><%= r1.summary %></td>
                                 <td><%= r1.effciency %></td>
-                                <td><%= link_to "View", project_site_report_path(@site.project.id,@site.id,r1.id) %></td>
+                                <td><%= link_to(image_tag("view.png"), project_site_report_path(@site.project.id,@site.id,r1.id)) %></td>
                             </tr>
                             <% end %>                         
                         </tbody>

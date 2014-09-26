@@ -61,7 +61,9 @@
                                               </div>
                                             </div>
                                         </td>
-                                        <td><%= link_to "View", project_path(proj.id), :class => 'btn btn-primary', :id => 'btn_pad' %></td>
+                                          
+                                        <td><%= link_to(image_tag("view.png"), project_path(proj.id)) %></td>                                     
+
                                     </tr>
                                 <% end %>
                                 </tbody>
