@@ -50,9 +50,9 @@
                                 <td><%= @project.start_date.to_date() %></td>
                                 <td><%= @project.estimated_end_date.to_date() %></td>
                                 <% if current_user.role == 'Manager' %>                          
-                                   <td class="pull-right"> <%= link_to 'Delete Project', delete_project_projects_path(id: @project.id),method: :put, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', tabindex: "1" %> </td>
+                                   <td class="pull-right"> <%= link_to 'Delete Project', delete_project_projects_path(id: @project.id),method: :put, data: { confirm: 'Are you sure?' }, :class => 'btn btn-warning', tabindex: "1" %> </td>
 
-                                   <td class="pull-right"> <%= link_to 'Edit Project', edit_project_path(@project), :class => 'btn btn-primary', tabindex: "2" %> </td>
+                                   <td class="pull-right"> <%= link_to 'Edit Project', edit_project_path(@project), :class => 'btn btn-warning', tabindex: "2" %> </td>
 
                                     <% end %>
                                 
@@ -70,7 +70,11 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <% if current_user.role == 'Manager' %>
-                                        <span><%= link_to 'Add a site', new_project_site_path(@project), :class => 'btn btn-primary', tabindex: "2" %></span>                 
+                                        <span><%= link_to 'Add a site', new_project_site_path(@project), :class => 'btn btn-warning', tabindex: "2" %></span>  
+<!-- 
+                                            <%= link_to(image_tag("add_site.png"), new_project_site_path(@project),tabindex: "2") %>
+ -->
+                                                           
                                         <% end %>
                                     </div>
                                     <% if current_user.role == 'Manager' %>
@@ -78,7 +82,7 @@
                                         <span><h4>List of Users</h4></span>
                                     </div>
                                     <div class="col-sm-3">                                    
-                                        <%= link_to 'Assign Users', list_users_dashboards_path(:id => @project.id), :class => 'btn btn-primary', tabindex: "1" %>
+                                        <%= link_to 'Assign Users', list_users_dashboards_path(:id => @project.id), :class => 'btn btn-warning', tabindex: "1" %>
                                     </div>
                                     <% end %>
                                 </div>

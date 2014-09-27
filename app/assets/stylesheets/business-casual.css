@@ -28,7 +28,7 @@ h6 {
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #000;
+    color: #F99E2A;
 }
 
 hr {
@@ -185,6 +185,9 @@ footer p {
     background: #ffffff ;
     opacity: 0.9;
 }
+.text_orange {
+    color: #F99E2A;
+}
 
 .bg_black {
     background: #000000;
@@ -203,6 +206,15 @@ footer p {
     min-height: 400px;
 }
 
+.table_bot {
+    border-bottom-style: solid;
+    border-bottom-color: rgb(204, 196, 196);
+}
+.table_head {
+    background: #f5f5f5;
+    border-top-style: solid;
+    border-top-color: rgb(204, 196, 196);
+}
 .table_wi_index {
     width: 30%;
 }
@@ -212,10 +224,28 @@ footer p {
     width: 30%;
 }
 
+
+
 #progress_bar {
     margin-bottom: 10px;
     margin-top: 3px;
 }
+
+.btn-warning {
+  color: #fff;
+  background-color: #F99E2A;
+  border-color: #eea236;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+  color: #fff;
+  background-color: #F99E2A;
+  border-color: #eea236;
+}
+
 
 /*#btn_pad {
     padding-right: 3.5em;

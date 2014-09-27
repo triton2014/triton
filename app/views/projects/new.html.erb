@@ -90,11 +90,11 @@
 						  <br>
                         <div class="row">
                             <div class="actions"> 
-                                  <div class="col-md-4">
-                                        <a href="/dashboards"> <button type="button" class="btn btn-primary btn-block" tabindex= "4">Cancel </button></a>
+                                  <div class="col-md-4">                                        
+                                        <%= link_to 'Cancel', dashboards_path, :class => 'btn btn-warning btn-block', tabindex: "4" %>
                                   </div>            
                                   <div class="col-md-4">
-                                        <%= f.submit 'Submit', :class => 'btn btn-primary btn-block',tabindex: "5" %>
+                                        <%= f.submit 'Submit', :class => 'btn btn-warning btn-block',tabindex: "5" %>
                                   </div>
                             </div>
                         </div>

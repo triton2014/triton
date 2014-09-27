@@ -47,21 +47,20 @@
                                 </div>
                                 <% if current_user.role == 'Manager' %>
                                 <div class="col-sm-3">                                                           
-                                    <%= link_to "Create a New Report", new_project_site_report_path(@site.project.id,@site.id), :class => 'btn btn-primary', tabindex: "1" %>
+                                    <%= link_to "Create a New Report", new_project_site_report_path(@site.project.id,@site.id), :class => 'btn btn-warning', tabindex: "1" %>
                                 </div>
                                 <% end %> 
                                 <div class="col-sm-3">
-                                    <%= link_to 'Back To Project', project_path(@site.project.id), :class => 'btn btn-primary btn-block', tabindex: "2" %>                                    
+                                    <%= link_to 'Back To Project', project_path(@site.project.id), :class => 'btn btn-warning btn-block', tabindex: "2" %>                                    
                                 </div>
                                 <div class="col-sm-4"></div>
                                 
                             </div>
                        </div> 
-                        <hr>
-                                                
+                                                  
                     <% if @reports_tristatus != [] %>                   
-					<table class = "table table-hover table-condensed" >
-                        <thead>
+					<table class = "table table-hover table-condensed table_bot" >
+                        <thead class="table_head">
                             <tr>
                                 <th>Tri Status</th>
                                 <th>Date</th>
@@ -88,9 +87,9 @@
                     <% end %>
 
                     <% if @reports_triharder != [] %>
-                    <hr>
-                    <table class = "table table-hover table-condensed">
-                        <thead>
+                    
+                    <table class = "table table-hover table-condensed table_bot">
+                        <thead class="table_head">
                             <tr>
                                 <th>Tri Harder</th>
                                 <th>Date</th>

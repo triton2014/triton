@@ -27,37 +27,28 @@
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p> <p>&nbsp; List of Users</p>
+                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p> <p>&nbsp; Assign Users</p>
                     </div>
                 <div class="row pad_top">
-                        
-                    <div class="row">
-                        <div class="col-sm-12">                        
-                            <div class="col-sm-2">
-                                <div class="row">
-                                    <p>List of Users</p>
-                                </div>
-                            </div>
-                             
-                        </div>
-                   </div> 
-                        <hr> 
+                    <hr>
+                     
+                         
                     <div class="col-sm-12 col-lg-12 ">
                         <%= form_tag assign_users_dashboards_path, class: "form-horizontal" do  %>
                         <%= hidden_field_tag :id , @project.id %>
 
                         <div class="form-group">                
-                            <label class="control-label col-md-2">Project Name</label>
-                            <div class="col-md-6">                        	
-                            		 <%= @project.name %>                           
-                          	</div>
-                        </div>
+                              <label class="control-label col-md-2">Project Name</label>
+                              <div class="col-md-6">
+                                <div class="form-control"><%= @project.name %></div>                              
+                              </div>
+                        </div>                    
 
                         <div class="form-group">
                             <label class="control-label col-md-2">Customers</label>
                             <div class="col-md-6">
                         	<% @customers.each do |c| %>							
-							    <div class="checkbox">								
+							    <div class="checkbox form-control">								
     							    <label>
     							       <%= check_box_tag("user_ids[]", c.id, @project.users.include?(c)) %> <%= c.first_name %>
     							    </label>
@@ -69,10 +60,10 @@
 
                         <div class="actions"> 
                             <div class="col-md-4">
-                                <%= link_to 'Cancel', project_path(@project), :class => 'btn btn-primary btn-block', tabindex: "2" %>
+                                <%= link_to 'Cancel', project_path(@project), :class => 'btn btn-warning btn-block', tabindex: "1" %>
                             </div>                 
                             <div class="col-md-4">
-                                <%= submit_tag 'Submit', :class => 'btn btn-primary btn-block' %>
+                                <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block', tabindex: "2" %>
                             </div>
                         </div>
 
