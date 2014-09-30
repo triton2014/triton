@@ -40,7 +40,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                            <!-- <h5><span> Here are Your All Projects</span></h5> -->
-                           <table class = "table table-hover table-condensed table_bot">
+                           
+
+                            <div id="table_scroll_index">
+                            <table class = "table table-hover table-condensed table_bot">
                                 <thead class="table_head">
                                     <tr>
                                         <th>Project name</th>
@@ -61,13 +64,13 @@
                                               </div>
                                             </div>
                                         </td>
-                                          
-                                        <td><%= link_to(image_tag("view.png"), project_path(proj.id)) %></td>                                     
-
+                                        <td><%= link_to(image_tag("view.png"), project_path(proj.id)) %></td>
                                     </tr>
                                 <% end %>
                                 </tbody>
                             </table>
+                            </div>
+
                         </div>
                     </div>
 

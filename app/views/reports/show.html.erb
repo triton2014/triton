@@ -31,7 +31,7 @@
 			                <li><a href="#tri_s_today" class="form-control" >Today's Photos</a></li>             
 			                <li><a href="#tri_s_safety" class="form-control">Safety Meeting</a></li>
 			                <li><a href="#tri_s_tomorrow" class="form-control">Tomorrow's Target Tasks</a></li>
-			                <li class="form-group"><a href="#tri_s_material" class="form-control">Materials</a></li>
+			                <li><a href="#tri_s_material" class="form-control">Materials</a></li>
 			                 
 			            </ul>
 
@@ -64,7 +64,7 @@
                                 <div class="col-sm-6"></div>
                             </div>
                        </div>
-                            <hr>
+                            
                     </div> 
 
 
@@ -73,7 +73,7 @@
                         <div id="tri_s_target" >
                             <% if @tasks_today != [] %>
                                 <table class = "table table-hover table-condensed">
-                                    <thead>
+                                    <thead class="table_head">
                                         <tr>
                                             <th>Target Tasks</th>
                                             <th>Completed Tasks</th>
@@ -92,12 +92,11 @@
                                 </table>                            		 
                             <% end %>        
                         </div>
-                        <hr>
-                        
+                                               
 
                     	<div id="tri_s_today" >
-                            <table class = "table table-hover table-condensed">
-                                    <thead>
+                            <table class = "table table-hover table-condensed ">
+                                    <thead class="table_head">
                                         <tr>
                                             <th>Today's Photo</th>     
                                         </tr>
@@ -116,8 +115,8 @@
                     	</div>
 
                     	<div id="tri_s_safety" >
-                            <table class = "table table-hover table-condensed">
-                                    <thead>
+                            <table class = "table table-hover table-condensed ">
+                                    <thead class="table_head">
                                         <tr>
                                             <th>Safety Meeting</th> 
                                             <th></th>    
@@ -135,8 +134,8 @@
                     	
                         <% if @tasks_tomorrow != [] %>
                                 <div id="tri_s_tomorrow" >
-                                    <table class = "table table-hover table-condensed">
-                                    <thead>
+                                    <table class = "table table-hover table-condensed ">
+                                    <thead class="table_head">
                                         <tr>
                                             <th>Target Tasks</th>
                                             <th>Completed Tasks</th>
@@ -158,8 +157,8 @@
 
 
                     	<div id="tri_s_material">
-                             <table class = "table table-hover table-condensed">
-                                    <thead>
+                             <table class = "table table-hover table-condensed ">
+                                    <thead class="table_head">
                                         <tr>
                                             <th>Materials</th> 
                                             <th></th>    
@@ -266,13 +265,13 @@
                                 </div>
                             </div>
                        </div> 
-                        <hr>
+                       
                     </div> 
                     <div class="row scroll_div">
 
                     	<div id="tri_h_place" >
                             <table class = "table table-hover table-condensed">
-                                <thead>
+                                    <thead class="table_head">
                                     <tr>
                                         <th>Controls in place</th>                                            
                                     </tr>
@@ -287,7 +286,7 @@
 
                     	<div id="tri_h_project" >
                             <table class = "table table-hover table-condensed">
-                                <thead>
+                                    <thead class="table_head">
                                     <tr>
                                         <th>Project Start Conditions</th>         
                                     </tr>
@@ -303,7 +302,7 @@
 
                     	<div id="tri_h_condition">
                             <table class = "table table-hover table-condensed">
-                                <thead>
+                                    <thead class="table_head">
                                     <tr>
                                         <th>Today's Conditions</th>
                                     </tr>
@@ -318,7 +317,7 @@
 
                     	<div id="tri_h_today" >
                             <table class = "table table-hover table-condensed">
-                                <thead>
+                                    <thead class="table_head">
                                     <tr>
                                         <th>Today's Photo</th>     
                                     </tr>

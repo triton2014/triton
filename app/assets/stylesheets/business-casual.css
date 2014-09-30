@@ -271,12 +271,44 @@ footer p {
 }
 
 
+#table_scroll_index {
+    max-height:21.5em;
+    overflow-y:auto;
+}
+
+#table_scroll_dash_index {
+    max-height:20.5em;
+    overflow-y:auto;
+}
+
+#table_scroll_chat {
+    max-height:22em;
+    overflow-y:auto;
+}
+
+#table_scroll_site {
+    max-height:9.5em;
+    overflow-y:auto;
+}
+
+#table_scroll_tri {
+    max-height:21em;
+    overflow-y:auto;
+}
+
+#table_scroll_list {
+    max-height:17.1em;
+    overflow-y:auto;
+}
+
 #list_tri ul>li>a {    
         padding-left: 3em;
         padding-right: 2em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
 }
+
+
 
 @media screen and (min-width:768px) {
     .brand {

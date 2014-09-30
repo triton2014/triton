@@ -30,8 +30,7 @@
                         <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p> <p>&nbsp; Assign Users</p>
                     </div>
                 <div class="row pad_top">
-                    <hr>
-                     
+                                        
                          
                     <div class="col-sm-12 col-lg-12 ">
                         <%= form_tag assign_users_dashboards_path, class: "form-horizontal" do  %>
@@ -46,7 +45,7 @@
 
                         <div class="form-group">
                             <label class="control-label col-md-2">Customers</label>
-                            <div class="col-md-6">
+                            <div class="col-md-6" id="table_scroll_list">
                         	<% @customers.each do |c| %>							
 							    <div class="checkbox form-control">								
     							    <label>
