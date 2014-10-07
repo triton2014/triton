@@ -28,15 +28,16 @@
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; PROJECT > <%=@site.project.name %> >  <%= @site.name %> > Report</p>
+                        <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
+                        <p class="para_link"> &nbsp; Projects > <%=@site.project.name %> > <%= @site.name %> > <span class="para_link_last">Add Report</span></p>
                     </div>
                     <div class="row pad_top">
 
            <div class="col-sm-12">
 
                 <ul id="myTab" class="nav nav-pills">
-                  <li class="active"><a href="#tristatus" data-toggle="tab">TRI-STATUS</a></li>
-                  <li><a href="#triharder" data-toggle="tab">TRI-HARDER</a></li>                   
+                  <li class="active"><a class="nav_style" href="#tristatus" data-toggle="tab">TRI-STATUS</a></li>
+                  <li ><a class="nav_style" href="#triharder" data-toggle="tab">TRI-HARDER</a></li>                   
                 </ul>
              
                 <div id="myTabContent" class="tab-content">         <!-- full tab content -->

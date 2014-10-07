@@ -29,11 +29,11 @@
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; DASHBOARD</p>
+                        <i style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></i>
+                        <p class="para_link"> &nbsp; Admin > Edit User</p>
                     </div>
                     <div class="row pad_top">
-                        <p>Admin > Edit User</p>
-                        <hr>
+                        
                    <div class="col-md-12 col-lg-12 ">
                     <%= form_tag update_user_dashboards_path, class: "form-horizontal" do  %>
                     <%= hidden_field_tag :id , @edited_user.id %>

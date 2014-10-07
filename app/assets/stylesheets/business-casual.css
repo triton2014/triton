@@ -31,6 +31,10 @@ p {
     color: #F99E2A;
 }
 
+a {
+    color: #2C522C;
+}
+
 hr {
     max-width: 100%;
     border-color: #999999;
@@ -59,13 +63,26 @@ hr {
     color: #121F06;
 }
 .nav_style {
-    color: #ffffff;
+    color: #2C522C;
 }
 
 .nav>li>a:hover, .nav>li>a:focus {
     background: #F99E2A;
 }
 
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background: #2C522C;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    color: #2C522C;
+    background: #F99E2A;
+    /*font-weight: 700;*/
+}
+
+#nav_hover>li>a:hover {
+   color: #F99E2A;
+}
 
 .img-full {
     min-width: 100%;
@@ -220,7 +237,7 @@ footer p {
 }
 
 #table_wi_al_index {
-    text-align: center;
+    text-align: left;
     width: 30%;
 }
 
@@ -235,6 +252,8 @@ footer p {
   color: #fff;
   background-color: #F99E2A;
   border-color: #eea236;
+  border-radius: 10px;
+  text-transform: uppercase;
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -259,7 +278,7 @@ footer p {
 }
 
 .scroll_project {
-    height: 10.3em;
+    height: 11.7em;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -277,7 +296,7 @@ footer p {
 }
 
 #table_scroll_dash_index {
-    max-height:20.5em;
+    max-height:22.6em;
     overflow-y:auto;
 }
 
@@ -287,7 +306,7 @@ footer p {
 }
 
 #table_scroll_site {
-    max-height:9.5em;
+    max-height:10.3em;
     overflow-y:auto;
 }
 
@@ -301,11 +320,40 @@ footer p {
     overflow-y:auto;
 }
 
-#list_tri ul>li>a {    
+#list_tri ul>li>a {
+        color: #ffffff;     
         padding-left: 3em;
         padding-right: 2em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
+        border-top: solid 1px;
+        border-bottom: solid 1px;
+}
+
+#list_tri ul>li>a:hover {
+    color: #2C522C;
+    border-top: solid 0px;
+        border-bottom: solid 0px;
+}
+
+.nav-stacked>li+li {
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+.para_link {
+    color: rgb(153, 153, 153);
+    font-size: 1em;
+    margin-top: 0.2em;
+    margin-bottom: 0em;
+}
+
+.para_link_last {
+    color: #F99E2A;
+    font-size: 1em;
+    margin-top: 0.2em;
+    margin-bottom: 0em;
 }
 
 

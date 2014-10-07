@@ -25,7 +25,7 @@
                     <div class="row" id="list_tri">
                     	<ul class="nav nav-stacked text-right scroll_site_nav">
 			                <li><% @sites_project.each do |site| %>
-                            <%= link_to "#{site.name}" ,"/projects/#{@site.project.id}/sites/#{site.id}", :class => 'nav_style' %>
+                            <%= link_to "#{site.name}" ,"/projects/#{@site.project.id}/sites/#{site.id}" %>
                         <% end %>
                             </li>
 			            </ul>
@@ -34,7 +34,8 @@
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></p><p> &nbsp; PROJECT > <%=@site.project.name %> >  <%= @site.name %></p>
+                        <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
+                        <p class="para_link"> &nbsp; Projects > <%=@site.project.name %> >  <span class="para_link_last"><%= @site.name %></span></p>
                     </div>
                     <div class="row pad_top">
                         

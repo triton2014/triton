@@ -27,11 +27,11 @@
                     </div>
                     <div class="row" id="list_tri">
                     	<ul class="nav nav-stacked">
-			                <li><a href="#tri_s_target" class="form-control">Target Tasks</a></li>
-			                <li><a href="#tri_s_today" class="form-control" >Today's Photos</a></li>             
-			                <li><a href="#tri_s_safety" class="form-control">Safety Meeting</a></li>
-			                <li><a href="#tri_s_tomorrow" class="form-control">Tomorrow's Target Tasks</a></li>
-			                <li><a href="#tri_s_material" class="form-control">Materials</a></li>
+			                <li><a href="#tri_s_target" >Target Tasks</a></li>
+			                <li><a href="#tri_s_today"  >Today's Photos</a></li>             
+			                <li><a href="#tri_s_safety" >Safety Meeting</a></li>
+			                <li><a href="#tri_s_tomorrow" >Tomorrow's Target Tasks</a></li>
+			                <li><a href="#tri_s_material" >Materials</a></li>
 			                 
 			            </ul>
 
@@ -42,7 +42,8 @@
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; Tri-Status Report</p>
+                        <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
+                        <p class="para_link"> &nbsp; Projects > <%=@report.site.project.name %> > <%= @report.site.name %> > <span class="para_link_last">Tri-Status Report</span></p>
                     </div>
 
                     <div class="row pad_top">
@@ -238,17 +239,18 @@
                     </div>
                     <div class="row" id="list_tri">
                     	<ul class="nav nav-stacked">
-			                <li><a href="#tri_h_place" class="form-control">Controls in Place</a></li>
-			                <li><a href="#tri_h_project" class="form-control" >Project Start Conditions</a></li>
-			                <li><a href="#tri_h_condition" class="form-control">Today's Conditions</a></li>
-			                <li><a href="#tri_h_today" class="form-control">Today's Photos</a></li>	
+			                <li><a href="#tri_h_place" >Controls in Place</a></li>
+			                <li><a href="#tri_h_project"  >Project Start Conditions</a></li>
+			                <li><a href="#tri_h_condition" >Today's Conditions</a></li>
+			                <li><a href="#tri_h_today" >Today's Photos</a></li>	
 			            </ul>
                     </div>                   
                 </div>
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></p><p> &nbsp; Tri-Harder Report</p>
+                        <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
+                        <p class="para_link"> &nbsp; Projects > <%=@report.site.project.name %> > <%= @report.site.name %> > <span class="para_link_last">Tri-Harder Report</span></p>
                     </div>
                     <div class="row pad_top">
                         <div class="row">

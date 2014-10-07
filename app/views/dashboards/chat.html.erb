@@ -25,7 +25,8 @@
 
                 <div class="col-sm-9 pad_rl2">
                     <div class ="row pad_left radius bg_silver">
-                        <p style="float: left;"><img class="img-responsive" src="/assets/chat.png" alt=""></p><p> &nbsp; CHAT</p>
+                        <i style="float: left;"><img class="img-responsive" src="/assets/chat.png" alt=""></i>
+                        <p class="para_link_last"> &nbsp; Chat</p>
                     </div>
                     <hr>
                     
@@ -49,7 +50,7 @@
                                               <div class="col-sm-12">
                                                 <%= hidden_field_tag :project_id , params[:id] %>
                                                 <%= hidden_field_tag :user_id , current_user.id %>
-                                              <%= text_area_tag :message, nil, type:"text", tabindex: "1", class: "form-control", placeholder: 'Enter Your message', autofocus:true, required: true %>
+                                              <%= text_area_tag :message, nil, type:"text", tabindex: "1", class: "form-control", placeholder: 'Enter Your Message', autofocus:true, required: true %>
                                               </div>
                                           </div>
 
