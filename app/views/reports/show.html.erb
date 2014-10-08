@@ -170,7 +170,7 @@
                                             <td><%= @report.materials %></td>
                                             <td>
                                                 <% if @report.material? %>
-                                            <p><%= image_tag @report.material_url(:thumb)  %></p>
+                                            <p><%= image_tag @report.material_url (:thumb) %></p>
                                     <%= link_to 'Download Image' , @report.material.url , :target => '_blank' %>
                                                 <% end %>
                                             </td>

@@ -1,0 +1,245 @@
+<% if current_user.role == 'Manager' %> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+<div class="col-sm-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius">      
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8">
+                       <%= render 'common/profile_pic' %>
+                        <div class="caption font_style1 pull-right">
+                            
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> <br> 
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
+                        <p class="para_link"> &nbsp; Projects > <%=@report.site.project.name %> > <%= @report.site.name %> > <span class="para_link_last">Edit Report</span></p>
+                    </div>
+                    <div class="row pad_top">
+
+           <div class="col-sm-12">
+
+                <!-- <ul id="myTab" class="nav nav-pills">
+                  <li class="active"><a class="nav_style" href="#tristatus" data-toggle="tab">TRI-STATUS</a></li>
+                  <li ><a class="nav_style" href="#triharder" data-toggle="tab">TRI-HARDER</a></li>                   
+                </ul> -->
+             
+              <!--   <div id="myTabContent" class="tab-content">   -->       <!-- full tab content -->
+            
+                  <% if @report.report_type == 'tristatus' %> 
+
+                      <!-- <div class="tab-pane fade in active" id="tristatus"> -->
+                          <div class="col-sm-12 nav_style">TRI-STATUS</div>
+                            <div class="well" id="table_scroll_tri">
+                            <div class="row"> 
+                            <div class="col-sm-12">                          
+
+                              <%= form_tag project_site_reports_path,:multipart => true,  class: "form-horizontal" do  %>
+                              <%= hidden_field_tag :id , @report.id %>
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Summary</label>
+                                  <div class="col-md-9">                                
+                                      <%= text_field_tag( "report[summary]",@report.summary, type:"text", tabindex: "1", class: "form-control",  placeholder: 'Fill The Summary') %>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Efficiency</label>
+                                  <div class="col-md-9">                                  
+                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", pattern: "[0-9.% ]{1,5}",  placeholder: 'Fill The Efficiency', required: true %>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Upload Today's Pic</label>
+                                  <div class="col-md-9">                                  
+                                      <div>
+                                         <%= file_field_tag "report[image]" , class: "form-control",tabindex:"3"%>
+                                      </div>
+                                  </div>
+                              </div>
+
+                        
+                              <div class="form-group">                
+                                  <label class="control-label col-md-3">Safety Meeting File</label>
+                                  <div class="col-md-9">
+                                      <%= hidden_field_tag "report[report_type]" , 'tristatus' %>
+                                      <%= file_field_tag "report[safety_doc]" , class: "form-control",tabindex:"4"%>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">                
+                                  <label class="control-label col-md-3">Safety Meeting</label>
+                                  <div class="col-md-9">
+                                      <%= hidden_field_tag "report[report_type]" , 'tristatus' %>
+                                      <%= text_area_tag "report[safety_meeting]", @report.safety_meeting, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Fill The Details of Safety Meeting',  rows: "3" %>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Materials</label>
+                                  <div class="col-md-9">                                  
+                                      <%= text_area_tag "report[materials]", @report.materials, type:"text", tabindex: "6", class: "form-control",  placeholder: 'Fill The Details of Materials',  rows: "3" %>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Material Image</label>
+                                  <div class="col-md-9">                                  
+                                      <%= file_field_tag "report[material]",  class: "form-control",tabindex: "7" %>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-3">
+                                  </div>
+                                  <div class="col-md-4">
+                                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block',tabindex: "8" %>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <%= link_to 'Cancel', project_site_path(id: @report.site.id), :class => 'btn btn-warning btn-block', tabindex: "9" %>
+                                  </div>
+                              </div>
+                          
+                              <% end %>
+                              </div>
+                            </div>
+                          </div>
+                      <!-- </div> -->
+
+                      <% else %>
+
+                      <!-- <div class="tab-pane fade" id="triharder"> -->
+                      <div class="col-sm-12 nav_style">TRI-HARDER</div>
+                            <div class="well" id="table_scroll_tri">
+                            <div class="row"> 
+                            <div class="col-sm-12">                          
+
+                              <%= form_tag project_site_reports_path, :multipart => true,  class: "form-horizontal" do  %>
+
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Summary</label>
+                                  <div class="col-md-9">                                  
+                                      <%= text_field_tag "report[summary]", @report.summary, type:"text", tabindex: "1", class: "form-control",  placeholder: 'Fill The Summary', required: true %>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Efficiency</label>
+                                  <div class="col-md-9">                                  
+                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", pattern: "[0-9.% ]{1,5}",  placeholder: 'Fill The Efficiency', required: true %>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Controls In Place</label>
+                                  <div class="col-md-9">                                  
+                                      <%= text_field_tag "report[controls_in_place]", @report.controls_in_place, type:"text", tabindex: "3", class: "form-control",  placeholder: 'Fill The Control in Place', required: true %>
+                                  </div>
+                              </div>
+
+                                                     
+                              <div class="form-group">                
+                                  <label class="control-label col-md-3">Project Start Condition</label>
+                                  <div class="col-md-9">
+                                      <%= hidden_field_tag "report[report_type]" , 'triharder' %>
+                                      <%= text_area_tag "report[project_start_condition]", @report.project_start_condition, type:"text", tabindex: "4", class: "form-control",  placeholder: 'Fill The Details of Project Start Condition',  rows: "2", required: true %>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Today's condition</label>
+                                  <div class="col-md-9">                                  
+                                      <%= text_area_tag "report[todays_condition]", @report.todays_condition, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Fill The Details of Todays Condition',  rows: "2",required: true %>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label class="control-label col-md-3">Upload Today's Pic</label>
+                                  <div class="col-md-9">                                  
+                                      <div>
+                                         <%= file_field_tag "report[image]", class: "form-control",tabindex: "6" %>
+                                      </div>
+                                  </div>
+                              </div>
+                       
+                              <div class="row">
+                                  <div class="col-md-3">
+                                  </div>
+                                  <div class="col-md-4">
+                                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block',tabindex: "7" %>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <%= link_to 'Cancel', project_site_path(id: @report.site.id), :class => 'btn btn-warning btn-block', tabindex: "8" %>
+                                  </div>
+                              </div>
+                          
+                              <% end %>
+                              </div>
+                            </div>
+                          </div>
+                      <!-- </div> -->
+                      <% end %>
+                <!-- </div> -->
+            </div>
+
+
+                            
+
+            
+              
+             
+                    </div>                    
+
+                </div>
+
+                <div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+
+         
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+<% end %>
+
+
+
+
+
+
+
+

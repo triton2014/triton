@@ -20,6 +20,9 @@ Triton::Application.routes.draw do
       resources :reports do
         resources :tasks do
           end
+        collection do
+          post :update
+        end  
         end
       end
       collection do

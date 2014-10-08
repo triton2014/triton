@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html"></a>
+                <!-- <a class="navbar-brand" href="index.html"></a> -->
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
              
@@ -62,21 +62,21 @@
                         <img class="img-responsive center-block" src="/assets/logo.png" alt="">
                     </li>                    
                     <li>
-                        <img class="img-responsive center-block pad_top" src="/assets/home.png" alt=""> <a class="align_center" href="/static_pages/index">HOME</a>
+                        <a class="align_center" href="/static_pages/index"><img class="img-responsive center-block pad_top" src="/assets/home.png" alt="">HOME</a>
                     </li>
                     <li>
-                    	<img class="img-responsive center-block pad_top" src="/assets/project.png" alt=""> <a class="align_center" href="/dashboards">PROJECTS</a>
+                    	<a class="align_center" href="/dashboards"><img class="img-responsive center-block pad_top" src="/assets/project.png" alt="">PROJECTS</a>
                     </li>
                     <li>
-                    	<img class="img-responsive center-block pad_top" src="/assets/profile.png" alt=""><a class="align_center" href="/static_pages/profile">PROFILE</a>
+                    	<a class="align_center" href="/static_pages/profile"><img class="img-responsive center-block pad_top" src="/assets/profile.png" alt="">PROFILE</a>
                     </li>
                     <li>
-                    	<img class="img-responsive center-block pad_top" src="/assets/chat.png" alt=""> <a class="align_center" href="/static_pages/chat">CHAT</a>
+                    	<a class="align_center" href="/static_pages/chat"><img class="img-responsive center-block pad_top" src="/assets/chat.png" alt="">CHAT</a>
                     </li>                   
-                     <li>                       
-                     	<img class="img-responsive center-block pad_top" src="/assets/logout.png" alt="">
-                        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-                      </li>
+                    <li>                      
+                     	<div class="pad_top"></div>
+                      <%= link_to(image_tag("logout.png")+"<br>Logout".html_safe, destroy_user_session_path, class: "align_center", method: :delete) %>                      
+                    </li>
                       </ul> 
                   
 
@@ -87,16 +87,16 @@
                           <img class="img-responsive center-block" src="/assets/logo.png" alt="">
                         </li>
                         <li class="invisible">
-                        <img class="img-responsive center-block pad_top" src="/assets/home.png" alt=""> <a class="align_center" href="/">HOME</a>
+                        <a class="align_center" href="#"><img class="img-responsive center-block pad_top" src="/assets/home.png" alt="">HOME</a>
                         </li>
                         <li class="invisible">
-                          <img class="img-responsive center-block pad_top" src="/assets/project.png" alt=""> <a class="align_center" href="/dashboard">PROJECTS</a>
+                          <a class="align_center" href="#"><img class="img-responsive center-block pad_top" src="/assets/project.png" alt="">PROJECTS</a>
                         </li>
                         <li class="invisible">
-                          <img class="img-responsive center-block pad_top" src="/assets/profile.png" alt=""><a class="align_center" href="#">PROFILE</a>
+                          <a class="align_center" href="#"><img class="img-responsive center-block pad_top" src="/assets/profile.png" alt="">PROFILE</a>
                         </li>
                         <li class="invisible">
-                          <img class="img-responsive center-block pad_top" src="/assets/chat.png" alt=""> <a class="align_center" href="#">CHAT</a>
+                          <a class="align_center" href="#"><img class="img-responsive center-block pad_top" src="/assets/chat.png" alt="">CHAT</a>
                         </li> 
                         <li>
                           <img class="img-responsive center-block pad_top" src="/assets/logout.png" alt=""> <a class="align_center" href="/users/sign_in">LOG IN</a>
