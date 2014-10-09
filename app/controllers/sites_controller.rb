@@ -21,11 +21,30 @@ class SitesController < ApplicationController
   end
 
   def edit
+    @site = Site.find(params[:id])
+  end
+
+  def update_site
+    @site = Site.find(params[:id])
+    @site.name = params[:name]
+    @site.save
+    redirect_to project_site_path(@site.project.id, @site.id)
 
   end
 
-  def update
+  def delete_site
+    @site = Site.find(params[:id])
+    @project = @site.project
+    @site.destroy
+    redirect_to project_path(id: @project.id)   
+  end
 
+  def delete_report
+    @report= Report.find(params[:id])
+    @site = @report.site
+    @report.destroy
+    redirect_to project_site_path(id: @site.id)
+    
   end
 
 

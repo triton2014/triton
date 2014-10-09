@@ -64,7 +64,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-2">Select Role</label>
                         <div class="col-md-6">
-                        <%= select_tag :role,  options_for_select(["Customer","Manager"], tabindex: "4", ) %>
+                        <%= select_tag :role,  options_for_select(["Customer","Manager"]), tabindex: "4", class: "form-control" %>
                       </div>
                     </div>
 
@@ -85,10 +85,10 @@
 
                       <div class="actions"> 
                       <div class="col-md-4">
-                        <a href="/dashboards"> <button type="button" class="btn btn-warning btn-block">Cancel </button></a>
+                        <%= link_to 'Cancel', dashboards_path, :class => 'btn btn-warning btn-block', tabindex: "8" %>
                       </div>                 
                       <div class="col-md-4">
-                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block' %>
+                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block', tabindex: "7" %>
                       </div>
                     </div>
                     <% end %>

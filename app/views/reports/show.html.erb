@@ -57,10 +57,11 @@
                                     <% if current_user.role == 'Manager' %> 
                                 <div class="col-sm-2">
                                     <%= link_to "Add a task", new_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id), :class => 'btn btn-warning', tabindex: "1" %>
-                                </div>                                        
+                                </div> 
+                                                                        
                                     <% end %>
                                 <div class="col-sm-2">                   
-                                    <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-warning', tabindex: "2" %>
+                                    <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-warning', tabindex: "3" %>
                                 </div>
                                 <div class="col-sm-6"></div>
                             </div>
@@ -106,7 +107,7 @@
                                         <tr>
                                             <td>
                                                 <% if @report.image? %>
-                                                    <p><%= image_tag @report.image_url(:thumb)  %></p>
+                                                    <p><%= image_tag @report.image_url(:thumb) %></p>
                                         <%= link_to 'Download Image' , @report.image.url , :target => '_blank' %>
                                                 <% end %>
                                             </td>
@@ -146,7 +147,7 @@
                                     <tbody> 
                                           <% @tasks_tomorrow.each  do |t1| %>          
                                         <tr>
-                                            <td><%=  t1.target_task %></td>
+                                            <td><%= t1.target_task %></td>
                                             <td><%= t1.completed_task %></td>
                                             <td><%= t1.efficiency %></td>
                                         </tr>
@@ -329,7 +330,7 @@
                                     <tr>
                                         <td>
                                             <%  if @report.image?  %>
-                                    <p><%= image_tag @report.image_url(:thumb)   %></p>
+                                    <p><%= image_tag @report.image_url(:thumb)  %></p>
                                     <br>
                                     <%= link_to 'Download Image' , @report.image.url, :target => '_blank'  %>
                                     <% end %>

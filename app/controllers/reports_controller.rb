@@ -38,6 +38,13 @@ class ReportsController < ApplicationController
 		redirect_to project_site_report_path(@report.site.project.id,@report.site.id,@report.id)
 	end
 
+	# def delete_task
+	# 	@task = Tasks.find(params[:id])	
+	# 	@task.destroy
+
+	# 	redirect_to dashboards_path	
+	# end
+
 
 	private
 

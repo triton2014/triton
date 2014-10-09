@@ -16,18 +16,24 @@ Triton::Application.routes.draw do
 
 
   resources :projects do
-    resources :sites do
-      resources :reports do
-        resources :tasks do
+      resources :sites do
+          resources :reports do
+            resources :tasks do
+              end
+          collection do
+            post :update_report
+            #put :delete_task
+          end 
           end
-        collection do
-          post :update_report
-        end  
-        end
-      end
       collection do
-      put :delete_project
-    end
+        put :delete_site
+        put :delete_report
+        post :update_site
+      end
+      end
+  collection do
+  put :delete_project
+  end
   end
   
   resources :dashboards do

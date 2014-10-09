@@ -64,9 +64,17 @@
                     <li>
                         <a class="align_center" href="/static_pages/index"><img class="img-responsive center-block pad_top" src="/assets/home.png" alt="">HOME</a>
                     </li>
+                    
+                <% if current_user.role == 'admin' %>
                     <li>
-                    	<a class="align_center" href="/dashboards"><img class="img-responsive center-block pad_top" src="/assets/project.png" alt="">PROJECTS</a>
+                    	<a class="align_center" href="/dashboards"><img class="img-responsive center-block pad_top" src="/assets/project.png" alt="">USERS</a>
                     </li>
+                <% else %>
+                    <li>
+                      <a class="align_center" href="/dashboards"><img class="img-responsive center-block pad_top" src="/assets/project.png" alt="">PROJECTS</a>
+                    </li>
+                <% end %>
+
                     <li>
                     	<a class="align_center" href="/static_pages/profile"><img class="img-responsive center-block pad_top" src="/assets/profile.png" alt="">PROFILE</a>
                     </li>
