@@ -50,7 +50,7 @@
                             <div class="row"> 
                             <div class="col-sm-12">                          
 
-                              <%= form_tag project_site_reports_path,:multipart => true,  class: "form-horizontal" do  %>
+                              <%= form_tag update_report_project_site_reports_path,:multipart => true,  class: "form-horizontal" do  %>
                               <%= hidden_field_tag :id , @report.id %>
                               <div class="form-group">
                                   <label class="control-label col-md-3">Summary</label>
@@ -62,7 +62,7 @@
                               <div class="form-group">
                                   <label class="control-label col-md-3">Efficiency</label>
                                   <div class="col-md-9">                                  
-                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", pattern: "[0-9.% ]{1,5}",  placeholder: 'Fill The Efficiency', required: true %>
+                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", pattern: "[0-9.% ]{1,5}",  placeholder: 'Fill The Efficiency' %>
                                   </div>
                               </div>
 
@@ -129,26 +129,27 @@
                             <div class="row"> 
                             <div class="col-sm-12">                          
 
-                              <%= form_tag project_site_reports_path, :multipart => true,  class: "form-horizontal" do  %>
+                              <%= form_tag update_report_project_site_reports_path,:multipart => true,  class: "form-horizontal" do  %>
+                               <%= hidden_field_tag :id , @report.id %>
 
                               <div class="form-group">
                                   <label class="control-label col-md-3">Summary</label>
                                   <div class="col-md-9">                                  
-                                      <%= text_field_tag "report[summary]", @report.summary, type:"text", tabindex: "1", class: "form-control",  placeholder: 'Fill The Summary', required: true %>
+                                      <%= text_field_tag "report[summary]", @report.summary, type:"text", tabindex: "1", class: "form-control",  placeholder: 'Fill The Summary' %>
                                   </div>
                               </div>
 
                               <div class="form-group">
                                   <label class="control-label col-md-3">Efficiency</label>
                                   <div class="col-md-9">                                  
-                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", pattern: "[0-9.% ]{1,5}",  placeholder: 'Fill The Efficiency', required: true %>
+                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", pattern: "[0-9.% ]{1,5}",  placeholder: 'Fill The Efficiency' %>
                                   </div>
                               </div>
 
                               <div class="form-group">
                                   <label class="control-label col-md-3">Controls In Place</label>
                                   <div class="col-md-9">                                  
-                                      <%= text_field_tag "report[controls_in_place]", @report.controls_in_place, type:"text", tabindex: "3", class: "form-control",  placeholder: 'Fill The Control in Place', required: true %>
+                                      <%= text_field_tag "report[controls_in_place]", @report.controls_in_place, type:"text", tabindex: "3", class: "form-control",  placeholder: 'Fill The Control in Place' %>
                                   </div>
                               </div>
 
@@ -157,14 +158,14 @@
                                   <label class="control-label col-md-3">Project Start Condition</label>
                                   <div class="col-md-9">
                                       <%= hidden_field_tag "report[report_type]" , 'triharder' %>
-                                      <%= text_area_tag "report[project_start_condition]", @report.project_start_condition, type:"text", tabindex: "4", class: "form-control",  placeholder: 'Fill The Details of Project Start Condition',  rows: "2", required: true %>
+                                      <%= text_area_tag "report[project_start_condition]", @report.project_start_condition, type:"text", tabindex: "4", class: "form-control",  placeholder: 'Fill The Details of Project Start Condition',  rows: "2" %>
                                   </div>
                               </div>
 
                               <div class="form-group">
                                   <label class="control-label col-md-3">Today's condition</label>
                                   <div class="col-md-9">                                  
-                                      <%= text_area_tag "report[todays_condition]", @report.todays_condition, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Fill The Details of Todays Condition',  rows: "2",required: true %>
+                                      <%= text_area_tag "report[todays_condition]", @report.todays_condition, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Fill The Details of Todays Condition',  rows: "2" %>
                                   </div>
                               </div>
 

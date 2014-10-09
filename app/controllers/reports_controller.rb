@@ -31,11 +31,11 @@ class ReportsController < ApplicationController
 
 	end
 
-	def update
+	def update_report
 		@report = Report.find(params[:id])
 		@report.update(report_params)
 
-		redirect_to project_site_path(@report.site.project.id,@report.site.id,@report.id)
+		redirect_to project_site_report_path(@report.site.project.id,@report.site.id,@report.id)
 	end
 
 
