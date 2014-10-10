@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   	static_pages_index_path
   end
 
+
+
+  
+
 end

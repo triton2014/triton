@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :projects
   mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, 
-         :recoverable, :rememberable, :validatable, :timeoutable
+         :recoverable, :rememberable, :validatable, :timeoutable,:registerable 
 
 end

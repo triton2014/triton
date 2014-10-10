@@ -106,10 +106,11 @@
                                     <tbody>                                                      
                                         <tr>
                                             <td>
-                                                <% if @report.image? %>
-                                                    <p><%= image_tag @report.image_url(:thumb) %></p>
-                                        <%= link_to 'Download Image' , @report.image.url , :target => '_blank' %>
+                                                <% @image_attachement.each do |p| %>
+                                                  <%= image_tag p.image_url(:thumb) %>
+                                                  <%= link_to 'Download Image' , p.image.url , :target => '_blank' %>
                                                 <% end %>
+                                                
                                             </td>
                                         </tr>                                                       
                                     </tbody>
@@ -329,11 +330,10 @@
                                 <tbody>                                                      
                                     <tr>
                                         <td>
-                                            <%  if @report.image?  %>
-                                    <p><%= image_tag @report.image_url(:thumb)  %></p>
-                                    <br>
-                                    <%= link_to 'Download Image' , @report.image.url, :target => '_blank'  %>
-                                    <% end %>
+                                            <% @image_attachement.each do |p| %>
+                                                  <%= image_tag p.image_url(:thumb) %>
+                                                  <%= link_to 'Download Image' , p.image.url , :target => '_blank' %>
+                                                <% end %>
                                         </td>
                                     </tr>                                                       
                                 </tbody>

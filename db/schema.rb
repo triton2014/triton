@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924071341) do
+ActiveRecord::Schema.define(version: 20141010113113) do
 
   create_table "chats", force: true do |t|
     t.integer  "project_id"
     t.integer  "user_id"
     t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "image_attachements", force: true do |t|
+    t.integer  "report_id"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

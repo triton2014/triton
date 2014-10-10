@@ -64,7 +64,11 @@
                       <div class="form-group">
                         <label class="control-label col-md-2">Select Role</label>
                         <div class="col-md-6">
-                        <%= select_tag :role,  options_for_select(["Customer","Manager"]), tabindex: "4", class: "form-control" %>
+                          <% if @edited_user.role == "Manager" %>
+                        <%= select_tag :role, options_for_select([@edited_user.role,"Customer"]), tabindex: "4", class: "form-control" %>
+                        <% else %>
+                        <%= select_tag :role, options_for_select([@edited_user.role,"Manager"]), tabindex: "4", class: "form-control" %>
+                        <% end %>
                       </div>
                     </div>
 

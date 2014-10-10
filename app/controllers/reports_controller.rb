@@ -1,22 +1,30 @@
 class ReportsController < ApplicationController
 	def show
 		@report = Report.find(params[:id])
+		@image_attachement = @report.image_attachements.all
 		@tasks_today =  @report.tasks.find(:all, :conditions => ["task_type = 'Today' "])
 		@tasks_tomorrow =  @report.tasks.find(:all, :conditions => ["task_type = 'Tomorrow' "])
 	end
 
 	def edit
 		@report = Report.find(params[:id])
+		@image_attachement = @report.image_attachements.all
 	end
 
 	def new
 		@site = Site.find(params[:site_id])
     	@report = @site.reports.build
+    	@image_attachement = @report.image_attachements.build
 	end
 
 	def create
 		@site = Site.find(params[:site_id])
 	    @report = @site.reports.build(report_params)
+	    if @report.save
+	       params[:image_attachements]['image'].each do |a|
+	          @image_attachement = @report.image_attachements.create!(:image => a, :report_id => @report.id)
+	       end
+	   end
 	    # @report.report_type = params[:report_type]
 	    # @report.summary = params[:summary]
 	    # @report.effciency = params[:effciency]
@@ -26,7 +34,6 @@ class ReportsController < ApplicationController
 	    # @report.materials = params[:materials]
 	    # @report.safety_meeting = params[:safety_meeting]
 	    # @report.image = params[:image]
-	    @report.save
 	    redirect_to project_site_report_path(@site.project.id,@site.id,@report.id)
 
 	end
@@ -34,6 +41,12 @@ class ReportsController < ApplicationController
 	def update_report
 		@report = Report.find(params[:id])
 		@report.update(report_params)
+		if params[:image_attachements] != nil
+	       params[:image_attachements]['image'].each do |a|
+	          @image_attachment = @report.image_attachements.create!(:image => a, :report_id => @report.id)
+	       end
+	   end
+	   @report.save
 
 		redirect_to project_site_report_path(@report.site.project.id,@report.site.id,@report.id)
 	end
