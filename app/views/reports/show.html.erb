@@ -105,13 +105,14 @@
                                     </thead>
                                     <tbody>                                                      
                                         <tr>
-                                            <td>                                                
+                                            <td>    <div class="col-sm-12">                                            
                                                     <% @image_attachement.each do |p| %>
                                                     <div class="col-sm-3">
                                                       <%= image_tag p.image_url(:thumb) %><br>
                                                       <%= link_to 'Download Image' , p.image.url , :target => '_blank' %>
                                                       </div>
-                                                    <% end %>                                       
+                                                    <% end %>  
+                                                    </div>                                     
                                             </td>
                                         </tr>                                                       
                                     </tbody>
