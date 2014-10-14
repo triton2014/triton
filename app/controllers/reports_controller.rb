@@ -21,10 +21,12 @@ class ReportsController < ApplicationController
 		@site = Site.find(params[:site_id])
 	    @report = @site.reports.build(report_params)
 	    if @report.save
-	       params[:image_attachements]['image'].each do |a|
-	          @image_attachement = @report.image_attachements.create!(:image => a, :report_id => @report.id)
-	       end
-	   end
+	    	if params[:image_attachements] != nil
+	       		params[:image_attachements]['image'].each do |a|
+	          	@image_attachement = @report.image_attachements.create!(:image => a, :report_id => @report.id)
+	       		end
+	   		end
+	  	end
 	    # @report.report_type = params[:report_type]
 	    # @report.summary = params[:summary]
 	    # @report.effciency = params[:effciency]
