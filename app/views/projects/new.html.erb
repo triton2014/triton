@@ -79,10 +79,8 @@
                         <div class="form-group">
                         <div class="row">                
                             <label class="control-label col-md-3">Site Progress</label>
-                            <div class="col-md-5">
-                                <div class="form-control">
-                            <%= f.select :progress, [['0%'], ['10%'], ['20%'], ['30%'], ['40%'], ['50%'], ['60%'],['70%'], ['80%'], ['90%'], ['100%']], tabindex: "4", class: "form-control",  required: true %>
-                                </div>
+                            <div class="col-md-5">                                
+                            <%= f.select :progress, [['0%'], ['10%'], ['20%'], ['30%'], ['40%'], ['50%'], ['60%'],['70%'], ['80%'], ['90%'], ['100%']], {}, tabindex: "4", class: "form-control" %>                                
                             </div>
                         </div>
                         </div>
