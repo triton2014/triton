@@ -90,9 +90,16 @@
                                 <td><%= r1.summary %></td>
                                 <td><%= r1.effciency %></td>
                                 <td><%= link_to(image_tag("view.png"), project_site_report_path(@site.project.id,@site.id,r1.id), tabindex: "5") %></td>
-                                <td><%= link_to(image_tag("edit.png"), edit_project_site_report_path(@site.project.id,@site.id,r1.id), tabindex: "6") %></td>
-                                <td><%= link_to(image_tag("delete.png"), delete_report_project_sites_path(id: r1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "7") %></td>
-            
+                                <td>
+                                    <% if current_user.role == 'Manager' %>
+                                        <%= link_to(image_tag("edit.png"), edit_project_site_report_path(@site.project.id,@site.id,r1.id), tabindex: "6") %>
+                                    <% end %>
+                                </td>
+                                <td>
+                                    <% if current_user.role == 'Manager' %>
+                                        <%= link_to(image_tag("delete.png"), delete_report_project_sites_path(id: r1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "7") %>
+                                    <% end %>
+                                </td>
                             </tr>
                         
                             <% end %> 
@@ -132,8 +139,16 @@
                                 <td><%= r1.summary %></td>
                                 <td><%= r1.effciency %></td>
                                 <td><%= link_to(image_tag("view.png"), project_site_report_path(@site.project.id,@site.id,r1.id), tabindex: "8") %></td>
-                                <td><%= link_to(image_tag("edit.png"), edit_project_site_report_path(@site.project.id,@site.id,r1.id), tabindex: "9") %></td>
-                                <td><%= link_to(image_tag("delete.png"), delete_report_project_sites_path(id: r1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "10") %></td>
+                                <td>
+                                    <% if current_user.role == 'Manager' %>
+                                        <%= link_to(image_tag("edit.png"), edit_project_site_report_path(@site.project.id,@site.id,r1.id), tabindex: "9") %>
+                                    <% end %>
+                                </td>
+                                <td>
+                                    <% if current_user.role == 'Manager' %>
+                                        <%= link_to(image_tag("delete.png"), delete_report_project_sites_path(id: r1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "10") %>
+                                    <% end %>
+                                </td>
                             </tr>
                             <% end %>                         
                         </tbody>

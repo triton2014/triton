@@ -12,7 +12,7 @@ Triton::Application.routes.draw do
   post "static_pages/update_profile"
   get "static_pages/chat"
   get "static_pages/help"
-  get "static_pages/help1"
+  
 
 
   resources :projects do

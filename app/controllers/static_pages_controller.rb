@@ -32,7 +32,5 @@ class StaticPagesController < ApplicationController
   def help
   end
 
-  def help1    
-  end
 
 end
