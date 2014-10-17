@@ -53,6 +53,12 @@ class ReportsController < ApplicationController
 		redirect_to project_site_report_path(@report.site.project.id,@report.site.id,@report.id)
 	end
 
+	#def delete_image
+	#	@report = Report.find(params[:image_attachements]['image'])
+	#	@report.destroy
+	#	redirect_to edit_project_site_report_path		
+	#end
+
 	# def delete_task
 	# 	@task = Tasks.find(params[:id])	
 	# 	@task.destroy

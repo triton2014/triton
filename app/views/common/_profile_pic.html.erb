@@ -1,7 +1,7 @@
 					
 					<a class="thumbnail">
                         <% if current_user.avatar? %>
-                        <i><%= image_tag current_user.avatar_url(:thumb) %></i>
+                        <i><%= image_tag current_user.avatar_url %></i>
                         <% else %>
                         <img src="/assets/profile_img.jpg" alt="" style="height: 9em; width: 9em;"> 
                          <% end %>
