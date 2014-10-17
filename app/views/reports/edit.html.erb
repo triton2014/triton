@@ -195,7 +195,8 @@
                                       <div>
                                          <% @image_attachement.each do |p| %>
                                             <div class="col-sm-3">
-                                                  <%= image_tag p.image_url(:thumb) %> 
+                                                  <%= image_tag p.image_url(:thumb) %>
+                                                  <%= link_to 'Remove', project_site_report_delete_image_path(@report.site.project.id, @report.site.id,@report.id, :id => p.id), :method => :put %> 
                                             </div>                     
                                           <% end %>
                                       </div>
