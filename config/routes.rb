@@ -22,7 +22,7 @@ Triton::Application.routes.draw do
               end
           collection do
             post :update_report
-            put :delete_image
+            #put :delete_image
             #put :delete_task
           end 
           end
