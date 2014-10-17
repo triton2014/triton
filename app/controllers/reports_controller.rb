@@ -27,15 +27,7 @@ class ReportsController < ApplicationController
 	       		end
 	   		end
 	  	end
-	    # @report.report_type = params[:report_type]
-	    # @report.summary = params[:summary]
-	    # @report.effciency = params[:effciency]
-	    # @report.controls_in_place = params[:controls_in_place]
-	    # @report.project_start_condition = params[:project_start_condition]
-	    # @report.todays_condition = params[:todays_condition]
-	    # @report.materials = params[:materials]
-	    # @report.safety_meeting = params[:safety_meeting]
-	    # @report.image = params[:image]
+	   
 	    redirect_to project_site_report_path(@site.project.id,@site.id,@report.id)
 
 	end
@@ -53,11 +45,12 @@ class ReportsController < ApplicationController
 		redirect_to project_site_report_path(@report.site.project.id,@report.site.id,@report.id)
 	end
 
-	#def delete_image
-	#	@report = Report.find(params[:image_attachements]['image'])
-	#	@report.destroy
-	#	redirect_to edit_project_site_report_path		
-	#end
+	def delete_image
+		@report = Report.find(params[:report_id])
+		@image = ImageAttachement.find(params[:id])
+		@image.destroy!
+		redirect_to edit_project_site_report_path(@report.site.project.id,@report.site.id,@report.id)
+	end
 
 	# def delete_task
 	# 	@task = Tasks.find(params[:id])	

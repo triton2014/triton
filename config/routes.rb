@@ -20,11 +20,13 @@ Triton::Application.routes.draw do
           resources :reports do
             resources :tasks do
               end
+
           collection do
             post :update_report
-            #put :delete_image
+            
             #put :delete_task
-          end 
+          end
+          put :delete_image 
           end
       collection do
         put :delete_site
