@@ -108,7 +108,7 @@
                                             <td>                                                
                                                     <% @image_attachement.each do |p| %>
                                                     <div class="col-sm-3">
-                                                      <%= image_tag p.image_url %><br>
+                                                      <%= image_tag p.image_url(:thumb) %><br>
                                                       <%= link_to 'Download Image' , p.image.url , :target => '_blank' %>
                                                       </div>
                                                     <% end %>                                       
@@ -173,7 +173,7 @@
                                             <td><%= @report.materials %></td>
                                             <td>
                                                 <% if @report.material? %>
-                                            <p><%= image_tag @report.material_url  %></p>
+                                            <p><%= image_tag @report.material_url(:thumb)  %></p>
                                     <%= link_to 'Download Image' , @report.material.url , :target => '_blank' %>
                                                 <% end %>
                                             </td>
@@ -333,7 +333,7 @@
                                         <td>
                                             <% @image_attachement.each do |p| %>
                                             <div class="col-sm-3">
-                                                  <%= image_tag p.image_url %><br>
+                                                  <%= image_tag p.image_url(:thumb) %><br>
                                                   <%= link_to 'Download Image' , p.image.url , :target => '_blank' %>
                                               </div>
                                                 <% end %>
