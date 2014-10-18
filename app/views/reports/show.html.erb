@@ -79,7 +79,9 @@
                                         <tr>
                                             <th>Target Tasks</th>
                                             <th>Completed Tasks</th>
-                                            <th>Efficiency</th>                                
+                                            <th>Efficiency</th> 
+                                            <th></th>
+                                            <th></th>                               
                                         </tr>
                                     </thead>
                                     <tbody> 
@@ -88,6 +90,16 @@
                                             <td><%=  t1.target_task %></td>
                                             <td><%= t1.completed_task %></td>
                                             <td><%= t1.efficiency %></td>
+                                            <td>
+                        <% if current_user.role == 'Manager' %>
+                            
+                        <% end %>
+                                            </td>
+                                            <td>
+                        <% if current_user.role == 'Manager' %>
+                            <%= link_to(image_tag("delete.png"), delete_task_project_site_reports_path(id: t1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "7") %>
+                        <% end %>
+                                            </td>
                                         </tr>
                                             <% end %>           
                                     </tbody>
@@ -143,7 +155,9 @@
                                         <tr>
                                             <th>Target Tasks</th>
                                             <th>Completed Tasks</th>
-                                            <th>Efficiency</th>                                
+                                            <th>Efficiency</th> 
+                                            <th></th>                               
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody> 
@@ -152,6 +166,16 @@
                                             <td><%= t1.target_task %></td>
                                             <td><%= t1.completed_task %></td>
                                             <td><%= t1.efficiency %></td>
+                                            <td>
+                        <% if current_user.role == 'Manager' %>
+                            
+                        <% end %>
+                                            </td>
+                                            <td>
+                        <% if current_user.role == 'Manager' %>
+                            <%= link_to(image_tag("delete.png"), delete_task_project_site_reports_path(id: t1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "7") %>
+                        <% end %>
+                                            </td>
                                         </tr>
                                             <% end %>           
                                     </tbody>

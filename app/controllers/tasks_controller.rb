@@ -4,6 +4,10 @@ class TasksController < ApplicationController
     	@task = @report.tasks.build
 	end
 
+	def edit
+		@task = Task.find(params[:id])		
+	end
+
 	def create
 		@report = Report.find(params[:report_id])
     	@task = @report.tasks.build

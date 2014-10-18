@@ -1,0 +1,128 @@
+<% if current_user.role == 'Manager' %> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+<div class="col-sm-12">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius">      
+
+                <div class="col-sm-3 bg_green right_radius pad_top min_height">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8">
+                       <%= render 'common/profile_pic' %>
+                        <div class="caption font_style1 pull-right">
+                            
+                            <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> 
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-9 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
+                        <p class="para_link"> &nbsp; Projects > <%=@report.site.project.name %> > <%= @report.site.name %> > Tri-Status Report > <span class="para_link_last">Add Task</span></p>
+                    </div>
+                    <div class="row pad_top">
+                       <!--  <p>Site</p> -->
+                        <hr>
+                        <%= form_tag project_site_report_tasks_path, class: "form-horizontal" do  %>
+
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Task for :</label>
+                        <div class="col-md-6">
+                        <%= select_tag :task_type, options_for_select(["Today","Tomorrow"]), tabindex: "1", class: "form-control" %>
+                      </div>
+                      </div>
+
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Target Task</label>
+                        <div class="col-md-6">
+                        <%= text_field_tag :target_task, nil, type:"text", tabindex: "2", class: "form-control", placeholder: 'Enter The Target Task' %>
+                      </div>
+                      </div>
+
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Completed Task</label>
+                        <div class="col-md-6">
+                        <%= text_field_tag :completed_task, nil, type:"text", tabindex: "3", class: "form-control", placeholder: 'Enter The Completed Task' %>
+                      </div>
+                      </div>
+
+                      <div class="form-group">                
+                        <label class="control-label col-md-2">Efficiency</label>
+                        <div class="col-md-6">
+                        <%= text_field_tag :efficiency, nil, type:"text", tabindex: "4", class: "form-control",  placeholder: 'Enter The Efficiency' %>
+                      </div>
+                      </div>
+
+                      <div class="row">
+
+                        <div class="col-sm-2"></div>
+                          <div class="col-sm-3">
+                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block', tabindex: "5" %>
+                          </div>
+                          <div class="col-sm-3">
+                            <%= link_to 'Back To Report', project_site_report_path(id: @report.id), :class => 'btn btn-warning btn-block', tabindex: "6" %>
+                          </div>
+                           <div class="col-sm-4"></div>
+                           </div>
+
+                              <% end %>
+                              <br>
+                              <hr>
+                    </div>
+                    
+                       
+						  
+						  
+
+
+                    <!-- </div>
+                    <div class="row"> -->
+                                               
+                        
+                    </div>                    
+
+                
+
+                <div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+
+                </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+
+
+    
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+<% end %>
+
+
+

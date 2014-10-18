@@ -20,9 +20,16 @@ class ReportsController < ApplicationController
 	def create
 		@site = Site.find(params[:site_id])
 	    @report = @site.reports.build(report_params)
+	    if params[:safety_doc] != nil
+	    	Cloudinary::Uploader.upload(params[:safety_doc])
+	    end
+	    if params[:material] != nil
+	    	Cloudinary::Uploader.upload(params[:material])
+	    end
 	    if @report.save
 	    	if params[:image_attachements] != nil
 	       		params[:image_attachements]['image'].each do |a|
+	       		Cloudinary::Uploader.upload(a)
 	          	@image_attachement = @report.image_attachements.create!(:image => a, :report_id => @report.id)
 	       		end
 	   		end
@@ -35,8 +42,15 @@ class ReportsController < ApplicationController
 	def update_report
 		@report = Report.find(params[:id])
 		@report.update(report_params)
+		if params[:safety_doc] != nil
+	    	Cloudinary::Uploader.upload(params[:safety_doc])
+	    end
+	    if params[:material] != nil
+	    	Cloudinary::Uploader.upload(params[:material])
+	    end
 		if params[:image_attachements] != nil
 	       params[:image_attachements]['image'].each do |a|
+	       	Cloudinary::Uploader.upload(a)
 	          @image_attachment = @report.image_attachements.create!(:image => a, :report_id => @report.id)
 	       end
 	   end
@@ -52,12 +66,12 @@ class ReportsController < ApplicationController
 		redirect_to edit_project_site_report_path(@report.site.project.id,@report.site.id,@report.id)
 	end
 
-	# def delete_task
-	# 	@task = Tasks.find(params[:id])	
-	# 	@task.destroy
-
-	# 	redirect_to dashboards_path	
-	# end
+	def delete_task
+		@task= Task.find(params[:id])
+	    @report = @task.report
+	    @task.destroy
+		 redirect_to project_site_report_path(@report.site.project.id,@report.site.id,@report.id)	
+	end
 
 
 	private

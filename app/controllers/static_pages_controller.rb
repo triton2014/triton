@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
   def update_profile
+    Cloudinary::Uploader.upload(params[:avatar])
     current_user.avatar = params[:avatar]
     current_user.first_name = params[:first_name]
     current_user.last_name = params[:last_name]
