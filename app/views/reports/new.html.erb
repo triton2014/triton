@@ -97,9 +97,9 @@
                                   </div>
                               </div>
                               <div class="form-group">
-                                  <label class="control-label col-md-3">Material Image</label>
+                                  <label class="control-label col-md-3">Material's Images</label>
                                   <div class="col-md-9">                                  
-                                    <%= file_field_tag "report[material]",  class: "form-control",tabindex:"7" %>
+                                    <%= file_field_tag "material_attachements[material_image][]" ,:multiple => true, class: "form-control",tabindex:"7" %>
                                   </div>
                               </div>
                               <div class="row">

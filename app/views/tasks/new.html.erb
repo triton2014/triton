@@ -38,28 +38,28 @@
                       <div class="form-group">                
                         <label class="control-label col-md-2">Task for :</label>
                         <div class="col-md-6">
-                        <%= select_tag :task_type, options_for_select(["Today","Tomorrow"]), tabindex: "1", class: "form-control" %>
+                        <%= select_tag "task[task_type]", options_for_select(["Today","Tomorrow"]), tabindex: "1", class: "form-control" %>
                       </div>
                       </div>
 
                       <div class="form-group">                
                         <label class="control-label col-md-2">Target Task</label>
                         <div class="col-md-6">
-                        <%= text_field_tag :target_task, nil, type:"text", tabindex: "2", class: "form-control", placeholder: 'Enter The Target Task' %>
+                        <%= text_field_tag "task[target_task]",nil, type:"text", tabindex: "2", class: "form-control", placeholder: 'Enter The Target Task' %>
                       </div>
                       </div>
 
                       <div class="form-group">                
                         <label class="control-label col-md-2">Completed Task</label>
                         <div class="col-md-6">
-                        <%= text_field_tag :completed_task, nil, type:"text", tabindex: "3", class: "form-control", placeholder: 'Enter The Completed Task' %>
+                        <%= text_field_tag "task[completed_task]", nil, type:"text", tabindex: "3", class: "form-control", placeholder: 'Enter The Completed Task' %>
                       </div>
                       </div>
 
                       <div class="form-group">                
                         <label class="control-label col-md-2">Efficiency</label>
                         <div class="col-md-6">
-                        <%= text_field_tag :efficiency, nil, type:"text", tabindex: "4", class: "form-control",  placeholder: 'Enter The Efficiency' %>
+                        <%= text_field_tag "task[efficiency]", nil, type:"text", tabindex: "4", class: "form-control",  placeholder: 'Enter The Efficiency' %>
                       </div>
                       </div>
 

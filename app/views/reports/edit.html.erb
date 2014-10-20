@@ -65,24 +65,23 @@
                                       <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", placeholder: 'Fill The Efficiency' %>
                                   </div>
                               </div>
+
+
                               
-                              <% if @image_attachement != nil %>
+                              <% if @image_attachement.blank? %>
+                              <div></div>
+                              <% else %>
                                 <div class="form-group">
                                     <label class="control-label col-md-3">Already Uploaded Photos</label>
-                                    <div class="col-md-9">                                  
-                                        <div>
+                                    <div class="col-md-9">                            
                                            <% @image_attachement.each do |p| %>
                                            <div class="col-sm-3">
                                                     <%= image_tag p.image_url(:thumb) %><br>
                                                     <%= link_to 'Remove', project_site_report_delete_image_path(@report.site.project.id, @report.site.id,@report.id, :id => p.id), :method => :put %>
-                                                    
-                                                    
-                                                    
                                             </div>                     
                                             <% end %>
-                                        </div>
                                     </div>
-                                </div>
+                                </div>                                
                               <% end %>
 
                               <div class="form-group">
@@ -117,11 +116,28 @@
                                       <%= text_area_tag "report[materials]", @report.materials, type:"text", tabindex: "6", class: "form-control",  placeholder: 'Fill The Details of Materials',  rows: "3" %>
                                   </div>
                               </div>
+
+                              <% if @material_attachment.blank? %>
+                              <div></div>
+                              <% else %>                              
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Already Uploaded Photos</label>
+                                    <div class="col-md-9">                            
+                                           <% @material_attachment.each do |p| %>
+                                           <div class="col-sm-3">
+                                    <%= image_tag p.material_image_url(:thumb) %><br>
+                                    <%= link_to 'Remove', project_site_report_delete_material_image_path(@report.site.project.id, @report.site.id,@report.id, :id => p.id), :method => :put %>
+                                            </div>                     
+                                            <% end %>
+                                    </div>
+                                </div>
+                              <% end %>
                               <div class="form-group">
-                                  <label class="control-label col-md-3">Material Image</label>
+                                  <label class="control-label col-md-3">Add Material Images</label>
                                   <div class="col-md-9">                                  
-                                      <%= file_field_tag "report[material]",  class: "form-control",tabindex: "7" %>
+                                    <%= file_field_tag "material_attachements[material_image][]" ,:multiple => true, class: "form-control",tabindex:"7" %>
                                   </div>
+
                               </div>
                               <div class="row">
                                   <div class="col-md-3">
@@ -188,7 +204,9 @@
                                   </div>
                               </div>
 
-                              <% if @image_attachement != nil %>
+                              <% if @image_attachement.blank? %>
+                              <div></div>
+                              <% else %>
                               <div class="form-group">
                                   <label class="control-label col-md-3">Already Uploaded Photos</label>
                                   <div class="col-md-9">                                  

@@ -61,7 +61,7 @@
                                                                         
                                     <% end %>
                                 <div class="col-sm-2">                   
-                                    <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-warning', tabindex: "3" %>
+                                    <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-warning', tabindex: "2" %>
                                 </div>
                                 <div class="col-sm-6"></div>
                             </div>
@@ -92,12 +92,12 @@
                                             <td><%= t1.efficiency %></td>
                                             <td>
                         <% if current_user.role == 'Manager' %>
-                            
+                            <%= link_to(image_tag("edit.png"), edit_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id,t1.id), tabindex: "3") %>
                         <% end %>
                                             </td>
                                             <td>
                         <% if current_user.role == 'Manager' %>
-                            <%= link_to(image_tag("delete.png"), delete_task_project_site_reports_path(id: t1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "7") %>
+                            <%= link_to(image_tag("delete.png"), delete_task_project_site_reports_path(id: t1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "4") %>
                         <% end %>
                                             </td>
                                         </tr>
@@ -168,12 +168,12 @@
                                             <td><%= t1.efficiency %></td>
                                             <td>
                         <% if current_user.role == 'Manager' %>
-                            
+                            <%= link_to(image_tag("edit.png"), edit_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id,t1.id), tabindex: "5") %>
                         <% end %>
                                             </td>
                                             <td>
                         <% if current_user.role == 'Manager' %>
-                            <%= link_to(image_tag("delete.png"), delete_task_project_site_reports_path(id: t1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "7") %>
+                            <%= link_to(image_tag("delete.png"), delete_task_project_site_reports_path(id: t1.id), method: :put, data: { confirm: 'Are you sure?' }, tabindex: "6") %>
                         <% end %>
                                             </td>
                                         </tr>
@@ -188,18 +188,21 @@
                              <table class = "table table-hover table-condensed ">
                                     <thead class="table_head">
                                         <tr>
-                                            <th>Materials</th> 
-                                            <th></th>    
+                                            <th>Materials</th>    
                                         </tr>
                                     </thead>
                                     <tbody>                                                      
                                         <tr>
                                             <td><%= @report.materials %></td>
+                                        </tr>
+                                        <tr>
                                             <td>
-                                                <% if @report.material? %>
-                                            <p><%= image_tag @report.material_url(:thumb)  %></p>
-                                    <%= link_to 'Download Image' , @report.material.url , :target => '_blank' %>
-                                                <% end %>
+                                                 <% @material_attachment.each do |p| %>
+                                                    <div class="col-sm-3">
+                                                      <%= image_tag p.material_image_url(:thumb) %><br>
+                                                      <%= link_to 'Download Image' , p.material_image.url , :target => '_blank' %>
+                                                      </div>
+                                                    <% end %>     
                                             </td>
                                         </tr>                                                       
                                     </tbody>
