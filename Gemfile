@@ -21,6 +21,7 @@ gem 'carrierwave'
 #gem 'rmagick'
 gem 'cloudinary'
 gem "mail"
+gem 'bootstrap-wysihtml5-rails', '~> 0.3.3.1'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

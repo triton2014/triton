@@ -2,9 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-</head>
+<head></head>
 
 <body>
 
@@ -12,58 +10,56 @@
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
         <div class="col-sm-12">
-            <div class="row bg_white pad_top2 radius"> 
-                
-
+            <div class="row bg_white pad_top2 radius">
+              
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-8">
+                    <div class="col-sm-4"></div>
+                    <div class="col-xs-3 col-sm-8">
                        <%= render 'common/profile_pic' %>
-                        <div class="caption font_style1 pull-right">
-                            
+                        <div class="margin_l-3">                            
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6>
                         </div>
                     </div>
                     
                 </div>
 
-                <div class="col-sm-9 pad_rl2">
+                <div class="col-sm-9 pad_rl2 pad_t_res">
                     <div class ="row pad_left radius bg_silver">
                         <i style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></i>
-                        <p class="para_link"> &nbsp; Admin > Edit User</p>
+                        <p class="para_link"> &nbsp; Admin > <span class="para_link_last">Edit User</span></p>
                     </div>
                     <div class="row pad_top">
                         
-                   <div class="col-md-12 col-lg-12 ">
+                   <div class="col-sm-12 col-md-12 col-lg-12 ">
                     <%= form_tag update_user_dashboards_path, class: "form-horizontal" do  %>
                     <%= hidden_field_tag :id , @edited_user.id %>
 
                       
 
                       <div class="form-group">                
-                        <label class="control-label col-md-2">First Name</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-5 col-md-4 col-lg-3">First Name</label>
+                        <div class="col-sm-7 col-md-8 col-lg-7">
                         <%= text_field_tag :first_name, @edited_user.first_name,  type:"text", tabindex: "1", class: "form-control", placeholder: 'Enter The First Name',  required: true %>
                       </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-2">Last Name</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-5 col-md-4 col-lg-3">Last Name</label>
+                        <div class="col-sm-7 col-md-8 col-lg-7">
                         <%= text_field_tag :last_name, @edited_user.last_name,   type:"text", tabindex: "2", class: "form-control", placeholder: 'Enter The Last Name' %>
                       </div>
                     </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-2">Email</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-5 col-md-4 col-lg-3">Email</label>
+                        <div class="col-sm-7 col-md-8 col-lg-7">
                         <%= text_field_tag :email,  @edited_user.email,  type:"email", tabindex: "3", class: "form-control",  placeholder: 'Enter The Email Address',  required: true %>
                       </div>
                     </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-2">Select Role</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-5 col-md-4 col-lg-3">Select Role</label>
+                        <div class="col-sm-7 col-md-8 col-lg-7">
                           <% if @edited_user.role == "Manager" %>
                         <%= select_tag :role, options_for_select([@edited_user.role,"Customer"]), tabindex: "4", class: "form-control" %>
                         <% else %>
@@ -73,27 +69,29 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-md-2">Password</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-5 col-md-4 col-lg-3">Password</label>
+                        <div class="col-sm-7 col-md-8 col-lg-7">
                         <%= text_field_tag :password,  nil, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Create a Password',  required: true %>
                       </div>
                     </div>
 
                       <div class="form-group">
-                      <label class="control-label col-md-2">Retype Password</label>
-                        <div class="col-md-6">                  
+                      <label class="control-label col-sm-5 col-md-4 col-lg-3">Retype Password</label>
+                        <div class="col-sm-7 col-md-8 col-lg-7">                  
                         <%= text_field_tag :password_confirmation,  nil, type:"text", tabindex: "6", class: "form-control",  placeholder: 'Retype Password',  required: true %>
                       </div>
                     </div>
                       
-
-                      <div class="actions"> 
-                      <div class="col-md-4">
+                      <div class="row">
+                      <div class="actions">
+                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block', tabindex: "7" %>
+                      </div> 
+                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
                         <%= link_to 'Cancel', dashboards_path, :class => 'btn btn-warning btn-block', tabindex: "8" %>
                       </div>                 
-                      <div class="col-md-4">
-                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block', tabindex: "7" %>
-                      </div>
+                      
+                    </div>
                     </div>
                     <% end %>
                        

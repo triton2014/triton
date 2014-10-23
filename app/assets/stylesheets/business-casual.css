@@ -176,6 +176,10 @@ footer p {
     padding-right: 2em;
 }
 
+.pad_t_p5 {
+    padding-top: 0.5em;
+}
+
 .radius {
     border-radius: 1em;
 }
@@ -316,7 +320,7 @@ footer p {
 }
 
 #table_scroll_tri {
-    max-height:21em;
+    max-height:21.6em;
     overflow-y:auto;
 }
 
@@ -444,4 +448,89 @@ footer p {
         display: table;
         clear: both;
     }
+}
+
+
+/* <<<<< START NAV BAR >>>>>*/
+
+@media screen and (min-width: 1200px) and (max-width: 1265px ) {
+    .nav>li>a {
+        padding-left: 4em;
+        padding-right: 5em;
+    }
+}
+
+@media screen and (min-width: 1140px) and (max-width: 1199px ) {
+    .nav>li>a {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+}
+
+@media screen and (min-width: 1010px) and (max-width: 1139px ) {
+    .nav>li>a {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+}
+
+@media screen and (min-width: 890px) and (max-width: 1009px ) {
+    .nav>li>a {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+@media screen and (min-width: 825px) and (max-width: 889px ) {
+    .nav>li>a {
+        padding-left: 1em;
+        padding-right: 2em;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 824px ) {
+    .nav>li>a {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+@media screen and (max-width: 767px ) {
+    .invisible {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+/* <<<<< END NAV BAR >>>>>*/
+
+@media screen and (max-width: 767px ) {
+    .right_radius {
+        border-bottom-right-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .pad_t_res {
+        padding-top: 1em;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .img_wh {
+        min-height: 100px;
+        min-width: 100px;
+    }
+    .min_height {
+        min-height: 200px;
+    }
+
+
+}
+
+@media screen and (max-width: 615px ) {
+   .margin_l-3 {
+    margin-left: 7em;
+   }
 }

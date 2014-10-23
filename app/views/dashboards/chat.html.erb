@@ -13,17 +13,17 @@
             <div class="row bg_white pad_top2 radius">      
 
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-8">
+                    <div class="col-sm-4"></div>
+                    <div class="col-xs-3 col-sm-8">
                        <%= render 'common/profile_pic' %>
-                        <div class="caption font_style1 pull-right">                            
+                        <div class="margin_l-3">                            
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name  %></h6>  
                         </div>
                     </div>
                   
                 </div>
 
-                <div class="col-sm-9 pad_rl2">
+                <div class="col-sm-9 pad_rl2 pad_t_res">
                     <div class ="row pad_left radius bg_silver">
                         <i style="float: left;"><img class="img-responsive" src="/assets/chat.png" alt=""></i>
                         <p class="para_link_last"> &nbsp; Chat</p>
@@ -56,7 +56,7 @@
 
                                           <div class="actions"> 
                                                        
-                                              <div class="col-md-4">
+                                              <div class="col-sm-4">
                                               <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block', tabindex: "2" %>
                                               </div>
                                         </div>                      

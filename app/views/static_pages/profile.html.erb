@@ -14,23 +14,22 @@
             <div class="row bg_white pad_top2 radius">      
 
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-8">
+                    <div class="col-sm-4"></div>
+                    <div class="col-xs-3 col-sm-8">
                        <%= render 'common/profile_pic' %>
-                        <div class="caption font_style1 pull-right">
-                            
+                       <div class="margin_l-3">                             
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> 
                         </div>
                     </div>
                    
                 </div>
 
-                <div class="col-sm-9 pad_rl2">
+                <div class="col-sm-9 pad_rl2 pad_t_res">
                     <div class ="row pad_left radius bg_silver">
 
                         <div class="row">
                             <div class="col-sm-12">                        
-                                <div class="col-sm-2">
+                                <div class="col-sm-4">
                                     <div class="row">
                                         <i style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></i>
                                         <p class="para_link_last">&nbsp; Profile</p>
@@ -46,34 +45,34 @@
 
                     </div>
 
-                    <div class="col-sm-12 col-lg-12 pad_top ">
+                    <div class="col-sm-12 col-md-12 col-lg-12 pad_top ">
                         <div class="well">
                         <div class="form-horizontal">                                       
 
                       <div class="form-group">                
-                        <label class="control-label col-md-2">First Name</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-3 col-md-3 col-lg-3">First Name</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
                         <div class="form-control"><%= current_user.first_name %></div>
                       </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-2">Last Name</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-3 col-md-3 col-lg-3">Last Name</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
                         <div class="form-control"><%= current_user.last_name %></div>
                       </div>
                     </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-2">Email</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-3 col-md-3 col-lg-3">Email</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
                         <div class="form-control"><%= current_user.email %></div>
                       </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-md-2">Role</label>
-                        <div class="col-md-6">
+                        <label class="control-label col-sm-3 col-md-3 col-lg-3">Role</label>
+                        <div class="col-sm-8 col-md-8 col-lg-8">
                        <div class="form-control"><%= current_user.role %></div>
                       </div>
                     </div>
@@ -82,9 +81,9 @@
                        
                   </div>
 
-                    <div class="col-md-12 col-lg-12 ">
-                        <div class="row col-sm-3">                        
-                            <%= link_to 'Edit Profile', static_pages_edit_profile_path, :class => 'btn btn-warning btn-block', tabindex: "1" %>
+                    <div class="col-sm-12 col-md-12 ">
+                        <div class="row col-sm-5 col-md-3">                        
+                            <%= link_to 'Edit Profile', static_pages_edit_profile_path, :class => 'btn btn-warning', tabindex: "1" %>
                         </div>                       
                     </div>                    
 
