@@ -30,12 +30,12 @@
                     </div>
                     <hr>
                     
-                    <div class="col-sm-12">
-                        <div class="col-sm-2"></div>
-                            <div class="col-sm-8">                                
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-md-1 col-lg-2"></div>
+                            <div class="col-sm-12 col-md-10 col-lg-8">
                                 
                                 <div class="panel panel-default">
-                                  <div class="panel-heading">
+                                  <div class="panel-heading scroll_chat">
                                     <% @chats.each  do |c| %>
                                         <%= User.find(c.user_id).first_name %> :
                                         <%= c.message %>
@@ -54,18 +54,20 @@
                                               </div>
                                           </div>
 
+                                        <div class="row">
                                           <div class="actions"> 
                                                        
                                               <div class="col-sm-4">
-                                              <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block', tabindex: "2" %>
+                                              <%= submit_tag 'Submit', :class => 'btn btn-warning', tabindex: "2" %>
                                               </div>
-                                        </div>                      
+                                          </div> 
+                                        </div>                     
                                        <% end %>
                                   </div>
                                 </div>
                                 
                             </div>
-                        <div class="col-sm-2"></div>
+                        <div class="col-md-1 col-lg-2"></div>
                     </div>
 
                     <div class="row pad_top">

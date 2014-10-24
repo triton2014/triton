@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-</head>
+<head></head>
 
 <body>
 
@@ -14,16 +13,16 @@
             <div class="row bg_white pad_top2 radius">      
 
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-8">
+                    <div class="col-sm-4"></div>
+                    <div class="col-xs-3 col-sm-8">
                        <%= render 'common/profile_pic' %>
-                        <div class="caption font_style1 pull-right">                            
+                        <div class="margin_l-3">                            
                             <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> 
                         </div>
                     </div>                    
                 </div>
 
-                <div class="col-sm-9 pad_rl2">
+                <div class="col-sm-9 pad_rl2 pad_t_res">
                     <div class ="row pad_left radius bg_silver">
                         <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
                         <p class="para_link"> &nbsp; Projects > <%= @site.project.name %> > <span class="para_link_last">Rename Site</span></p>
@@ -34,31 +33,31 @@
                         <%= form_tag update_site_project_sites_path, class: "form-horizontal" do  %>
                         <%= hidden_field_tag :id , @site.id %>
                           <div class="form-group">                
-                              <label class="control-label col-md-2">Site Name</label>
-                              <div class="col-md-6">
+                              <label class="control-label col-sm-3 col-lg-2">Site Name</label>
+                              <div class="col-sm-6 col-lg-6">
                               <%= text_field_tag :name, @site.name, type:"text", tabindex: "1", class: "form-control", pattern: "[!-~ ]{1,30}",  placeholder: 'Enter The Site  Name',  required: true %>
                               </div>
                           </div>
                           <div class="row">
-                              <div class="actions"> 
-                                  <div class="col-md-4">
-                                  <%= link_to 'Cancel', project_site_path(@site.project.id,@site.id), :class => 'btn btn-warning btn-block', tabindex: "3" %>
-                                  </div>            
-                                  <div class="col-md-4">
+                              <div class="actions">
+                                  <div class="col-sm-3 col-lg-2"></div>         
+                                  <div class="col-xs-5 col-sm-3 col-lg-3">
                                   <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block', tabindex: "2" %>
                                   </div>
-                                  <div class="col-md-4">
+                                  <div class="col-xs-5 col-sm-3 col-lg-3">
+                                  <%= link_to 'Cancel', project_site_path(@site.project.id,@site.id), :class => 'btn btn-warning btn-block', tabindex: "3" %>
                                   </div>
+                                  <div class="col-xs-2 col-sm-3 col-lg-4"></div>
                               </div> 
                           </div>                     
                        <% end %>  
                        
-                       <div class="col-md-12">
                         <div class="row">
-                        <br>
-                        <hr>
+                            <div class="col-sm-12">
+                                <br>
+                                <hr>
+                            </div>
                         </div>
-                              </div>
                           
                     </div>
                            

@@ -1,8 +1,7 @@
  <!DOCTYPE html>
 <html lang="en">
 
-<head>
-</head>
+<head></head>
 
 <body>
 
@@ -14,11 +13,11 @@
 
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-8">
+                        <div class="col-sm-12">
+                            <div class="col-sm-4"></div>
+                            <div class="col-xs-3 col-sm-8">
                                <%= render 'common/profile_pic' %>
-                                <div class="caption font_style1 pull-right">                            
+                                <div class="margin_l-3">                            
                                     <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> <br> 
                                 </div>
                             </div>
@@ -34,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-9 pad_rl2">
+                <div class="col-sm-9 pad_rl2 pad_t_res">
                     <div class ="row pad_left radius bg_silver">
                         <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
                         <p class="para_link"> &nbsp; Projects > <%=@site.project.name %> >  <span class="para_link_last"><%= @site.name %></span></p>
@@ -42,25 +41,25 @@
                     <div class="row pad_top">
                         
                         <div class="row">
-                            <div class="col-sm-12">                        
-                                <div class="col-sm-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12">                        
+                                <div class="col-sm-2 col-lg-1">
                                     <div class="row">
                                         <p>Reports</p>
                                     </div>
                                 </div>
                                 <% if current_user.role == 'Manager' %>
-                                <div class="col-sm-3">                                                           
-                                    <%= link_to "Create a New Report", new_project_site_report_path(@site.project.id,@site.id), :class => 'btn btn-warning', tabindex: "1" %>
-                                </div>
-                                <div class="col-sm-2"> 
-                                <%= link_to 'Edit Site', edit_project_site_path(@site.project.id,@site.id), :class => 'btn btn-warning', tabindex: "2" %>
-                                </div>
-                                <div class="col-sm-2"> 
-                                <%= link_to 'Delete Site', delete_site_project_sites_path(id: @site.id),method: :put, data: { confirm: 'Are you sure?' }, :class => 'btn btn-warning', tabindex: "3" %>
-                                </div>
+                                <div class="col-sm-10 col-lg-11">                                                           
+                                    <%= link_to "Create a Report", new_project_site_report_path(@site.project.id,@site.id), :class => 'btn btn-warning margin_bot2p', tabindex: "1" %>
+                                <!-- </div> 
+                                <div class="col-sm-2"> --> 
+                                <%= link_to 'Edit Site', edit_project_site_path(@site.project.id,@site.id), :class => 'btn btn-warning margin_bot2p', tabindex: "2" %>
+                                <!-- </div>
+                                <div class="col-sm-2"> --> 
+                                <%= link_to 'Delete Site', delete_site_project_sites_path(id: @site.id),method: :put, data: { confirm: 'Are you sure?' }, :class => 'btn btn-warning margin_bot2p', tabindex: "3" %>
+                                <!-- </div> -->
                                 <% end %> 
-                                <div class="col-sm-3">
-                                    <%= link_to 'Back To Project', project_path(@site.project.id), :class => 'btn btn-warning', tabindex: "4" %>                                    
+                                <!-- <div class="col-sm-3"> -->
+                                    <%= link_to 'Back To Project', project_path(@site.project.id), :class => 'btn btn-warning margin_bot2p', tabindex: "4" %>                                    
                                 </div>
                                                                 
                                 

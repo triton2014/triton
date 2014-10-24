@@ -16,12 +16,11 @@
 
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-8">
+                        <div class="col-sm-12">
+                            <div class="col-sm-4"></div>
+                            <div class="col-xs-3 col-sm-8">
                                <%= render 'common/profile_pic' %>
-                                <div class="caption font_style1 pull-right">
-                                    
+                                <div class="margin_l-3">                                    
                                     <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6> <br> 
                                 </div>
                             </div>
@@ -42,7 +41,7 @@
                    
                 </div>
 
-                <div class="col-sm-9 pad_rl2">
+                <div class="col-sm-9 pad_rl2 pad_t_res">
                     <div class ="row pad_left radius bg_silver">
                         <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
                         <p class="para_link"> &nbsp; Projects > <%=@report.site.project.name %> > <%= @report.site.name %> > <span class="para_link_last">Tri-Status Report</span></p>
@@ -51,21 +50,21 @@
                     <div class="row pad_top">
                         <div class="row">
                             <div class="col-sm-12">                        
-                                <div class="col-sm-2">
+                                <div class="col-xs-3 col-sm-2">
                                     <div class="row">
                                         <p>Report</p>
                                     </div>
-                                </div>                                
-                                    <% if current_user.role == 'Manager' %> 
-                                <div class="col-sm-2">
-                                    <%= link_to "Add a task", new_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id), :class => 'btn btn-warning', tabindex: "1" %>
                                 </div> 
+                                <div class="col-xs-9 col-sm-10">                               
+                                    <% if current_user.role == 'Manager' %> 
+                                
+                                    <%= link_to "Add a task", new_project_site_report_task_path(@report.site.project.id,@report.site.id,@report.id), :class => 'btn btn-warning margin_bot2p', tabindex: "1" %>
                                                                         
                                     <% end %>
-                                <div class="col-sm-2">                   
-                                    <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-warning', tabindex: "2" %>
+                                                   
+                                    <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-warning margin_bot2p', tabindex: "2" %>
                                 </div>
-                                <div class="col-sm-6"></div>
+                                
                             </div>
                        </div>
                             
@@ -262,11 +261,13 @@
 
                 <div class="col-sm-3 bg_green right_radius pad_top min_height">
                     <div class="row">
-                        <div class="col-lg-4"></div>
-                        <div class="col-lg-8">
-                           <%= render 'common/profile_pic' %>
-                            <div class="caption font_style1 pull-right">                                
-                                <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6><br>
+                        <div class="col-sm-12">
+                            <div class="col-sm-4"></div>
+                            <div class="col-xs-3 col-sm-8">
+                               <%= render 'common/profile_pic' %>
+                                <div class="margin_l-3">                                
+                                    <h6 class="caption font_style1 pull-right"><%= current_user.first_name %></h6><br>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -280,7 +281,7 @@
                     </div>                   
                 </div>
 
-                <div class="col-sm-9 pad_rl2">
+                <div class="col-sm-9 pad_rl2 pad_t_res">
                     <div class ="row pad_left radius bg_silver">
                         <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
                         <p class="para_link"> &nbsp; Projects > <%=@report.site.project.name %> > <%= @report.site.name %> > <span class="para_link_last">Tri-Harder Report</span></p>
@@ -288,15 +289,14 @@
                     <div class="row pad_top">
                         <div class="row">
                             <div class="col-sm-12">                        
-                                <div class="col-sm-2">
+                                <div class="col-xs-3 col-sm-2">
                                     <div class="row">
                                         <p>Report</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-10">
-                                    <% if current_user.role == 'Manager' %>                          
+                                <div class="col-xs-9 col-sm-10">                                                              
                                     <%= link_to 'Back to Site', project_site_path(@report.site.project.id,@report.site.id), :class => 'btn btn-warning', tabindex: "1" %>
-                                    <% end %> 
+                                     
                                 </div>
                             </div>
                        </div> 

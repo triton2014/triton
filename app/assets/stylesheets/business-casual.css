@@ -281,15 +281,19 @@ footer p {
 }
 */
 .scroll_div {
-    height: 20em;
+    height: 22em;
     overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .scroll_project {
     height: 11.7em;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.scroll_chat {
+    max-height: 13.8em;
+    overflow-y: auto;
 }
 
 .scroll_site_nav {
@@ -529,8 +533,16 @@ footer p {
 
 }
 
+@media screen and (max-width: 1200px ) {
+    .margin_bot2p {
+        margin-bottom: 2px !important;
+    }
+}
+
 @media screen and (max-width: 615px ) {
    .margin_l-3 {
     margin-left: 7em;
    }
 }
+
+
