@@ -1,18 +1,18 @@
 development:
   #:address: smtp.live.com
-  :address: smtp.gmail.com
-  :port: 587
-  :Domain: mail.google.com
+  :address: smtpout.secureserver.net
+  :port: 25
+  :Domain: www.tritonlsstatus.ca
   :authentication: plain
-  :user_name: priyanko.dey33@gmail.com
-  :password: priyanko123456
+  :user_name: tritonls@tritonlsstatus.ca
+  :password: oilbiz2014
   :enable_starttls_auto: true        
 
-production:
-  :address: smtp.gmail.com
-  :port: 587
-  :Domain: mail.google.com
-  :authentication: plain
-  :user_name: priyanko.dey33@gmail.com
-  :password: priyanko123456
-  :enable_starttls_auto: true 
+# production:
+#   :address: smtp.gmail.com
+#   :port: 587
+#   :Domain: mail.google.com
+#   :authentication: plain
+#   :user_name: priyanko.dey33@gmail.com
+#   :password: priyanko123456
+#   :enable_starttls_auto: true 

@@ -286,9 +286,8 @@ footer p {
 }
 
 .scroll_project {
-    height: 11.7em;
+    max-height: 12.7em;
     overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .scroll_chat {
@@ -538,6 +537,21 @@ footer p {
         margin-bottom: 2px !important;
     }
 }
+
+@media screen and (max-width: 1199px ) {
+    .scroll_project {
+    max-height: 11.7em;
+    overflow-y: auto;
+    }
+}
+@media screen and (max-width: 991px ) {
+    .scroll_project {
+    max-height: 9.7em;
+    overflow-y: auto;
+    }
+}
+
+
 
 @media screen and (max-width: 615px ) {
    .margin_l-3 {

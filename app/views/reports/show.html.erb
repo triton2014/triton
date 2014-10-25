@@ -142,7 +142,11 @@
                                     <tbody>                                                      
                                         <tr>
                                             <td><%= @report.safety_meeting %></td>
+                                            <% if @report.safety_doc.blank? %>
+                                              <div></div>
+                                            <% else %>
                                             <td><%= link_to 'Download File' , @report.safety_doc.url  %></td>
+                                            <% end %>
                                         </tr>                                                       
                                     </tbody>
                             </table>
