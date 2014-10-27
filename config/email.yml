@@ -1,11 +1,11 @@
 development:
   #:address: smtp.live.com
-  :address: smtpout.secureserver.net
-  :port: 25
-  :Domain: www.tritonlsstatus.ca
+  :address: smtp.tritonls.ca
+  :port: 80
+  :Domain: mail.tritonls.ca
   :authentication: plain
-  :user_name: tritonls@tritonlsstatus.ca
-  :password: oilbiz2014
+  :user_name: info@tritonls.ca
+  :password: tr1t0n
   :enable_starttls_auto: true        
 
 # production:

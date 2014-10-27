@@ -108,16 +108,19 @@
                                   <label class="control-label col-sm-3">Safety Meeting</label>
                                   <div class="col-sm-9">
                                       <%= hidden_field_tag "report[report_type]" , 'tristatus' %>
-                                      <%= text_area_tag "report[safety_meeting]", @report.safety_meeting, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Fill The Details of Safety Meeting',  rows: "3" %>
+                                      <%= text_area_tag "report[safety_meeting]", @report.safety_meeting, type:"text", tabindex: "5", class: "form-control", id: "safety_textarea",  placeholder: 'Fill The Details of Safety Meeting',  rows: "3" %>
+                                      <script type="text/javascript">
+                                      $('#safety_textarea').wysihtml5(); 
+                                    </script>
                                   </div>
                               </div>
 
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Materials</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_area_tag "report[materials]", @report.materials, type:"text", tabindex: "6", class: "form-control", id: "some-textarea",  placeholder: 'Fill The Details of Materials',  rows: "5" %>
+                                      <%= text_area_tag "report[materials]", @report.materials, type:"text", tabindex: "6", class: "form-control", id: "materials_textarea",  placeholder: 'Fill The Details of Materials',  rows: "5" %>
                                       <script type="text/javascript">
-                                      $('#some-textarea').wysihtml5(); 
+                                      $('#materials_textarea').wysihtml5(); 
                                     </script>
                                   </div>
                               </div>

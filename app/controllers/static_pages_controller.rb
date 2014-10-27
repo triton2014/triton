@@ -23,15 +23,15 @@ class StaticPagesController < ApplicationController
   end
 
 
-  def project
-  end
+  # def project
+  # end
 
   def chat
      @projects = current_user.projects 
   end
 
-  def help
-  end
+  # def help
+  # end
 
 
 end

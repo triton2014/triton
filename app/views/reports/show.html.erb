@@ -141,7 +141,7 @@
                                     </thead>
                                     <tbody>                                                      
                                         <tr>
-                                            <td><%= @report.safety_meeting %></td>
+                                            <td><%= @report.safety_meeting.html_safe() %></td>
                                             <% if @report.safety_doc.blank? %>
                                               <div></div>
                                             <% else %>

@@ -5,13 +5,18 @@ Triton::Application.routes.draw do
   devise_scope :user do
       root :to => 'devise/sessions#new'
   end
-  get "static_pages/index"
-  get "static_pages/profile"
-  get "static_pages/project"
-  get "static_pages/edit_profile"
-  post "static_pages/update_profile"
-  get "static_pages/chat"
-  get "static_pages/help"
+  #get "static_pages/index"  
+  #get "static_pages/profile"  
+  #get "static_pages/edit_profile"
+  #post "static_pages/update_profile"
+  #get "static_pages/chat"
+  #get "static_pages/help"
+
+  match '/index',    to: 'static_pages#index',    via: 'get'
+  match '/profile',    to: 'static_pages#profile',    via: 'get'
+  match '/edit_profile',    to: 'static_pages#edit_profile',    via: 'get'
+  match '/update_profile',    to: 'static_pages#update_profile',    via: 'post'
+  match '/chat',    to: 'static_pages#chat',    via: 'get'
   
 
 
