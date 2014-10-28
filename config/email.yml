@@ -1,18 +1,18 @@
 development:
   #:address: smtp.live.com
-  :address: smtp.tritonls.ca
-  :port: 80
+  :address: localhost
+  :port: 25
   :Domain: mail.tritonls.ca
   :authentication: plain
   :user_name: info@tritonls.ca
   :password: tr1t0n
-  :enable_starttls_auto: true        
+  :enable_starttls_auto: false        
 
-# production:
-#   :address: smtp.gmail.com
-#   :port: 587
-#   :Domain: mail.google.com
-#   :authentication: plain
-#   :user_name: priyanko.dey33@gmail.com
-#   :password: priyanko123456
-#   :enable_starttls_auto: true 
+production:
+  :address: smtp.gmail.com
+  :port: 587
+  :Domain: mail.google.com
+  :authentication: plain
+  :user_name: triton.triton2014@gmail.com
+  :password: asdfghjkl2014
+  :enable_starttls_auto: true 

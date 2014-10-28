@@ -96,6 +96,6 @@ class ReportsController < ApplicationController
 
        def report_params
          params.require(:report).permit(:report_type,:summary, :effciency, :project_start_condition,
-                 :todays_condition, :controls_in_place, :materials, :material ,:safety_meeting, :safety_doc, :image)
+                 :todays_condition, :controls_in_place, :materials, :material ,:safety_meeting, :safety_doc, :image, :tomorrows_task, :todays_task)
        end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020093341) do
+ActiveRecord::Schema.define(version: 20141028125311) do
 
   create_table "chats", force: true do |t|
     t.integer  "project_id"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20141020093341) do
     t.string   "image"
     t.string   "material"
     t.string   "safety_doc"
+    t.text     "todays_task"
+    t.text     "tomorrows_task"
   end
 
   create_table "sites", force: true do |t|
