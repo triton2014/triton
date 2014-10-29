@@ -1,18 +1,20 @@
 development:
   #:address: smtp.live.com
-  :address: smtp.tritonls.ca
+  :address: mail.tritonls.ca
   :port: 25
-  :Domain: mail.tritonls.ca
-  :authentication: plain
-  :user_name: info@tritonls.ca
-  :password: tr1t0n
-  :enable_starttls_auto: true        
-
-production:
-  :address: smtp.tritonls.ca
-  :port: 25
-  :Domain: mail.tritonls.ca
+  :Domain: tritonls.ca
   :authentication: plain
   :user_name: info@tritonls.ca
   :password: tr1t0n
   :enable_starttls_auto: true 
+  :openssl_verify_mode: 'none'
+
+production:
+  :address: mail.tritonls.ca
+  :port: 25
+  :Domain: tritonls.ca
+  :authentication: plain
+  :user_name: info@tritonls.ca
+  :password: tr1t0n
+  :enable_starttls_auto: true 
+  :openssl_verify_mode: 'none' 
