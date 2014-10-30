@@ -352,7 +352,7 @@
                                 </thead>
                                 <tbody>                                                      
                                     <tr>
-                                        <td><%= @report.controls_in_place %></td>
+                                        <td><%= @report.controls_in_place.html_safe() %></td>
                                     </tr>                                                       
                                 </tbody>
                             </table>
@@ -367,7 +367,7 @@
                                 </thead>
                                 <tbody>                                                      
                                     <tr>
-                                        <td><%= @report.project_start_condition %></td>
+                                        <td><%= @report.project_start_condition.html_safe() %></td>
                                     </tr>                                                       
                                 </tbody>
                             </table>
@@ -383,7 +383,7 @@
                                 </thead>
                                 <tbody>                                                      
                                     <tr>
-                                        <td><%= @report.todays_condition %></td>
+                                        <td><%= @report.todays_condition.html_safe() %></td>
                                     </tr>                                                       
                                 </tbody>
                             </table>

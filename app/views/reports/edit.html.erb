@@ -57,7 +57,10 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Summary</label>
                                   <div class="col-sm-9">                                
-                                      <%= text_field_tag( "report[summary]",@report.summary, type:"text", tabindex: "1", class: "form-control",  placeholder: 'Fill The Summary') %>
+                                      <%= text_area_tag( "report[summary]",@report.summary, type:"text", tabindex: "1", class: "form-control", id: "trys_summary_textarea",  placeholder: 'Fill The Summary', rows: "3") %>
+                                  <script type="text/javascript">
+                                $('#trys_summary_textarea').wysihtml5(); 
+                                  </script>
                                   </div>
                               </div>
 
@@ -198,7 +201,10 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Summary</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_field_tag "report[summary]", @report.summary, type:"text", tabindex: "1", class: "form-control",  placeholder: 'Fill The Summary' %>
+                                      <%= text_area_tag "report[summary]", @report.summary, type:"text", tabindex: "1", class: "form-control", id: "tryh_summary_textarea" ,  placeholder: 'Fill The Summary', rows: "3" %>
+                                  <script type="text/javascript">
+                                $('#tryh_summary_textarea').wysihtml5(); 
+                                  </script>
                                   </div>
                               </div>
 
@@ -212,7 +218,10 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Controls In Place</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_field_tag "report[controls_in_place]", @report.controls_in_place, type:"text", tabindex: "3", class: "form-control",  placeholder: 'Fill The Control in Place' %>
+                                      <%= text_area_tag "report[controls_in_place]", @report.controls_in_place, type:"text", tabindex: "3", class: "form-control", id: "control_textarea",  placeholder: 'Fill The Control in Place', rows: "4" %>
+                                  <script type="text/javascript">
+                                $('#control_textarea').wysihtml5(); 
+                                  </script>                                
                                   </div>
                               </div>
 
@@ -221,14 +230,20 @@
                                   <label class="control-label col-sm-3">Project Start Condition</label>
                                   <div class="col-sm-9">
                                       <%= hidden_field_tag "report[report_type]" , 'triharder' %>
-                                      <%= text_area_tag "report[project_start_condition]", @report.project_start_condition, type:"text", tabindex: "4", class: "form-control",  placeholder: 'Fill The Details of Project Start Condition',  rows: "2" %>
+                                      <%= text_area_tag "report[project_start_condition]", @report.project_start_condition, type:"text", tabindex: "4", class: "form-control", id: "proj_start_textarea",  placeholder: 'Fill The Details of Project Start Condition',  rows: "4" %>
+                                  <script type="text/javascript">
+                                $('#proj_start_textarea').wysihtml5(); 
+                                  </script>
                                   </div>
                               </div>
 
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Today's condition</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_area_tag "report[todays_condition]", @report.todays_condition, type:"text", tabindex: "5", class: "form-control",  placeholder: 'Fill The Details of Todays Condition',  rows: "2" %>
+                                      <%= text_area_tag "report[todays_condition]", @report.todays_condition, type:"text", tabindex: "5", class: "form-control", id: "today_c_textarea",  placeholder: 'Fill The Details of Todays Condition',  rows: "4" %>
+                                  <script type="text/javascript">
+                                $('#today_c_textarea').wysihtml5(); 
+                                  </script>
                                   </div>
                               </div>
 
