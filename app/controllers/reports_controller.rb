@@ -35,12 +35,17 @@ class ReportsController < ApplicationController
 	   		if params[:material_attachements] != nil
 	       		params[:material_attachements]['material_image'].each do |b|
 	       		#Cloudinary::Uploader.upload(b)
-			  @material_attachment = @report.material_attachements.create!(:material_image => b, :report_id => @report.id)
+			  	@material_attachment = @report.material_attachements.create!(:material_image => b, :report_id => @report.id)
 	       		end
 	   		end
 	  	end
 	   
 	    redirect_to project_site_report_path(@site.project.id,@site.id,@report.id)
+
+	    users = @site.project.users
+	    users.each do |u|
+	    	ReportMailer.report_confirmation(u).deliver
+		end
 
 	end
 
