@@ -55,6 +55,14 @@
                               <%= form_tag update_report_project_site_reports_path,:multipart => true,  class: "form-horizontal" do  %>
                               <%= hidden_field_tag :id , @report.id %>
                               <div class="form-group">
+                                  <label class="control-label col-sm-3">Date</label>
+                                  <div class="col-sm-9"> 
+                                    <div class="form-control">                                 
+                                      <%= date_select("report", "report_date", {:order => [:day, :month, :year]} ) %>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
                                   <label class="control-label col-sm-3">Summary</label>
                                   <div class="col-sm-9">                                
                                       <%= text_area_tag( "report[summary]",@report.summary, type:"text", tabindex: "1", class: "form-control", id: "trys_summary_textarea",  placeholder: 'Fill The Summary', rows: "3") %>
@@ -198,6 +206,15 @@
                               <%= form_tag update_report_project_site_reports_path,:multipart => true,  class: "form-horizontal" do  %>
                                <%= hidden_field_tag :id , @report.id %>
 
+                              <div class="form-group">
+                                  <label class="control-label col-sm-3">Date</label>
+                                  <div class="col-sm-9"> 
+                                    <div class="form-control">                                 
+                                      <%= date_select("report", "report_date", {:order => [:day, :month, :year]} ) %>
+                                    </div>
+                                  </div>
+                              </div>
+                              
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Summary</label>
                                   <div class="col-sm-9">                                  

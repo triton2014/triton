@@ -87,7 +87,7 @@
                             <% @reports_tristatus.each do |r1| %>            
                            <tr>
                                 <td></td>
-                                <td><%= r1.created_at.to_date %></td>
+                                <td><%= r1.report_date.to_date %></td>
                                 <td><%= r1.summary.html_safe() %></td>
                                 <td><%= r1.effciency %></td>
                                 <td><%= link_to(image_tag("view.png"), project_site_report_path(@site.project.id,@site.id,r1.id), tabindex: "5") %></td>
@@ -136,7 +136,7 @@
                             <% @reports_triharder.each do |r1| %>            
                             <tr>
                                 <td></td>
-                                <td><%= r1.created_at.to_date %></td>
+                                <td><%= r1.report_date.to_date %></td>
                                 <td><%= r1.summary.html_safe() %></td>
                                 <td><%= r1.effciency %></td>
                                 <td><%= link_to(image_tag("view.png"), project_site_report_path(@site.project.id,@site.id,r1.id), tabindex: "8") %></td>
