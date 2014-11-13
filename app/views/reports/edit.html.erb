@@ -8,7 +8,7 @@
 
 <body>
 
-<div class="col-sm-12">
+<div class="col-sm-12 margin_lf30">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
         <div class="col-sm-12">
@@ -33,7 +33,7 @@
                         <i style="float: left;"><img class="img-responsive" src="/assets/project.png" alt=""></i>
                         <p class="para_link"> &nbsp; Projects > <%=@report.site.project.name %> > <%= @report.site.name %> > <span class="para_link_last">Edit Report</span></p>
                     </div>
-                    <div class="row pad_top">
+                    <div class="row pad_top margin_lf30">
 
            <div class="col-sm-12">
 
@@ -58,14 +58,14 @@
                                   <label class="control-label col-sm-3">Date</label>
                                   <div class="col-sm-9"> 
                                     <div class="form-control">                                 
-                                      <%= date_select("report", "report_date", {:order => [:day, :month, :year]} ) %>
+                                      <%= date_select("report", "report_date", {:order => [:day, :month, :year]},tabindex: "1" ) %>
                                     </div>
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Summary</label>
                                   <div class="col-sm-9">                                
-                                      <%= text_area_tag( "report[summary]",@report.summary, type:"text", tabindex: "1", class: "form-control", id: "trys_summary_textarea",  placeholder: 'Fill The Summary', rows: "3") %>
+                                      <%= text_area_tag( "report[summary]",@report.summary, type:"text", tabindex: "2", class: "form-control", id: "trys_summary_textarea",  placeholder: 'Fill The Summary', rows: "3") %>
                                   <script type="text/javascript">
                                 $('#trys_summary_textarea').wysihtml5(); 
                                   </script>
@@ -75,14 +75,14 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Efficiency</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", placeholder: 'Fill The Efficiency' %>
+                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "3", class: "form-control", placeholder: 'Fill The Efficiency' %>
                                   </div>
                               </div>
 
                                <div class="form-group">
                                   <label class="control-label col-sm-3">Today's Tasks</label>
                                   <div class="col-sm-9">                       
-                                      <%= text_area_tag "report[todays_task]", @report.todays_task, type:"text", tabindex: "6", class: "form-control", id: "today_textarea",  placeholder: 'Fill The Details of Tasks ',  rows: "5" %>
+                                      <%= text_area_tag "report[todays_task]", @report.todays_task, type:"text", tabindex: "4", class: "form-control", id: "today_textarea",  placeholder: 'Fill The Details of Tasks ',  rows: "5" %>
                                   <script type="text/javascript">
                                 $('#today_textarea').wysihtml5(); 
                                   </script>
@@ -92,7 +92,7 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Tomorrow's Tasks</label>
                                   <div class="col-sm-9">                       
-                                      <%= text_area_tag "report[tomorrows_task]", @report.tomorrows_task, type:"text", tabindex: "6", class: "form-control", id: "tomorrow_textarea",  placeholder: 'Fill The Details of Tasks ',  rows: "5" %>
+                                      <%= text_area_tag "report[tomorrows_task]", @report.tomorrows_task, type:"text", tabindex: "5", class: "form-control", id: "tomorrow_textarea",  placeholder: 'Fill The Details of Tasks ',  rows: "5" %>
                                   <script type="text/javascript">
                                 $('#tomorrow_textarea').wysihtml5(); 
                                   </script>
@@ -121,7 +121,7 @@
                                   <label class="control-label col-sm-3">Add Photos</label>
                                   <div class="col-sm-9">                                  
                                       <div>
-                                         <%= file_field_tag "image_attachements[image][]" ,:multiple => true, class: "form-control",tabindex:"3" %>
+                                         <%= file_field_tag "image_attachements[image][]" ,:multiple => true, class: "form-control",tabindex:"6" %>
                                       </div>
                                   </div>
                               </div>
@@ -131,7 +131,7 @@
                                   <label class="control-label col-sm-3">Safety Meeting File</label>
                                   <div class="col-sm-9">
                                       <%= hidden_field_tag "report[report_type]" , 'tristatus' %>
-                                      <%= file_field_tag "report[safety_doc]" , class: "form-control",tabindex:"4"%>
+                                      <%= file_field_tag "report[safety_doc]" , class: "form-control",tabindex:"7"%>
                                   </div>
                               </div>
 
@@ -139,7 +139,7 @@
                                   <label class="control-label col-sm-3">Safety Meeting</label>
                                   <div class="col-sm-9">
                                       <%= hidden_field_tag "report[report_type]" , 'tristatus' %>
-                                      <%= text_area_tag "report[safety_meeting]", @report.safety_meeting, type:"text", tabindex: "5", class: "form-control", id: "safety_textarea",  placeholder: 'Fill The Details of Safety Meeting',  rows: "3" %>
+                                      <%= text_area_tag "report[safety_meeting]", @report.safety_meeting, type:"text", tabindex: "8", class: "form-control", id: "safety_textarea",  placeholder: 'Fill The Details of Safety Meeting',  rows: "3" %>
                                       <script type="text/javascript">
                                       $('#safety_textarea').wysihtml5(); 
                                     </script>
@@ -149,7 +149,7 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Materials</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_area_tag "report[materials]", @report.materials, type:"text", tabindex: "6", class: "form-control", id: "materials_textarea",  placeholder: 'Fill The Details of Materials',  rows: "5" %>
+                                      <%= text_area_tag "report[materials]", @report.materials, type:"text", tabindex: "9", class: "form-control", id: "materials_textarea",  placeholder: 'Fill The Details of Materials',  rows: "5" %>
                                       <script type="text/javascript">
                                       $('#materials_textarea').wysihtml5(); 
                                     </script>
@@ -174,7 +174,7 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Add Material Images</label>
                                   <div class="col-sm-9">                                  
-                                    <%= file_field_tag "material_attachements[material_image][]" ,:multiple => true, class: "form-control",tabindex:"7" %>
+                                    <%= file_field_tag "material_attachements[material_image][]" ,:multiple => true, class: "form-control",tabindex:"10" %>
                                   </div>
 
                               </div>
@@ -182,10 +182,10 @@
                                   <div class="col-sm-3">
                                   </div>
                                   <div class="col-xs-6 col-sm-4">
-                                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block',tabindex: "8" %>
+                                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block',tabindex: "11" %>
                                   </div>
                                   <div class="col-xs-6 col-sm-4">
-                                      <%= link_to 'Cancel', project_site_path(id: @report.site.id), :class => 'btn btn-warning btn-block', tabindex: "9" %>
+                                      <%= link_to 'Cancel', project_site_path(id: @report.site.id), :class => 'btn btn-warning btn-block', tabindex: "12" %>
                                   </div>
                               </div>
                           
@@ -210,7 +210,7 @@
                                   <label class="control-label col-sm-3">Date</label>
                                   <div class="col-sm-9"> 
                                     <div class="form-control">                                 
-                                      <%= date_select("report", "report_date", {:order => [:day, :month, :year]} ) %>
+                                      <%= date_select("report", "report_date", {:order => [:day, :month, :year]},tabindex: "1" ) %>
                                     </div>
                                   </div>
                               </div>
@@ -218,7 +218,7 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Summary</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_area_tag "report[summary]", @report.summary, type:"text", tabindex: "1", class: "form-control", id: "tryh_summary_textarea" ,  placeholder: 'Fill The Summary', rows: "3" %>
+                                      <%= text_area_tag "report[summary]", @report.summary, type:"text", tabindex: "2", class: "form-control", id: "tryh_summary_textarea" ,  placeholder: 'Fill The Summary', rows: "3" %>
                                   <script type="text/javascript">
                                 $('#tryh_summary_textarea').wysihtml5(); 
                                   </script>
@@ -228,14 +228,14 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Efficiency</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "2", class: "form-control", placeholder: 'Fill The Efficiency' %>
+                                      <%= text_field_tag "report[effciency]", @report.effciency, type:"text", tabindex: "3", class: "form-control", placeholder: 'Fill The Efficiency' %>
                                   </div>
                               </div>
 
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Controls In Place</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_area_tag "report[controls_in_place]", @report.controls_in_place, type:"text", tabindex: "3", class: "form-control", id: "control_textarea",  placeholder: 'Fill The Control in Place', rows: "4" %>
+                                      <%= text_area_tag "report[controls_in_place]", @report.controls_in_place, type:"text", tabindex: "4", class: "form-control", id: "control_textarea",  placeholder: 'Fill The Control in Place', rows: "4" %>
                                   <script type="text/javascript">
                                 $('#control_textarea').wysihtml5(); 
                                   </script>                                
@@ -247,7 +247,7 @@
                                   <label class="control-label col-sm-3">Project Start Condition</label>
                                   <div class="col-sm-9">
                                       <%= hidden_field_tag "report[report_type]" , 'triharder' %>
-                                      <%= text_area_tag "report[project_start_condition]", @report.project_start_condition, type:"text", tabindex: "4", class: "form-control", id: "proj_start_textarea",  placeholder: 'Fill The Details of Project Start Condition',  rows: "4" %>
+                                      <%= text_area_tag "report[project_start_condition]", @report.project_start_condition, type:"text", tabindex: "5", class: "form-control", id: "proj_start_textarea",  placeholder: 'Fill The Details of Project Start Condition',  rows: "4" %>
                                   <script type="text/javascript">
                                 $('#proj_start_textarea').wysihtml5(); 
                                   </script>
@@ -257,7 +257,7 @@
                               <div class="form-group">
                                   <label class="control-label col-sm-3">Today's condition</label>
                                   <div class="col-sm-9">                                  
-                                      <%= text_area_tag "report[todays_condition]", @report.todays_condition, type:"text", tabindex: "5", class: "form-control", id: "today_c_textarea",  placeholder: 'Fill The Details of Todays Condition',  rows: "4" %>
+                                      <%= text_area_tag "report[todays_condition]", @report.todays_condition, type:"text", tabindex: "6", class: "form-control", id: "today_c_textarea",  placeholder: 'Fill The Details of Today\'s Condition',  rows: "4" %>
                                   <script type="text/javascript">
                                 $('#today_c_textarea').wysihtml5(); 
                                   </script>
@@ -286,7 +286,7 @@
                                   <label class="control-label col-sm-3">Add Photos</label>
                                   <div class="col-sm-9">                                  
                                       <div>
-                                        <%= file_field_tag "image_attachements[image][]" ,:multiple => true, class: "form-control",tabindex:"6" %>
+                                        <%= file_field_tag "image_attachements[image][]" ,:multiple => true, class: "form-control",tabindex:"7" %>
                                       </div>
                                   </div>
                               </div>
@@ -295,10 +295,10 @@
                                   <div class="col-sm-3">
                                   </div>
                                   <div class="col-xs-6 col-sm-4">
-                                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block',tabindex: "7" %>
+                                        <%= submit_tag 'Submit', :class => 'btn btn-warning btn-block',tabindex: "8" %>
                                   </div>
                                   <div class="col-xs-6 col-sm-4">
-                                      <%= link_to 'Cancel', project_site_path(id: @report.site.id), :class => 'btn btn-warning btn-block', tabindex: "8" %>
+                                      <%= link_to 'Cancel', project_site_path(id: @report.site.id), :class => 'btn btn-warning btn-block', tabindex: "9" %>
                                   </div>
                               </div>
                           

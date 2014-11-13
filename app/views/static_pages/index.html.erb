@@ -7,7 +7,7 @@
 
 <body>
 
-<div class="col-sm-12">
+<div class="col-sm-12 margin_lf30">
 	<div class="col-sm-1"></div>
 	<div class="col-sm-10">
 		<div class="col-sm-12">
@@ -31,14 +31,14 @@
                         <p class="para_link_last"> &nbsp; Home</p>
 					</div>
 
-                    <div class="row">
+                    <div class="row margin_lf30">
                         <div class="col-sm-12">
                             <h3 class="text_orange"><span>Welcome, <%= current_user.first_name %></span></h3>
                         </div>
                     </div>
                                       
                     <% if @projects.exists? %>
-                    <div class="row">
+                    <div class="row margin_lf30">
                         <div class="col-sm-12">
                            <!-- <h5><span> Here are Your All Projects</span></h5> -->
                            
@@ -77,7 +77,7 @@
 
                     <% else %>
 
-                    <div class="row">
+                    <div class="row margin_lf30">
                         <div class="col-sm-12 align_center">
                                                     
                            <% if current_user.role == 'Manager' %>

@@ -11,6 +11,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    overflow-x: hidden;
 }
 
 h1,
@@ -521,12 +522,29 @@ footer p {
         font-size: 20px;
     }
 
+    h4 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
     .img_wh {
         min-height: 100px;
         min-width: 100px;
     }
     .min_height {
         min-height: 200px;
+    }
+
+    .margin_lf30 {
+        margin: 0 -30px;
+    }
+
+    .margin_lf15 {
+        margin: 0 -15px;
+    }
+
+    .wysihtml5-toolbar {
+        width: 42em;
     }
 
 
@@ -559,3 +577,8 @@ footer p {
    }
 }
 
+@media screen and (max-width: 340px ) {
+   #report_report_date_2i {
+    width:38%;
+    }
+}
