@@ -1,16 +1,95 @@
-<h2>Change your password</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+<head>
 
-  <div><%= f.label :password, "New password" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %></div>
+</head>
 
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+<body>
 
-  <div><%= f.submit "Change my password" %></div>
-<% end %>
+<div class="col-sm-12 margin_lf30">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="col-sm-12">
+            <div class="row bg_white pad_top2 radius">
+                <div class="col-sm-12 pad_rl2">
+                    <div class ="row pad_left radius bg_silver">
+                        <i style="float: left;"><img class="img-responsive" src="/assets/profile.png" alt=""></i>
+                        <p class="para_link_last"> &nbsp;  Change your password</p>
+                    </div>
 
-<%= render "devise/shared/links" %>
+                    <div class="row pad_top margin_lf30">                               
+                                <hr>
+                        <div class="col-sm-12"> 
+                            <div class="col-sm-8 well well-lg"> 
+
+                            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  							<%= devise_error_messages! %>
+  							<%= f.hidden_field :reset_password_token %>
+								<div class="row form-group"> 
+                                    <label class="control-label col-sm-2">
+                                        <%= f.label :password, "New password" %>
+                                    </label>
+                                    <div class="col-sm-8 ">
+            					        <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+                                    </div>
+                                </div>
+                                <div class="row form-group"> 
+                                    <label class="control-label col-sm-2">
+                                        <%= f.label :password_confirmation, "Confirm new password" %>
+                                    </label>
+                                    <div class="col-sm-8 ">
+            					        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                                    </div>
+                                </div>
+
+								<div class="row form-group">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-8">
+                                        <%= f.submit "Change my password",  :class => 'btn btn-warning' %>
+                                    </div>
+                                </div>
+
+							<% end %> 
+
+                                <div class="row form-group">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-8">
+        								<%= render "devise/shared/links" %>
+                                    </div>
+                                </div>
+                                
+                            </div>         					                  
+                        </div>
+                    </div>                    
+
+                </div>
+               
+
+                <div class="col-sm-12 pad_top2">
+                    <div class="row bg_black bottom_radius">
+                        <p class="font_style1 pad_left"> &copy; | Triton | All Rights Reserved |</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="/assets/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
